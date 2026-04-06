@@ -773,14 +773,63 @@ let wishlist = JSON.parse(localStorage.getItem('alkhayat_wishlist') || '[]');
 
 function toggleWishlist(id, btn) {
   const index = wishlist.indexOf(id);
+  const p = products.find(x => x.id === id);
   if (index === -1) {
     wishlist.push(id);
-    btn.classList.add('active');
+    if(btn) btn.classList.add('active');
   } else {
     wishlist.splice(index, 1);
-    btn.classList.remove('active');
+    if(btn) btn.classList.remove('active');
   }
   localStorage.setItem('alkhayat_wishlist', JSON.stringify(wishlist));
+  updateWishlistUI();
+}
+
+function updateWishlistUI() {
+  const countEl = document.getElementById('wishlist-count');
+  if(countEl) countEl.textContent = wishlist.length;
+  
+  const list = document.getElementById('wishlist-items');
+  if(!list) return;
+
+  if (wishlist.length === 0) {
+    list.innerHTML = `<div style="text-align:center; padding: 50px 20px;">
+      <div style="font-size:3rem; margin-bottom:15px;">🖤</div>
+      <p style="color:var(--text-dim);">Your wishlist is empty</p>
+    </div>`;
+    return;
+  }
+
+  list.innerHTML = wishlist.map(id => {
+    const p = products.find(x => x.id === id);
+    if(!p) return '';
+    return `
+      <div class="cart-item">
+        <img src="${p.img}" alt="${p.name_en}">
+        <div class="cart-item-info">
+          <h4>${currentLang === 'en' ? p.name_en : p.name_ar}</h4>
+          <div class="cart-item-price">SAR ${p.price}</div>
+        </div>
+        <div class="cart-item-actions" style="display:flex; gap:10px;">
+           <button class="nav-icon-btn" style="background:var(--gold); border-radius:8px; padding:5px 12px; color:var(--dark); font-size:1.1rem;" onclick="addToCart(${p.id});closeWishlist();openCart()" title="Add to Cart">🛒</button>
+           <button class="cart-item-remove" style="position:static;" onclick="toggleWishlist(${p.id})">×</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function openWishlist() {
+  document.getElementById('wishlist-drawer').classList.add('active');
+  document.getElementById('cart-drawer-overlay').classList.add('active');
+  updateWishlistUI();
+}
+
+function closeWishlist() {
+  document.getElementById('wishlist-drawer').classList.remove('active');
+  if(!document.getElementById('cart-drawer').classList.contains('active')) {
+    document.getElementById('cart-drawer-overlay').classList.remove('active');
+  }
 }
 
 
@@ -1068,11 +1117,10 @@ function submitOrder() {
   const encoded = encodeURIComponent(message);
   window.open(`https://wa.me/966XXXXXXXXX?text=${encoded}`, '_blank');
   
-  alert(currentLang === 'en' ? 'Order placed! Opening WhatsApp...' : 'تم تقديم الطلب! جاري فتح واتساب...');
-  
+  document.getElementById('final-order-id').textContent = '#' + orderId;
   cart = [];
   updateCartUI();
-  navigateTo('products');
+  navigateTo('order-success');
 }
 
 function updateCheckoutSummary() {
@@ -1252,15 +1300,52 @@ function initBookingPage() {
   document.querySelector('.booking-section').style.display = '';
 }
 
-// Override navigateTo to init booking page
-const _origNav2 = window.navigateTo || function(){};
-window.navigateTo = (function(origFn) {
-  return function(page) {
-    origFn(page);
+// ============ CONSOLIDATED NAVIGATION ============
+function navigateTo(page) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  
+  // Show target page
+  const target = document.getElementById('page-' + page) || document.getElementById(page);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Special initializations
     if (page === 'booking') initBookingPage();
     if (page === 'checkout') updateCheckoutSummary();
-  };
-})(typeof navigateTo === 'function' ? navigateTo : _origNav2);
+    if (page === 'categories-page') renderCategoriesPage();
+  }
+
+  // Update Nav Links
+  document.querySelectorAll('.nav-links a').forEach(a => {
+     a.classList.toggle('active', a.getAttribute('onclick')?.includes(`'${page}'`));
+  });
+
+  // Auto-close menu if open
+  const menu = document.querySelector('.mobile-menu');
+  if(menu && menu.classList.contains('active')) menu.classList.remove('active');
+}
+
+window.navigateTo = navigateTo;
+
+function renderCategoriesPage() {
+  const grid = document.getElementById('categories-grid-page');
+  if (!grid) return;
+  grid.innerHTML = categories.map(c => {
+    const name = currentLang === 'en' ? c.name_en : c.name_ar;
+    const countText = currentLang === 'en' ? c.count + ' Products' : c.count + ' منتجات';
+    return `
+      <div class="category-card reveal" onclick="navigateTo('products');filterProducts('${c.id}')">
+        <img src="${c.img}" alt="${name}" loading="lazy">
+        <div class="category-overlay">
+          <div class="category-name">${name}</div>
+          <div class="category-count">${countText}</div>
+        </div>
+      </div>`;
+  }).join('');
+  initScrollAnimations();
+}
 
 // ---- Service Selection ----
 function selectService(el, id) {

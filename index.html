@@ -42,6 +42,12 @@
         </span>
       </span>
     </button>
+    <button class="nav-icon-btn" onclick="openWishlist()" aria-label="Wishlist">
+       ❤️ <span class="badge" id="wishlist-count">0</span>
+    </button>
+    <button class="nav-icon-btn" id="cart-btn" onclick="openCart()" aria-label="Cart">
+       🛒 <span class="badge" id="cart-count">0</span>
+    </button>
     <button class="theme-toggle-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode" title="Switch Theme">
       <span class="theme-toggle-track">
         <span class="theme-toggle-thumb">
@@ -1123,23 +1129,41 @@
 </div>
 
 <!-- Cart Drawer -->
-<div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="closeCart()"></div>
+<div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="closeCart();closeWishlist()"></div>
 <div class="cart-drawer" id="cart-drawer">
   <div class="cart-header">
     <h3 data-i18n="cart_title">Shopping Cart</h3>
     <button class="cart-close" onclick="closeCart()">×</button>
   </div>
-  <div class="cart-items" id="cart-items">
-    <!-- Items via JS -->
-  </div>
+  <div class="cart-items" id="cart-items"></div>
   <div class="cart-footer">
-    <div class="cart-total">
-      <span data-i18n="cart_total">Total</span>
-      <span id="cart-total-amount">SAR 0</span>
-    </div>
-    <button class="btn-primary checkout-btn" onclick="openCheckout()" data-i18n="cart_checkout">Checkout</button>
+    <div class="cart-total"><span data-i18n="cart_total">Total</span><span id="cart-total-amount">SAR 0</span></div>
+    <button class="btn-primary checkout-btn" style="width:100%" onclick="navigateTo('checkout');closeCart()" data-i18n="cart_checkout">Checkout</button>
   </div>
 </div>
+
+<!-- Wishlist Drawer -->
+<div class="cart-drawer" id="wishlist-drawer">
+  <div class="cart-header">
+    <h3>Wishlist</h3>
+    <button class="cart-close" onclick="closeWishlist()">×</button>
+  </div>
+  <div class="cart-items" id="wishlist-items"></div>
+</div>
+
+<!-- Order Success Section -->
+<section id="order-success" class="section">
+  <div class="container" style="text-align:center; padding: 100px 20px;">
+    <div class="success-icon" style="font-size: 80px; margin-bottom: 20px;">🎉</div>
+    <h1 data-i18n="success_title">Order Placed Successfully!</h1>
+    <p data-i18n="success_msg" style="color:var(--text-dim); margin-bottom: 30px;">Thank you for your order. We will contact you shortly.</p>
+    <div class="order-id-badge" style="display:inline-block; padding:15px 30px; background:rgba(var(--gold-rgb), 0.1); border:1px solid var(--gold); border-radius:12px; margin-bottom:30px;">
+       Order ID: <span id="final-order-id" style="font-weight:bold; color:var(--gold);">#000000</span>
+    </div>
+    <br>
+    <button class="btn-primary" onclick="navigateTo('home')">Back to Home</button>
+  </div>
+</section>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
