@@ -893,12 +893,14 @@ function renderAllProducts() {
   renderOriginBubbles();
   renderGridViewBubbles();
 
-  // Update result count
+  // Update result count with animation
   const countBadge = document.getElementById('results-count');
   if (countBadge) {
-    countBadge.textContent = filtered.length;
+    const currentVal = parseInt(countBadge.textContent) || 0;
+    const targetVal = filtered.length;
+    animateValue(countBadge, currentVal, targetVal, 600);
     countBadge.classList.add('animate');
-    setTimeout(()=> countBadge.classList.remove('animate'), 300);
+    setTimeout(() => countBadge.classList.remove('animate'), 500);
   }
 
   document.querySelectorAll('.filter-tab').forEach(t => {
@@ -1927,7 +1929,7 @@ function initStatsCounter() {
                 const target = entry.target;
                 const countTo = parseInt(target.getAttribute('data-count'));
                 if (!isNaN(countTo)) {
-                    animateValue(target, 0, countTo, 2000);
+                    animateValue(target, 0, countTo, 1200);
                 }
                 observer.unobserve(target);
             }
