@@ -110,6 +110,13 @@ const translations = {
     sum_service: "Service", sum_date: "Date", sum_time: "Time",
     sum_name: "Name", sum_phone: "Phone", sum_address: "Address", sum_city: "City", sum_garment: "Garment",
     book_now_btn: "Book Now",
+    summary_v_total: "VAT 15% (Included)",
+    shopping_cart_title: "My Shopping Cart",
+    btn_proceed_checkout: "Proceed to Checkout",
+    cart_items_header: "Items in Cart",
+    cart_price_header: "Price",
+    cart_qty_header: "Qty",
+    cart_subtotal_header: "Subtotal"
   },
   ar: {
     nav_home: "الرئيسية", nav_products: "المنتجات", nav_categories: "الفئات",
@@ -685,6 +692,7 @@ function navigateTo(page) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   closeMobileMenu();
   if (page === 'products') renderAllProducts();
+  if (page === 'cart') renderCartPage();
   if (page === 'checkout') renderCheckoutPage();
 }
 
@@ -1037,7 +1045,78 @@ function updateCartUI() {
     footer.style.display = 'block';
     footer.innerHTML = `
       <div class="cart-total"><span>${t('cart_total')}</span><span>SAR ${totalPrice}</span></div>
-      <button class="btn-primary" style="width:100%" onclick="navigateTo('checkout');closeCart()">${t('cart_checkout')}</button>`;
+      <button class="btn-primary" style="width:100%" onclick="navigateTo('cart');closeCart()">${t('cart_checkout')}</button>`;
+  }
+}
+
+function renderCartPage() {
+  const container = document.getElementById('cart-page-content');
+  if (!container) return;
+
+  if (cart.length === 0) {
+    container.innerHTML = `
+      <div class="cart-empty-page" style="text-align:center; padding: 60px 0;">
+        <div style="font-size:5rem; margin-bottom:20px;">🛒</div>
+        <h3 style="font-size:1.5rem; margin-bottom:20px;">${t('cart_empty')}</h3>
+        <button class="btn-primary" onclick="navigateTo('products')">${t('btn_shop')}</button>
+      </div>`;
+    return;
+  }
+
+  const subtotal = cart.reduce((s, c) => s + c.price * c.qty, 0);
+
+  container.innerHTML = `
+    <div class="cart-page-grid">
+      <div class="cart-items-column">
+        <div class="cart-header-row">
+          <span>${t('cart_items_header')}</span>
+          <span>${t('cart_price_header')}</span>
+          <span>${t('cart_qty_header')}</span>
+          <span>${t('cart_subtotal_header')}</span>
+        </div>
+        ${cart.map(item => {
+          const name = currentLang === 'en' ? item.name_en : item.name_ar;
+          return `
+            <div class="cart-page-item">
+              <div class="cart-p-info">
+                <img src="${item.img}" alt="${name}">
+                <div>
+                  <h4>${name}</h4>
+                  <button class="remove-p-btn" onclick="removeFromCart(${item.id}); renderCartPage();">Remove</button>
+                </div>
+              </div>
+              <div class="cart-p-price">SAR ${item.price}</div>
+              <div class="cart-p-qty">
+                <div class="qty-control-p">
+                  <button onclick="updateQty(${item.id}, -1); renderCartPage();">-</button>
+                  <span>${item.qty}</span>
+                  <button onclick="updateQty(${item.id}, 1); renderCartPage();">+</button>
+                </div>
+              </div>
+              <div class="cart-p-sub">SAR ${item.price * item.qty}</div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+      <div class="cart-summary-column">
+        <div class="summary-card">
+          <h3>${t('summary_title')}</h3>
+          <div class="summary-row"><span>${t('summary_sub')}</span><span>SAR ${subtotal}</span></div>
+          <div class="summary-row"><span>${t('summary_shipping')}</span><span>SAR 25</span></div>
+          <div class="summary-row total"><span>${t('summary_total')}</span><span>SAR ${subtotal + 25}</span></div>
+          <button class="btn-primary w-full" onclick="navigateTo('checkout')" style="margin-top:20px;">${t('btn_proceed_checkout')}</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function updateQty(id, delta) {
+  const item = cart.find(c => c.id === id);
+  if (item) {
+    item.qty += delta;
+    if (item.qty < 1) removeFromCart(id);
+    updateCartUI();
   }
 }
 
