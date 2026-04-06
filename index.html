@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al-Khayat Premium Tailoring | الخياط للخياطة الفاخرة</title>
+  <meta name="description" content="Premium bespoke tailoring in Saudi Arabia. Custom thobes, jubbas, saiderias with finest Japanese & Chinese fabrics. Saudi, Emirati, Qatari, Kuwaiti designs.">
+  <meta name="keywords" content="thobe, thawb, jubba, saideria, tailoring, Saudi Arabia, custom tailoring, premium fabric">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂️</text></svg>">
+</head>
+<body>
+
+<!-- Loader -->
+<div class="page-loader"><div class="loader-spinner"></div></div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <a href="#" class="nav-logo" onclick="navigateTo('home');return false">AL-KHAYAT <span>| الخياط</span></a>
+  <ul class="nav-links">
+    <li><a href="#" class="active" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a></li>
+    <li><a href="#" onclick="navigateTo('products');return false" data-i18n="nav_products">Products</a></li>
+    <li><a href="#" onclick="navigateTo('categories-page');return false" data-i18n="nav_categories">Categories</a></li>
+    <li><a href="#" onclick="navigateTo('about-page');return false" data-i18n="nav_about">About</a></li>
+    <li><a href="#" onclick="navigateTo('privacy');return false" data-i18n="nav_privacy">Privacy</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#" onclick="navigateTo('booking');return false" class="nav-book-btn-switch">
+      <span class="book-switch-track">
+        <span class="book-switch-thumb">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M12 18l2 2 4-4"></path></svg>
+        </span>
+        <span class="book-switch-text" data-i18n="book_now_btn">Book Now</span>
+      </span>
+    </a>
+
+    <button class="lang-toggle-btn" id="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle Language" title="Switch Language">
+      <span class="lang-toggle-track">
+        <span class="lang-toggle-thumb">
+          <span class="lang-label" id="lang-label-en">EN</span>
+          <span class="lang-label" id="lang-label-ar">AR</span>
+        </span>
+      </span>
+    </button>
+    <button class="theme-toggle-btn" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode" title="Switch Theme">
+      <span class="theme-toggle-track">
+        <span class="theme-toggle-thumb">
+          <span class="theme-toggle-icon" id="theme-icon-moon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span class="theme-toggle-icon" id="theme-icon-sun">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </span>
+        </span>
+      </span>
+    </button>
+    <div class="cart-icon" onclick="openCart()">🛒<span class="cart-badge">0</span></div>
+    <button class="menu-toggle" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a>
+  <a href="#" onclick="navigateTo('products');return false" data-i18n="nav_products">Products</a>
+  <a href="#" onclick="navigateTo('categories-page');return false" data-i18n="nav_categories">Categories</a>
+  <a href="#" onclick="navigateTo('about-page');return false" data-i18n="nav_about">About</a>
+  <a href="#" onclick="navigateTo('privacy');return false" data-i18n="nav_privacy">Privacy</a>
+  <a href="#" onclick="navigateTo('booking');return false" class="mobile-book-btn-switch">
+    <span class="book-switch-track">
+      <span class="book-switch-thumb">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M12 18l2 2 4-4"></path></svg>
+      </span>
+      <span class="book-switch-text" data-i18n="book_now_btn">Book Now</span>
+    </span>
+  </a>
+</div>
+
+<!-- ============ HOME PAGE ============ -->
+<div class="page active" id="page-home">
+
+  <!-- Hero Slider -->
+  <section class="hero">
+    <div class="hero-slide active">
+      <img src="images/hero_banner_1.png" alt="Premium Thobes">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-subtitle" data-i18n="hero1_subtitle">Premium Tailoring Since 2015</p>
+        <h1 class="hero-title" data-i18n="hero1_title">Crafting <span>Elegance</span>, Stitch by Stitch</h1>
+        <p class="hero-desc" data-i18n="hero1_desc">Experience bespoke tailoring with the finest Japanese & Chinese fabrics.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-primary" onclick="navigateTo('products');return false" data-i18n="btn_shop">Shop Now</a>
+          <a href="#" class="btn-outline" onclick="navigateTo('categories-page');return false" data-i18n="btn_collection">View Collection</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <img src="images/hero_banner_2.png" alt="Royal Thobes">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-subtitle" data-i18n="hero2_subtitle">Tradition Meets Luxury</p>
+        <h1 class="hero-title" data-i18n="hero2_title">Royal <span>Thobes</span> for Every Occasion</h1>
+        <p class="hero-desc" data-i18n="hero2_desc">Saudi, Emirati, Qatari & Kuwaiti designs crafted to perfection.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-primary" onclick="navigateTo('products');return false" data-i18n="btn_shop">Shop Now</a>
+          <a href="#" class="btn-outline" onclick="navigateTo('about-page');return false" data-i18n="btn_collection">View Collection</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide">
+      <img src="images/hero_banner_3.png" alt="Premium Fabrics">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-subtitle" data-i18n="hero3_subtitle">Premium Fabrics Collection</p>
+        <h1 class="hero-title" data-i18n="hero3_title">Finest <span>Fabrics</span> from Around the World</h1>
+        <p class="hero-desc" data-i18n="hero3_desc">Japanese, Chinese & European fabrics for quality and elegance.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-primary" onclick="navigateTo('products');return false" data-i18n="btn_shop">Shop Now</a>
+          <a href="#" class="btn-outline" onclick="navigateTo('categories-page');return false" data-i18n="btn_collection">View Collection</a>
+        </div>
+      </div>
+    </div>
+    <div class="slider-dots">
+      <div class="slider-dot active"></div>
+      <div class="slider-dot"></div>
+      <div class="slider-dot"></div>
+    </div>
+    <div class="slider-arrows">
+      <button class="slider-arrow" onclick="prevSlide()">◀</button>
+      <button class="slider-arrow" onclick="nextSlide()">▶</button>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section section-pattern">
+    <div class="section-header reveal">
+      <p class="section-label" data-i18n="feat_label">Our Collection</p>
+      <h2 class="section-title" data-i18n="feat_title">Featured Products</h2>
+      <p class="section-desc" data-i18n="feat_desc">Handpicked selections from our finest craftsmanship</p>
+    </div>
+    <div class="products-grid" id="featured-grid"></div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section section-dark">
+    <div class="section-header reveal">
+      <p class="section-label" data-i18n="cat_label">Browse By</p>
+      <h2 class="section-title" data-i18n="cat_title">Categories</h2>
+      <p class="section-desc" data-i18n="cat_desc">Explore our wide range of traditional garments</p>
+    </div>
+    <div class="categories-grid" id="categories-grid"></div>
+  </section>
+
+  <!-- New Arrivals -->
+  <section class="section section-pattern">
+    <div class="section-header reveal">
+      <p class="section-label" data-i18n="new_label">Just Arrived</p>
+      <h2 class="section-title" data-i18n="new_title">New Arrivals</h2>
+      <p class="section-desc" data-i18n="new_desc">Latest designs and seasonal collections</p>
+    </div>
+    <div class="products-grid" id="new-grid"></div>
+  </section>
+
+  <!-- Craftsmanship Process -->
+  <section class="section section-dark">
+    <div class="section-header reveal">
+      <p class="section-label" data-i18n="process_label">Our Craft</p>
+      <h2 class="section-title" data-i18n="process_title">The Art of Tailoring</h2>
+      <p class="section-desc" data-i18n="process_desc">Every garment passes through the hands of skilled artisans</p>
+    </div>
+    <div class="process-timeline">
+      <div class="process-step reveal">
+        <div class="process-number">01</div>
+        <div class="process-icon"><img src="images/measuring_customer.png" alt="Measurement"></div>
+        <h3 data-i18n="p1_title">Measurement</h3>
+        <p data-i18n="p1_desc">Expert muallim takes precise body measurements</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-number">02</div>
+        <div class="process-icon"><img src="images/cutting_fabric.png" alt="Cutting"></div>
+        <h3 data-i18n="p2_title">Cutting</h3>
+        <p data-i18n="p2_desc">Master cutter shapes the finest fabrics with precision</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-number">03</div>
+        <div class="process-icon"><img src="images/sewing_thobe.png" alt="Sewing"></div>
+        <h3 data-i18n="p3_title">Sewing</h3>
+        <p data-i18n="p3_desc">Skilled artisans stitch each piece to perfection</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-number">04</div>
+        <div class="process-icon"><img src="images/button_work.png" alt="Button Work"></div>
+        <h3 data-i18n="p4_title">Button Work</h3>
+        <p data-i18n="p4_desc">Detailed button and finishing touches applied</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-number">05</div>
+        <div class="process-icon"><img src="images/thobes_on_hangers.png" alt="Quality Check"></div>
+        <h3 data-i18n="p5_title">Quality Check</h3>
+        <p data-i18n="p5_desc">Finished garments hung and inspected for quality</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-number">06</div>
+        <div class="process-icon"><img src="images/home_delivery.png" alt="Delivery"></div>
+        <h3 data-i18n="p6_title">Delivery</h3>
+        <p data-i18n="p6_desc">Home delivery and doorstep measurement service</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section">
+    <div class="about-grid">
+      <div class="about-image reveal-left">
+        <img src="images/shop_interior.png" alt="Our Shop">
+        <div class="about-image-badge">
+          <div class="badge-number animate-stat" data-count="10">0</div>
+          <div class="badge-text" data-i18n="about_years">Years</div>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <p class="section-label" data-i18n="about_label">Who We Are</p>
+        <h2 data-i18n="about_title">Al-Khayat Premium Tailoring</h2>
+        <p data-i18n="about_p1">Located in the heart of Saudi Arabia, Al-Khayat Premium Tailoring has been the trusted name in bespoke traditional garments since 2015.</p>
+        <p data-i18n="about_p2">We specialize in Saudi, Emirati, Qatari, and Kuwaiti style thobes, jubbas, and saiderias. Using only the finest Japanese and Chinese fabrics.</p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number animate-stat" data-count="5000">0</div>
+            <div class="stat-label" data-i18n="about_stat1_l">Happy Customers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number animate-stat" data-count="15">0</div>
+            <div class="stat-label" data-i18n="about_stat2_l">Master Tailors</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number animate-stat" data-count="10">0</div>
+            <div class="stat-label" data-i18n="about_stat3_l">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CUSTOMER TESTIMONIALS (VERTICAL MARQUEE) ===== -->
+  <section class="section testimonials-section section-dark">
+    <div class="section-header reveal">
+      <div class="testimonial-badge-wrapper">
+        <span class="testimonial-badge">Happy Customers</span>
+      </div>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-desc">Real feedback from real customers who trust Al-Khayat</p>
+      <div style="margin-top:20px;">
+        <button class="btn-primary" onclick="openReviewModal()" style="padding: 12px 30px; border-radius: 50px;">✍️ Write a Review</button>
+      </div>
+    </div>
+
+    <div class="testimonials-marquee-container">
+      <div class="marquee-column" id="marquee-col-1"></div>
+      <div class="marquee-column md-show" id="marquee-col-2"></div>
+      <div class="marquee-column lg-show" id="marquee-col-3"></div>
+    </div>
+  </section>
+
+  <!-- ===== CORPORATE CLIENTS (FLOATING DESIGN) ===== -->
+  <section class="section corporate-section section-pattern">
+    <div class="section-header reveal mb-10 text-center">
+      <h2 class="section-title">Trusted by</h2>
+    </div>
+    
+    <div class="floating-logo-area">
+      <div class="floating-logo-grid" id="floating-logo-grid">
+        <!-- Floating bubbles will be injected here via JS -->
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ PRODUCTS PAGE ============ -->
+<div class="page" id="page-products">
+  <section class="section product-page-section">
+    <!-- High-End Category Filters -->
+    <div class="category-filters-outer">
+      <div class="filter-tabs-container">
+        <button class="filter-tab active" data-filter="all" onclick="filterProducts('all')">
+          <span class="tab-icon">✨</span> <span data-i18n="filter_all">All</span>
+        </button>
+        <button class="filter-tab" data-filter="thobe" onclick="filterProducts('thobe')">
+          <span class="tab-icon">🇸🇦</span> <span data-i18n="filter_thobe">Saudi Thobes</span>
+        </button>
+        <button class="filter-tab" data-filter="jubba" onclick="filterProducts('jubba')">
+          <span class="tab-icon">👔</span> <span data-i18n="filter_jubba">Jubbas</span>
+        </button>
+        <button class="filter-tab" data-filter="saideria" onclick="filterProducts('saideria')">
+          <span class="tab-icon">🎽</span> <span data-i18n="filter_saideria">Saiderias</span>
+        </button>
+        <button class="filter-tab" data-filter="fabric" onclick="filterProducts('fabric')">
+          <span class="tab-icon">🧵</span> <span data-i18n="filter_fabric">Fabrics</span>
+        </button>
+        <button class="filter-tab" data-filter="accessories" onclick="filterProducts('accessories')">
+          <span class="tab-icon">🎒</span> <span data-i18n="filter_accessories">Accessories</span>
+        </button>
+        <button class="filter-tab" data-filter="bisht" onclick="filterProducts('bisht')">
+          <span class="tab-icon">👑</span> <span data-i18n="filter_bisht">Bisht</span>
+        </button>
+        <button class="filter-tab" data-filter="kids" onclick="filterProducts('kids')">
+          <span class="tab-icon">👶</span> Kids Collection
+        </button>
+        <button class="filter-tab new-pill" data-filter="new" onclick="filterProducts('new')">
+          <span class="tab-icon">🔥</span> <span data-i18n="new_title">New Products</span>
+        </button>
+      </div>
+    </div>
+
+
+    <!-- Sleek Filter Toolbar -->
+    <div class="filter-toolbar-pill">
+      <div class="toolbar-section origin-section">
+        <label data-i18n="filter_origin">Fabric Origin</label>
+        <div class="origin-bubble-filter" id="origin-bubble-filter">
+          <!-- Bubbles injected via JS -->
+        </div>
+      </div>
+
+      <div class="toolbar-divider"></div>
+
+      <div class="toolbar-section price-section">
+        <div class="section-top">
+          <label data-i18n="filter_price">Price Filter</label>
+          <span id="price-val" class="toolbar-badge">1000</span>
+        </div>
+        <div class="range-container">
+          <input type="range" id="filter-price" min="50" max="1000" value="1000" step="50" oninput="updatePriceLabel(this.value);applyAdvancedFilters()">
+        </div>
+      </div>
+
+      <div class="toolbar-divider"></div>
+
+      <div class="toolbar-section size-section">
+        <div class="section-top">
+          <label data-i18n="filter_size">Size Filter</label>
+          <span id="size-val" class="toolbar-badge">All</span>
+        </div>
+        <div class="range-container">
+          <input type="range" id="filter-size-range" min="0" max="6" value="0" step="1" oninput="updateSizeLabel(this.value);applyAdvancedFilters()">
+        </div>
+      </div>
+
+      <div class="toolbar-divider"></div>
+
+      <div class="toolbar-section grid-section">
+        <label data-i18n="grid_view">View:</label>
+        <div class="grid-bubble-filter" id="grid-bubble-filter">
+          <!-- Grid bubbles injected via JS -->
+        </div>
+      </div>
+
+      <!-- Results Counter Floating on Toolbar -->
+      <div class="toolbar-results-badge" id="results-count">0</div>
+    </div>
+
+    <div class="products-grid" id="all-products-grid"></div>
+  </section>
+</div>
+
+<!-- ============ CATEGORIES PAGE ============ -->
+<div class="page" id="page-categories-page">
+  <div class="page-hero">
+    <img src="images/thobes_on_hangers.png" alt="Categories">
+    <div class="page-hero-content">
+      <h1 data-i18n="cat_title">Categories</h1>
+      <p data-i18n="cat_desc">Explore our wide range of traditional garments</p>
+      <div class="breadcrumb"><a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a> / <span data-i18n="nav_categories">Categories</span></div>
+    </div>
+  </div>
+  <section class="section">
+    <div class="categories-grid" id="categories-grid-page"></div>
+  </section>
+</div>
+
+<!-- ============ ABOUT PAGE ============ -->
+<div class="page" id="page-about-page">
+  <div class="page-hero">
+    <img src="images/shop_interior.png" alt="About Us">
+    <div class="page-hero-content">
+      <h1 data-i18n="about_page_title">About Us</h1>
+      <p data-i18n="about_page_desc">Our story of craftsmanship</p>
+      <div class="breadcrumb"><a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a> / <span data-i18n="nav_about">About</span></div>
+    </div>
+  </div>
+  <section class="section">
+    <div class="about-grid">
+      <div class="about-image reveal-left">
+        <img src="images/measuring_customer.png" alt="Our Craft">
+      </div>
+      <div class="about-content reveal-right">
+        <h2 data-i18n="about_mission">Our Mission</h2>
+        <p data-i18n="about_mission_p">To deliver the finest custom-tailored traditional garments.</p>
+        <h2 data-i18n="about_vision">Our Vision</h2>
+        <p data-i18n="about_vision_p">To become the leading bespoke tailoring house in the Gulf region.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section section-dark">
+    <div class="content-page">
+      <h2 data-i18n="about_values">Our Values</h2>
+      <ul>
+        <li data-i18n="about_v1">Quality: Only the finest fabrics and exceptional craftsmanship</li>
+        <li data-i18n="about_v2">Tradition: Honoring centuries of tailoring heritage</li>
+        <li data-i18n="about_v3">Innovation: Embracing modern techniques and designs</li>
+        <li data-i18n="about_v4">Service: Personalized attention to every customer</li>
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-header reveal">
+      <p class="section-label" data-i18n="process_label">Our Craft</p>
+      <h2 class="section-title" data-i18n="process_title">The Art of Tailoring</h2>
+    </div>
+    <div class="process-timeline">
+      <div class="process-step reveal">
+        <div class="process-number">01</div>
+        <div class="process-icon"><img src="images/measuring_customer.png" alt=""></div>
+        <h3 data-i18n="p1_title">Measurement</h3><p data-i18n="p1_desc"></p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-number">02</div>
+        <div class="process-icon"><img src="images/cutting_fabric.png" alt=""></div>
+        <h3 data-i18n="p2_title">Cutting</h3><p data-i18n="p2_desc"></p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-number">03</div>
+        <div class="process-icon"><img src="images/sewing_thobe.png" alt=""></div>
+        <h3 data-i18n="p3_title">Sewing</h3><p data-i18n="p3_desc"></p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-number">04</div>
+        <div class="process-icon"><img src="images/button_work.png" alt=""></div>
+        <h3 data-i18n="p4_title">Button Work</h3><p data-i18n="p4_desc"></p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-number">05</div>
+        <div class="process-icon"><img src="images/thobes_on_hangers.png" alt=""></div>
+        <h3 data-i18n="p5_title">Quality Check</h3><p data-i18n="p5_desc"></p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-number">06</div>
+        <div class="process-icon"><img src="images/home_delivery.png" alt=""></div>
+        <h3 data-i18n="p6_title">Delivery</h3><p data-i18n="p6_desc"></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PRIVACY PAGE ============ -->
+<div class="page" id="page-privacy">
+  <div class="page-hero">
+    <img src="images/shop_interior.png" alt="Privacy">
+    <div class="page-hero-content">
+      <h1 data-i18n="privacy_title">Privacy Policy</h1>
+      <p data-i18n="privacy_desc">Your privacy matters to us</p>
+      <div class="breadcrumb"><a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a> / <span data-i18n="nav_privacy">Privacy</span></div>
+    </div>
+  </div>
+  </section>
+</div>
+
+<!-- ============ CHECKOUT PAGE ============ -->
+<div class="page" id="page-checkout">
+  <div class="page-hero checkout-hero">
+    <img src="images/shop_interior.png" alt="Checkout">
+    <div class="page-hero-content">
+      <div class="secure-badge">
+        <span class="lock-icon">🔒</span> <span data-i18n="secure_msg">Secure Checkout</span>
+      </div>
+      <h1 data-i18n="cart_title">Checkout</h1>
+      <p data-i18n="products_desc">Experience the finest tailoring, delivered to your door.</p>
+    </div>
+  </div>
+
+  <section class="section checkout-section">
+    <div class="checkout-grid-split reveal">
+      <!-- LEFT: Shipping Form -->
+      <div class="checkout-left-side">
+        <div class="checkout-card-new">
+           <div class="checkout-card-header">
+              <h2 class="card-title-new">Shipping Details</h2>
+           </div>
+           <div class="checkout-card-content">
+              <form id="checkout-form" onsubmit="handlePlaceOrder(event)">
+                <div class="form-row">
+                  <div class="form-group chk-input-wrap">
+                    <label>Full Name</label>
+                    <input type="text" id="chk-name" required placeholder="Full Name" oninput="updateCheckoutSummary()">
+                  </div>
+                  <div class="form-group chk-input-wrap">
+                    <label>Phone Number</label>
+                    <input type="tel" id="chk-phone" required placeholder="+966" oninput="updateCheckoutSummary()">
+                  </div>
+                </div>
+                 <div class="form-group chk-input-wrap">
+                   <label>Shipping Address</label>
+                   <div class="address-input-wrapper">
+                     <textarea id="chk-address" rows="2" required placeholder="Street, Building, Apartment" oninput="updateCheckoutSummary()"></textarea>
+                     <button type="button" class="geo-btn" onclick="autoDetectCheckoutLocation()" title="Auto-detect location" style="margin-top: 8px;">
+                       <span class="geo-btn-icon">📍</span>
+                       <span class="geo-btn-text" id="chk-geo-btn-text">Use My Location</span>
+                     </button>
+                   </div>
+                   <div class="geo-status" id="chk-geo-status"></div>
+                 </div>
+                <div class="form-group chk-input-wrap">
+                  <label>City</label>
+                  <select id="chk-city" onchange="updateCheckoutSummary()">
+                    <option value="Riyadh">Riyadh</option>
+                    <option value="Jeddah">Jeddah</option>
+                    <option value="Dammam">Dammam</option>
+                    <option value="Mecca">Mecca</option>
+                    <option value="Medina">Medina</option>
+                  </select>
+                </div>
+
+                <div class="chk-separator my-6"></div>
+
+                <h2 class="card-title-new mb-4" style="font-size:1.1rem">Select Payment</h2>
+                <div class="payment-options">
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="cod" checked onchange="updateCheckoutSummary()">
+                    <div class="payment-box-new">
+                      <span>💵 Cash on Delivery</span>
+                    </div>
+                  </label>
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="whatsapp" onchange="updateCheckoutSummary()">
+                    <div class="payment-box-new">
+                      <span>💬 WhatsApp Pay</span>
+                    </div>
+                  </label>
+                </div>
+              </form>
+           </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Order Summary -->
+      <div class="checkout-right-side">
+        <div class="checkout-card-new">
+          <div class="checkout-card-header">
+            <h2 class="card-title-new">Order Summary</h2>
+          </div>
+          
+          <div class="checkout-card-content">
+            <!-- Delivery Section -->
+            <div class="checkout-group">
+              <div class="group-header">
+                <span class="group-icon">📍</span>
+                <span class="group-title">Delivery Address</span>
+              </div>
+              <p class="group-text" id="chk-display-address">Please enter your address</p>
+              <p class="group-text secondary" id="chk-display-city">Saudi Arabia</p>
+            </div>
+
+            <div class="chk-separator"></div>
+
+            <!-- Payment Method Section -->
+            <div class="checkout-group">
+              <div class="group-header">
+                <span class="group-icon">💳</span>
+                <span class="group-title">Billing Method</span>
+              </div>
+              <p class="group-text" id="chk-display-payment">Select payment method below</p>
+            </div>
+
+            <div class="chk-separator"></div>
+
+            <!-- Discount Section -->
+            <div class="checkout-group">
+              <div class="group-header">
+                <span class="group-icon">🏷️</span>
+                <span class="group-title">Apply Discount Code</span>
+              </div>
+              <div class="promo-wrap mt-3">
+                <input type="text" placeholder="Enter discount code" class="promo-input">
+                <button class="btn-redeem">Redeem</button>
+              </div>
+            </div>
+
+            <div class="chk-separator"></div>
+
+            <!-- Payment Summary -->
+            <div class="payment-details">
+              <span class="text-sm font-medium">Order Total</span>
+              <div class="details-grid mt-3">
+                <span class="detail-label">Item Total:</span>
+                <span class="detail-val" id="chk-subtotal-new">0.00 SAR</span>
+                <span class="detail-label">Delivery Fee:</span>
+                <span class="detail-val" id="chk-shipping-new">25.00 SAR</span>
+                <span class="detail-label">Taxes:</span>
+                <span class="detail-val">0.00 SAR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOOTER CHECKOUT BAR (Inside Right Side) -->
+        <div class="checkout-footer-bar mt-6">
+          <div class="footer-total">
+            <span class="total-amount" id="chk-grand-total-new">0.00 SAR</span>
+          </div>
+          <button class="btn-place-order" onclick="document.getElementById('checkout-form').requestSubmit()">Place Order</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+
+<!-- ============ ORDER SUCCESS PAGE ============ -->
+<div class="page" id="page-order-success">
+  <div class="success-container flex-center">
+    <div class="confirmation-card reveal">
+      <div class="success-icon-wrap">
+        <div class="success-circle">
+          <span class="check-icon">✓</span>
+        </div>
+      </div>
+      
+      <h2 class="success-title">Order Successfully Submitted!</h2>
+      <p class="success-subtitle">Experience the finest tailoring, delivered soon.</p>
+
+      <div class="order-details-card">
+        <div class="order-detail-row">
+          <span>Order ID</span>
+          <span id="success-order-id">#57625869</span>
+        </div>
+        <div class="order-detail-row">
+          <span>Payment Method</span>
+          <span id="success-payment">Apple Pay</span>
+        </div>
+        <div class="order-detail-row">
+          <span>Date & Time</span>
+          <span id="success-date">01/02/24 23:46</span>
+        </div>
+        <div class="order-detail-row total">
+          <span>Total Paid</span>
+          <span id="success-total">$ 129</span>
+        </div>
+      </div>
+
+      <button class="btn-primary w-full mt-6" onclick="navigateTo('home')" style="padding:16px; border-radius:12px;">
+        Continue Shopping
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ BOOKING PAGE ============ -->
+<div class="page" id="page-booking">
+  <div class="page-hero booking-hero">
+    <img src="images/shop_interior.png" alt="Book Appointment">
+    <div class="page-hero-content">
+      <h1 data-i18n="book_title">Book a Home Visit</h1>
+      <p data-i18n="book_subtitle">Custom tailoring delivered to your doorstep</p>
+      <div class="breadcrumb"><a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a> / <span data-i18n="nav_book">Book Now</span></div>
+    </div>
+  </div>
+
+  <!-- Progress Steps -->
+  <div class="booking-progress">
+    <div class="bp-step active" id="bp1">
+      <div class="bp-num">1</div>
+      <span data-i18n="bp_service">Service</span>
+    </div>
+    <div class="bp-line"></div>
+    <div class="bp-step" id="bp2">
+      <div class="bp-num">2</div>
+      <span data-i18n="bp_datetime">Date & Time</span>
+    </div>
+    <div class="bp-line"></div>
+    <div class="bp-step" id="bp3">
+      <div class="bp-num">3</div>
+      <span data-i18n="bp_details">Your Info</span>
+    </div>
+    <div class="bp-line"></div>
+    <div class="bp-step" id="bp4">
+      <div class="bp-num">✓</div>
+      <span data-i18n="bp_confirm">Confirm</span>
+    </div>
+  </div>
+
+  <section class="section booking-section">
+
+    <!-- STEP 1: Choose Service -->
+    <div class="booking-step active" id="bstep-1">
+      <div class="booking-step-header">
+        <h2 data-i18n="book_s1_title">Choose a Service</h2>
+        <p data-i18n="book_s1_desc">What would you like us to do for you?</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" onclick="selectService(this,'home_measure')">
+          <div class="service-icon">📏</div>
+          <h3 data-i18n="svc_measure">Home Measurement</h3>
+          <p data-i18n="svc_measure_d">Our master tailor visits your home for precise body measurements</p>
+          <div class="service-price" data-i18n="svc_free">Free Service</div>
+        </div>
+        <div class="service-card" onclick="selectService(this,'home_delivery')">
+          <div class="service-icon">🚚</div>
+          <h3 data-i18n="svc_delivery">Home Delivery</h3>
+          <p data-i18n="svc_delivery_d">Receive your completed order delivered to your door</p>
+          <div class="service-price" data-i18n="svc_delivery_p">SAR 20 – 50</div>
+        </div>
+        <div class="service-card" onclick="selectService(this,'custom_order')">
+          <div class="service-icon">✂️</div>
+          <h3 data-i18n="svc_custom">Custom Order</h3>
+          <p data-i18n="svc_custom_d">Place a fully custom thobe, jubba or bisht order from home</p>
+          <div class="service-price" data-i18n="svc_custom_p">Starts SAR 280</div>
+        </div>
+        <div class="service-card" onclick="selectService(this,'fabric_consult')">
+          <div class="service-icon">🧵</div>
+          <h3 data-i18n="svc_fabric">Fabric Consultation</h3>
+          <p data-i18n="svc_fabric_d">Expert brings fabric samples to your home for selection</p>
+          <div class="service-price" data-i18n="svc_free">Free Service</div>
+        </div>
+        <div class="service-card" onclick="selectService(this,'alteration')">
+          <div class="service-icon">🔧</div>
+          <h3 data-i18n="svc_alter">Alterations</h3>
+          <p data-i18n="svc_alter_d">Adjustments and repairs done at your convenience</p>
+          <div class="service-price" data-i18n="svc_alter_p">From SAR 30</div>
+        </div>
+        <div class="service-card" onclick="selectService(this,'vip_package')">
+          <div class="service-icon">👑</div>
+          <h3 data-i18n="svc_vip">VIP Package</h3>
+          <p data-i18n="svc_vip_d">Full-service: consultation, measurement, fitting & delivery at home</p>
+          <div class="service-price" data-i18n="svc_vip_p">SAR 150 (credited on order)</div>
+        </div>
+      </div>
+      <div class="booking-nav">
+        <button class="btn-primary" onclick="bookingNext(1)" id="btn-step1-next" disabled data-i18n="book_next">Next Step →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Date & Time -->
+    <div class="booking-step" id="bstep-2">
+      <div class="booking-step-header">
+        <h2 data-i18n="book_s2_title">Pick a Date & Time</h2>
+        <p data-i18n="book_s2_desc">Choose when you'd like us to visit</p>
+      </div>
+      <div class="datetime-container">
+        <div class="calendar-wrapper">
+          <div class="calendar-nav">
+            <button class="cal-arrow" onclick="changeMonth(-1)">‹</button>
+            <h3 id="cal-month-label"></h3>
+            <button class="cal-arrow" onclick="changeMonth(1)">›</button>
+          </div>
+          <div class="calendar-days-header">
+            <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+          </div>
+          <div class="calendar-grid" id="calendar-grid"></div>
+        </div>
+        <div class="time-slots-wrapper">
+          <h4 data-i18n="book_time">Available Time Slots</h4>
+          <div class="time-slots" id="time-slots"></div>
+          <div class="selected-datetime" id="selected-datetime-display"></div>
+        </div>
+      </div>
+      <div class="booking-nav">
+        <button class="btn-outline" onclick="bookingBack(2)" data-i18n="book_back">← Back</button>
+        <button class="btn-primary" onclick="bookingNext(2)" id="btn-step2-next" disabled data-i18n="book_next">Next Step →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Personal Info + Fabric Chooser -->
+    <div class="booking-step" id="bstep-3">
+      <div class="booking-step-header">
+        <h2 data-i18n="book_s3_title">Your Information</h2>
+        <p data-i18n="book_s3_desc">We'll use this to confirm your booking</p>
+      </div>
+      <div class="step3-layout">
+        <!-- LEFT: Form -->
+        <div class="step3-left">
+          <form class="booking-form" id="booking-form" onsubmit="return false">
+            <div class="form-row">
+              <div class="form-group">
+                <label data-i18n="form_name">Full Name *</label>
+                <input type="text" id="bk-name" placeholder="" data-i18n-ph="form_name_ph" required>
+              </div>
+              <div class="form-group">
+                <label data-i18n="form_phone">Phone Number *</label>
+                <input type="tel" id="bk-phone" placeholder="" data-i18n-ph="form_phone_ph" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_address">Delivery / Visit Address *</label>
+              <div class="address-input-wrapper">
+                <input type="text" id="bk-address" placeholder="" data-i18n-ph="form_address_ph" required>
+                <button type="button" class="geo-btn" onclick="autoDetectLocation()" title="Auto-detect location">
+                  <span class="geo-btn-icon">📍</span>
+                  <span class="geo-btn-text" id="geo-btn-text">Use My Location</span>
+                </button>
+              </div>
+              <div class="geo-status" id="geo-status"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label data-i18n="form_city">City</label>
+                <select id="bk-city">
+                  <option value="riyadh" data-i18n="city_riyadh">Riyadh</option>
+                  <option value="jeddah" data-i18n="city_jeddah">Jeddah</option>
+                  <option value="dammam" data-i18n="city_dammam">Dammam</option>
+                  <option value="mecca" data-i18n="city_mecca">Mecca</option>
+                  <option value="medina" data-i18n="city_medina">Medina</option>
+                  <option value="other" data-i18n="city_other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label data-i18n="form_garment">Garment Type</label>
+                <select id="bk-garment">
+                  <option value="thobe" data-i18n="filter_thobe">Saudi Thobe</option>
+                  <option value="emirati" data-i18n="filter_emirati">Emirati Kandura</option>
+                  <option value="qatari" data-i18n="filter_qatari">Qatari Thobe</option>
+                  <option value="kuwaiti" data-i18n="filter_kuwaiti">Kuwaiti Dishdasha</option>
+                  <option value="jubba" data-i18n="filter_jubba">Jubba</option>
+                  <option value="bisht">Bisht</option>
+                  <option value="other" data-i18n="city_other">Other / Not Sure</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label data-i18n="form_notes">Special Notes (Optional)</label>
+              <textarea id="bk-notes" rows="3" placeholder="" data-i18n-ph="form_notes_ph"></textarea>
+            </div>
+            <div class="form-group form-whatsapp">
+              <label class="checkbox-label">
+                <input type="checkbox" id="bk-whatsapp" checked>
+                <span data-i18n="form_wa">Send booking confirmation via WhatsApp</span>
+              </label>
+            </div>
+          </form>
+        </div>
+
+        <!-- RIGHT: Fabric Chooser Panel -->
+        <div class="step3-right">
+          <div class="fabric-chooser-panel">
+            <h4 class="fabric-panel-title">🧵 Optional: Choose Fabric</h4>
+            <p class="fabric-panel-sub">Select a fabric for your order (optional)</p>
+
+            <!-- Filter Tags -->
+            <div class="fabric-filter-tags" id="fabric-filter-tags">
+              <button class="ftag active" onclick="filterFabricPanel('all',this)">All</button>
+              <button class="ftag" onclick="filterFabricPanel('japanese',this)">🇯🇵 Japanese</button>
+              <button class="ftag" onclick="filterFabricPanel('chinese',this)">🇨🇳 Chinese</button>
+              <button class="ftag" onclick="filterFabricPanel('korean',this)">🇰🇷 Korean</button>
+              <button class="ftag" onclick="filterFabricPanel('turkish',this)">🇹🇷 Turkish</button>
+              <button class="ftag" onclick="filterFabricPanel('new',this)">🆕 New</button>
+              <button class="ftag" onclick="filterFabricPanel('bestseller',this)">🔥 Best Seller</button>
+              <button class="ftag" onclick="filterFabricPanel('discount',this)">🏷️ Discount</button>
+            </div>
+
+            <!-- Fabric List -->
+            <div class="fabric-panel-list" id="fabric-panel-list"></div>
+
+            <!-- Selected Fabric Info -->
+            <div class="fabric-selected-info" id="fabric-selected-info" style="display:none">
+              <div class="fsi-label">Selected Fabric:</div>
+              <div class="fsi-name" id="fsi-name"></div>
+              <div class="fsi-price" id="fsi-price"></div>
+              <button class="fsi-clear" onclick="clearFabricSelection()">✕ Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-nav step3-nav">
+        <button class="btn-outline" onclick="bookingBack(3)" data-i18n="book_back">← Back</button>
+        <button class="btn-primary" onclick="bookingNext(3)" data-i18n="book_review">Review Booking →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Confirmation -->
+    <div class="booking-step" id="bstep-4">
+      <div class="booking-step-header">
+        <h2 data-i18n="book_s4_title">Review & Confirm</h2>
+        <p data-i18n="book_s4_desc">Please check your details before confirming</p>
+      </div>
+      <div class="booking-summary" id="booking-summary"></div>
+      <div class="booking-nav" style="justify-content:center; gap:16px; flex-wrap:wrap">
+        <button class="btn-outline" onclick="bookingBack(4)" data-i18n="book_back">← Edit</button>
+        <button class="btn-primary btn-confirm" onclick="submitBooking()" data-i18n="book_confirm">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Confirm Appointment</span>
+        </button>
+        <button class="btn-whatsapp" onclick="bookViaWhatsApp()" data-i18n="book_wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 01-2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>Book via WhatsApp</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div class="booking-success" id="booking-success" style="display:none">
+      <div class="success-icon">🎉</div>
+      <h2 data-i18n="success_title">Booking Confirmed!</h2>
+      <p data-i18n="success_msg">Thank you! We'll contact you shortly to confirm your appointment.</p>
+      <div class="success-ref" id="success-ref"></div>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+        <button class="btn-primary" onclick="navigateTo('home')" data-i18n="success_home">Back to Home</button>
+        <button class="btn-whatsapp" onclick="bookViaWhatsApp()" data-i18n="book_wa">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>WhatsApp Us</span>
+        </button>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- ============ PRODUCT MODAL ============ -->
+<div class="modal-overlay" id="product-modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-body">
+      <div class="modal-img"><img src="" alt=""></div>
+      <div class="modal-info"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ REVIEW MODAL ============ -->
+<div class="modal-overlay" id="review-modal" onclick="if(event.target===this)closeReviewModal()">
+  <div class="modal review-modal-content" style="max-width: 500px;">
+    <button class="modal-close" onclick="closeReviewModal()">✕</button>
+    <div class="review-modal-header" style="text-align:center; padding: 20px;">
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--gold);">Share Your Experience</h3>
+      <p style="color:var(--text-muted); margin-top:8px;">We value your feedback!</p>
+    </div>
+    <form id="review-form" onsubmit="submitReview(event)" style="padding: 20px;">
+      <div class="form-group" style="margin-bottom:20px;">
+        <label>Your Name *</label>
+        <input type="text" id="rev-name" required placeholder="Enter your full name">
+      </div>
+      <div class="form-group" style="margin-bottom:20px;">
+        <label>Role / City *</label>
+        <input type="text" id="rev-role" required placeholder="e.g. CEO, Riyadh">
+      </div>
+      <div class="form-group" style="margin-bottom:20px;">
+        <label>Rating</label>
+        <div class="star-rating" id="star-rating">
+          <span class="star" data-value="1">☆</span>
+          <span class="star" data-value="2">☆</span>
+          <span class="star" data-value="3">☆</span>
+          <span class="star" data-value="4">☆</span>
+          <span class="star" data-value="5">☆</span>
+        </div>
+        <input type="hidden" id="rev-rating" value="5">
+      </div>
+      <div class="form-group" style="margin-bottom:20px;">
+        <label>Your Review *</label>
+        <textarea id="rev-text" required rows="4" placeholder="How was your experience with Al-Khayat?"></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%; padding:15px; border-radius:10px;">Submit Review</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ CART SIDEBAR ============ -->
+<div class="cart-sidebar-overlay" onclick="closeCart()"></div>
+<div class="cart-sidebar">
+  <div class="cart-header">
+    <h3 data-i18n="cart_title">🛒 Shopping Cart</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer" id="cart-footer"></div>
+</div>
+
+<!-- ============ FLOATING SOCIAL FAB ============ -->
+<div class="social-fab">
+  <div class="fab-options">
+    <a href="https://wa.me/966XXXXXXXXX" target="_blank" class="fab-option whatsapp">
+      <span class="fab-tooltip">WhatsApp</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a href="https://instagram.com/alkhayat" target="_blank" class="fab-option instagram">
+      <span class="fab-tooltip">Instagram</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </a>
+    <a href="https://tiktok.com/@alkhayat" target="_blank" class="fab-option tiktok">
+      <span class="fab-tooltip">TikTok</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48 6.3 6.3 0 001.88-4.48V8.73a8.3 8.3 0 004.7 1.46V6.73a4.85 4.85 0 01-1-.04z"/></svg>
+    </a>
+    <a href="https://snapchat.com/add/alkhayat" target="_blank" class="fab-option snapchat">
+      <span class="fab-tooltip">Snapchat</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641 0 12.017 0z"/></svg>
+    </a>
+  </div>
+  <button class="fab-main" aria-label="Contact us">💬</button>
+</div>
+<!-- ============ CHECKOUT PAGE ============ -->
+<div class="page" id="page-checkout">
+  <section class="section checkout-section">
+    <div class="checkout-grid container">
+      <!-- Checkout Form -->
+      <div class="checkout-form-side">
+        <h2 class="section-title left-align" data-i18n="cart_checkout">Checkout</h2>
+        <form id="checkout-main-form" onsubmit="event.preventDefault();submitOrder()">
+          <!-- Delivery Section -->
+          <div class="checkout-card">
+            <h3 class="form-h"><span class="icon">📍</span> <span data-i18n="bp_details">Delivery Details</span></h3>
+            <div class="form-grid">
+              <div class="input-group">
+                <label data-i18n="form_name">Full Name</label>
+                <input type="text" placeholder="e.g. Abdullah Al-Fahad" required>
+              </div>
+              <div class="input-group">
+                <label data-i18n="form_phone">Phone Number</label>
+                <input type="tel" placeholder="+966 5X XXX XXXX" required>
+              </div>
+              <div class="input-group full-width">
+                <label data-i18n="form_address">Street Address</label>
+                <input type="text" placeholder="Neighborhood, Street, House Num" required>
+              </div>
+              <div class="input-group">
+                <label data-i18n="form_city">City</label>
+                <select id="checkout-city" required>
+                  <option value="riyadh" data-i18n="city_riyadh">Riyadh</option>
+                  <option value="jeddah" data-i18n="city_jeddah">Jeddah</option>
+                  <option value="dammam" data-i18n="city_dammam">Dammam</option>
+                  <option value="mecca" data-i18n="city_mecca">Mecca</option>
+                  <option value="medina" data-i18n="city_medina">Medina</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label data-i18n="form_notes">Order Notes (Optional)</label>
+                <input type="text" placeholder="Any special requests...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Section -->
+          <div class="checkout-card">
+            <h3 class="form-h"><span class="icon">💳</span> <span>Payment Method</span></h3>
+            <div class="payment-methods">
+              <label class="pay-option">
+                <input type="radio" name="payment" value="cod" checked>
+                <div class="pay-box">
+                  <span class="icon">💵</span>
+                  <span>Cash on Delivery</span>
+                </div>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="payment" value="mada">
+                <div class="pay-box">
+                  <span class="icon">💳</span>
+                  <span>Mada / Visa</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary submit-order-btn">
+            ✅ Place Order Now
+          </button>
+        </form>
+      </div>
+
+      <!-- Summary Side -->
+      <div class="checkout-summary-side">
+        <div class="checkout-card sticky-summary">
+          <h3 class="form-h">Order Summary</h3>
+          <div id="checkout-items-list" class="summary-items">
+            <!-- Items injected by JS -->
+          </div>
+          <div class="summary-totals">
+            <div class="total-row">
+              <span>Subtotal</span>
+              <span id="summary-subtotal">SAR 0</span>
+            </div>
+            <div class="total-row">
+              <span>Delivery Fee</span>
+              <span id="summary-delivery">SAR 25</span>
+            </div>
+            <div class="total-row grand-total">
+              <span>Grand Total</span>
+              <span id="summary-grand-total">SAR 0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ MODALS & OVERLAYS ============ -->
+<!-- Product Quick View Modal -->
+<div class="modal-overlay" id="product-modal">
+  <div class="modal-container">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="product-modal-grid">
+      <div class="modal-img"></div>
+      <div class="modal-info"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Booking Modal -->
+<div class="modal-overlay" id="booking-modal">
+  <div class="modal-container wide-modal">
+    <button class="modal-close" onclick="closeBookingModal()">×</button>
+    <div class="booking-wrapper">
+      <div class="booking-steps">
+        <div class="step-indicator active">1</div>
+        <div class="step-indicator">2</div>
+        <div class="step-indicator">3</div>
+        <div class="step-indicator">4</div>
+      </div>
+      <div class="booking-content" id="booking-steps-content">
+        <!-- Steps injected via JS -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Drawer -->
+<div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3 data-i18n="cart_title">Shopping Cart</h3>
+    <button class="cart-close" onclick="closeCart()">×</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <!-- Items via JS -->
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span data-i18n="cart_total">Total</span>
+      <span id="cart-total-amount">SAR 0</span>
+    </div>
+    <button class="btn-primary checkout-btn" onclick="openCheckout()" data-i18n="cart_checkout">Checkout</button>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" onclick="navigateTo('home');return false">AL-KHAYAT <span>| الخياط</span></a>
+      <p data-i18n="footer_desc">Premium bespoke tailoring in Saudi Arabia.</p>
+    </div>
+    <div>
+      <h4 data-i18n="footer_quick">Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a></li>
+        <li><a href="#" onclick="navigateTo('products');return false" data-i18n="nav_products">Products</a></li>
+        <li><a href="#" onclick="navigateTo('about-page');return false" data-i18n="nav_about">About</a></li>
+        <li><a href="#" onclick="navigateTo('privacy');return false" data-i18n="nav_privacy">Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer_cat">Categories</h4>
+      <ul class="footer-links">
+        <li><a href="#" onclick="navigateTo('products');filterProducts('thobe');return false" data-i18n="filter_thobe">Thobes</a></li>
+        <li><a href="#" onclick="navigateTo('products');filterProducts('jubba');return false" data-i18n="filter_jubba">Jubbas</a></li>
+        <li><a href="#" onclick="navigateTo('products');filterProducts('saideria');return false" data-i18n="filter_saideria">Saiderias</a></li>
+        <li><a href="#" onclick="navigateTo('products');filterProducts('fabric');return false" data-i18n="filter_fabric">Fabrics</a></li>
+        <li><a href="#" onclick="navigateTo('products');filterProducts('accessories');return false" data-i18n="filter_accessories">Accessories</a></li>
+        <li><a href="#" onclick="navigateTo('products');filterProducts('bisht');return false" data-i18n="filter_bisht">Bisht</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer_contact">Contact</h4>
+      <ul class="footer-links">
+        <li><a href="#" data-i18n="footer_address">Riyadh, Saudi Arabia</a></li>
+        <li><a href="tel:+966XXXXXXXXX" data-i18n="footer_phone">+966 XX XXX XXXX</a></li>
+        <li><a href="mailto:info@alkhayat.com" data-i18n="footer_email">info@alkhayat.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-i18n="footer_copy">© 2026 Al-Khayat Premium Tailoring. All rights reserved.</p>
+    <div class="footer-social">
+      <a href="https://wa.me/966XXXXXXXXX" target="_blank">📱</a>
+      <a href="https://instagram.com/alkhayat" target="_blank">📷</a>
+      <a href="https://tiktok.com/@alkhayat" target="_blank">🎵</a>
+      <a href="https://snapchat.com/add/alkhayat" target="_blank">👻</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+// Handle categories page rendering
+const origNav = navigateTo;
+const _origNavigateTo = navigateTo;
+window.navigateTo = function(page) {
+  _origNavigateTo(page);
+  if (page === 'categories-page') {
+    const grid = document.getElementById('categories-grid-page');
+    if (grid) {
+      grid.innerHTML = categories.map(c => {
+        const name = currentLang === 'en' ? c.name_en : c.name_ar;
+        const countText = currentLang === 'en' ? c.count + ' Products' : c.count + ' منتجات';
+        return '<div class="category-card reveal" onclick="navigateTo(\'products\');filterProducts(\'' + c.id + '\')"><img src="' + c.img + '" alt="' + name + '" loading="lazy"><div class="category-overlay"><div class="category-name">' + name + '</div><div class="category-count">' + countText + '</div></div></div>';
+      }).join('');
+      initScrollAnimations();
+    }
+  }
+};
+
+// ========== THEME TOGGLE ==========
+function toggleTheme() {
+  const isLight = document.body.classList.toggle('light-mode');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
+// Apply saved theme on load
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light') {
+    document.body.classList.add('light-mode');
+  }
+})();
+</script>
+</body>
+</html>
