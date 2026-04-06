@@ -1,0 +1,11 @@
+# Git ignore for Premium Tailoring Shop
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+tmp/
+.vscode/
+.idea/
+.gemini/
+*.tmp
+tmp_best_images.txt
