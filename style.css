@@ -952,7 +952,20 @@ body.rtl {
   max-width: 1100px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 20px rgba(var(--gold-rgb), 0.05);
   position: relative;
+  transition: all 0.3s ease;
 }
+
+/* Light Mode Overrides for Toolbar */
+.light-mode .filter-toolbar-pill {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08), inset 0 0 20px rgba(var(--gold-rgb), 0.02);
+  border-color: rgba(var(--gold-rgb), 0.3);
+}
+.light-mode .toolbar-section label { color: #333; }
+.light-mode .origin-bubble { background: rgba(0,0,0,0.04); color: #333; }
+.light-mode .grid-bubble { background: rgba(0,0,0,0.04); color: #333; border-color: transparent; }
+.light-mode .toolbar-divider { background: linear-gradient(to bottom, transparent, rgba(var(--gold-rgb), 0.5), transparent); }
+
 .toolbar-section {
   display: flex;
   align-items: center;

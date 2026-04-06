@@ -533,6 +533,10 @@ const products = [
     name_en: "Designer Series Ivory Thobe", name_ar: "ثوب عاجي مجموعة المصممين",
     desc_en: "Exquisite ivory thobe from our exclusive designer series collection.", desc_ar: "ثوب عاجي رائع من مجموعة المصممين الحصرية لدينا.",
     price: 495, old_price: 650, badge: "Featured", sizes: ["M", "L", "XL"] },
+  { id: 122, cat: "thobe", img: "iproduct/men-thobe-saudi-cream-rethobe-fashion-trendy-bottons-eid-ramadan-1.png",
+    name_en: "Exclusive Royal Velvet Trim Thobe", name_ar: "ثوب ملكي حصري بحواف مخملية",
+    desc_en: "A masterpiece of tailoring with delicate velvet trimming on collar and cuffs.", desc_ar: "تحفة فنية في الخياطة مع حواف مخملية ناعمة على الياقة والأكمام.",
+    price: 650, old_price: 850, badge: "Featured", sizes: ["M", "L", "XL"] },
 ];
 
 // Preprocess products to add origin and isBestseller metadata for filters
