@@ -28,8 +28,8 @@ const translations = {
     p5_title: "Quality Check", p5_desc: "Finished garments hung and inspected for quality",
     p6_title: "Delivery", p6_desc: "Home delivery and doorstep measurement service",
     about_label: "Who We Are",
-    about_title: "Al-Khayat Premium Tailoring",
-    about_p1: "Located in the heart of Saudi Arabia, Al-Khayat Premium Tailoring has been the trusted name in bespoke traditional garments since 2015. Our master tailors combine generations of craftsmanship with modern techniques.",
+    about_title: "Namaa Al Qimmah Gents Tailor",
+    about_p1: "Located in the heart of Saudi Arabia, Namaa Al Qimmah Gents Tailor has been the trusted name in bespoke traditional garments since 2015. Our master tailors combine generations of craftsmanship with modern techniques.",
     about_p2: "We specialize in Saudi, Emirati, Qatari, and Kuwaiti style thobes, jubbas, and saiderias. Using only the finest Japanese and Chinese fabrics, we ensure every stitch reflects our commitment to excellence.",
     about_years: "Years", about_exp: "Experience",
     about_stat1: "5000+", about_stat1_l: "Happy Customers",
@@ -38,8 +38,8 @@ const translations = {
     footer_desc: "Premium bespoke tailoring in Saudi Arabia. Crafting elegant thobes, jubbas & saiderias with the finest fabrics.",
     footer_quick: "Quick Links", footer_cat: "Categories", footer_contact: "Contact",
     footer_address: "Riyadh, Saudi Arabia", footer_phone: "+966 XX XXX XXXX",
-    footer_email: "info@alkhayat.com",
-    footer_copy: "© 2026 Al-Khayat Premium Tailoring. All rights reserved.",
+    footer_email: "info@namaa-al-qimmah.com",
+    footer_copy: "© 2026 Namaa Al Qimmah Gents Tailor. All rights reserved.",
     products_title: "Our Products", products_desc: "Browse our complete collection",
     about_page_title: "About Us", about_page_desc: "Our story of craftsmanship",
     privacy_title: "Privacy Policy", privacy_desc: "Your privacy matters to us",
@@ -55,7 +55,7 @@ const translations = {
     filter_size: "Size Filter", size_all: "All Sizes", grid_view: "View:",
     results_text: "Products found matching your search",
     // Privacy content
-    priv_intro: "At Al-Khayat Premium Tailoring, we are committed to protecting your personal information and respecting your privacy.",
+    priv_intro: "At Namaa Al Qimmah Gents Tailor, we are committed to protecting your personal information and respecting your privacy.",
     priv_h1: "Information We Collect",
     priv_p1: "We collect information you provide directly to us, such as your name, phone number, measurements, and delivery address when you place an order.",
     priv_h2: "How We Use Your Information",
@@ -111,12 +111,21 @@ const translations = {
     sum_name: "Name", sum_phone: "Phone", sum_address: "Address", sum_city: "City", sum_garment: "Garment",
     book_now_btn: "Book Now",
     summary_v_total: "VAT 15% (Included)",
-    shopping_cart_title: "My Shopping Cart",
-    btn_proceed_checkout: "Proceed to Checkout",
-    cart_items_header: "Items in Cart",
+    summary_subtotal_header: "Subtotal",
+    summary_title: "Order Summary",
+    summary_sub: "Subtotal",
+    summary_shipping: "Shipping Fee",
+    nav_map: "Map",
+    nav_tracking: "Tracking",
+    map_title: "Our Branches",
+    map_desc: "Find the nearest Al-Khayat store to you.",
+    shopping_cart_title: "Shopping Cart",
+    cart_items_header: "Item",
     cart_price_header: "Price",
-    cart_qty_header: "Qty",
-    cart_subtotal_header: "Subtotal"
+    cart_qty_header: "Quantity",
+    cart_subtotal_header: "Subtotal",
+    btn_proceed_checkout: "Proceed to Checkout",
+    summary_total: "Total"
   },
   ar: {
     nav_home: "الرئيسية", nav_products: "المنتجات", nav_categories: "الفئات",
@@ -156,8 +165,8 @@ const translations = {
     footer_desc: "خياطة فاخرة مفصلة في المملكة العربية السعودية. صنع ثياب وجُبب وصداري أنيقة بأجود الأقمشة.",
     footer_quick: "روابط سريعة", footer_cat: "الفئات", footer_contact: "اتصل بنا",
     footer_address: "الرياض، المملكة العربية السعودية", footer_phone: "+966 XX XXX XXXX",
-    footer_email: "info@alkhayat.com",
-    footer_copy: "© ٢٠٢٦ الخياط للخياطة الفاخرة. جميع الحقوق محفوظة.",
+    footer_email: "info@namaa-al-qimmah.com",
+    footer_copy: "© ٢٠٢٦ نماء القمة لخياطة الرجالية. جميع الحقوق محفوظة.",
     products_title: "منتجاتنا", products_desc: "تصفح مجموعتنا الكاملة",
     about_page_title: "من نحن", about_page_desc: "قصة حرفتنا",
     privacy_title: "سياسة الخصوصية", privacy_desc: "خصوصيتك تهمنا",
@@ -226,6 +235,20 @@ const translations = {
     sum_service: "الخدمة", sum_date: "التاريخ", sum_time: "الوقت",
     sum_name: "الاسم", sum_phone: "الهاتف", sum_address: "العنوان", sum_city: "المدينة", sum_garment: "الزي",
     book_now_btn: "احجز الآن",
+    nav_map: "الفروع",
+    nav_tracking: "تتبع الطلب",
+    map_title: "فروعنا",
+    map_desc: "ابحث عن أقرب متجر لنماء القمة إليك.",
+    summary_title: "ملخص الطلب",
+    shopping_cart_title: "عربة التسوق",
+    cart_items_header: "العنصر",
+    cart_price_header: "السعر",
+    cart_qty_header: "الكمية",
+    cart_subtotal_header: "المجموع الفرعي",
+    summary_sub: "المجموع الفرعي",
+    summary_shipping: "رسوم الشحن",
+    summary_total: "المجموع الكلي",
+    btn_proceed_checkout: "متابعة الشراء"
   }
 };
 
@@ -546,6 +569,16 @@ const products = [
     price: 650, old_price: 850, badge: "Featured", sizes: ["M", "L", "XL"] },
 ];
 
+// ============ BRANCHES DATA ============
+const shopBranches = [
+  { id: 1, name_en: "Riyadh Main Branch", name_ar: "فرع الرياض الرئيسي", addr_en: "Olaya St, Riyadh", addr_ar: "شارع العليا، الرياض", lat: 24.7136, lng: 46.6753, type: "Showroom" },
+  { id: 2, name_en: "Jeddah Al-Balad", name_ar: "فرع جدة البلد", addr_en: "Old Jeddah St", addr_ar: "شارع جدة القديم", lat: 21.4858, lng: 39.1925, type: "Boutique" },
+  { id: 3, name_en: "Dammam Central", name_ar: "وسط الدمام", addr_en: "King Faisal Rd", addr_ar: "طريق الملك فيصل", lat: 26.4207, lng: 50.0888, type: "Tailoring Hub" },
+  { id: 4, name_en: "Mecca Holy Branch", name_ar: "فرع مكة المكرمة", addr_en: "Ibrahim Al-Khalil Rd", addr_ar: "شارع إبراهيم الخليل", lat: 21.4225, lng: 39.8262, type: "Premium" },
+  { id: 5, name_en: "Medina Munawwarah", name_ar: "فرع المدينة المنورة", addr_en: "Prince Mohammad St", addr_ar: "شارع الأمير محمد", lat: 24.4672, lng: 39.6068, type: "Showroom" },
+  { id: 6, name_en: "Riyadh Diplomatic", name_ar: "حي السفارات", addr_en: "DQ Square, Riyadh", addr_ar: "ساحة حي السفارات", lat: 24.6793, lng: 46.6267, type: "VIP Studio" },
+];
+
 // Preprocess products to add origin and isBestseller metadata for filters
 products.forEach(p => {
   p.origin = p.name_en.includes('Japanese') || p.name_en.includes('Toyobo') ? 'japanese'
@@ -643,6 +676,7 @@ const corporateClients = [
 // ============ DOM READY ============
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => document.querySelector('.page-loader').classList.add('hidden'), 800);
+  seedDemoData();
   initSlider();
   renderFeaturedProducts();
   renderCategories();
@@ -693,7 +727,7 @@ function navigateTo(page) {
   closeMobileMenu();
   if (page === 'products') renderAllProducts();
   if (page === 'cart') renderCartPage();
-  if (page === 'checkout') renderCheckoutPage();
+  if (page === 'tracking') animateTrackHeroStat();
 }
 
 function initNavScroll() {
@@ -755,10 +789,9 @@ function productCard(p) {
   return `<div class="product-card reveal">
     ${badge}
     <div class="product-img">
-      <img src="${p.img}" alt="${name}" loading="lazy">
+      <img src="${p.img}" alt="${name}" loading="lazy" onclick="openProductModal(${p.id})" style="cursor: pointer;">
       <div class="product-actions">
         <button class="product-action-btn wishlist-btn ${isWishlisted ? 'active' : ''}" onclick="toggleWishlist(${p.id}, this)" title="Wishlist">❤️</button>
-        <button class="product-action-btn" onclick="openProductModal(${p.id})" title="${t('quick_view')}">👁</button>
         <button class="product-action-btn" onclick="addToCart(${p.id})" title="${t('add_to_cart')}">🛒</button>
       </div>
     </div>
@@ -975,9 +1008,14 @@ function openProductModal(id) {
       <span class="qty-value" id="modal-qty">1</span>
       <button class="qty-btn" onclick="changeQty(1)">+</button>
     </div>
-    <button class="btn-primary" style="width:100%" onclick="addToCart(${p.id});closeModal()">
-      🛒 ${t('add_to_cart')} — SAR ${p.price}
-    </button>`;
+    <div style="display: flex; gap: 10px; margin-top: 15px;">
+      <button class="btn-primary" style="flex: 1; padding: 12px 0;" onclick="addToCart(${p.id});closeModal()">
+        🛒 Add to Cart
+      </button>
+      <button class="btn-primary" style="flex: 1; padding: 12px 0; background: var(--dark-2); color: var(--gold); border: 1px solid var(--gold);" onclick="buyNow(${p.id})">
+        ⚡ Buy Now
+      </button>
+    </div>`;
   modal.classList.add('active');
   // Initialize zoom on modal image
   initModalZoom(modalImg);
@@ -987,6 +1025,26 @@ function openProductModal(id) {
       e.target.classList.add('active');
     }
   });
+}
+
+function buyNow(id) {
+  // Add to cart directly, then navigate to checkout
+  const p = products.find(x => x.id === id);
+  if (p) {
+    const existing = cart.find(c => c.id === id);
+    // Use qty from modal if it's open, else 1
+    const qtyEl = document.getElementById('modal-qty');
+    const addQty = qtyEl ? parseInt(qtyEl.textContent) : 1;
+
+    if (existing) {
+      existing.qty += addQty;
+    } else {
+      cart.push({ ...p, qty: addQty });
+    }
+    updateCartUI();
+  }
+  closeModal();
+  navigateTo('checkout');
 }
 
 function closeModal() {
@@ -1104,11 +1162,24 @@ function renderCartPage() {
           <div class="summary-row"><span>${t('summary_sub')}</span><span>SAR ${subtotal}</span></div>
           <div class="summary-row"><span>${t('summary_shipping')}</span><span>SAR 25</span></div>
           <div class="summary-row total"><span>${t('summary_total')}</span><span>SAR ${subtotal + 25}</span></div>
-          <button class="btn-primary w-full" onclick="navigateTo('checkout')" style="margin-top:20px;">${t('btn_proceed_checkout')}</button>
+          <button class="btn-primary w-full" onclick="navigateTo('checkout')" style="margin-top:20px; margin-bottom: 15px;">${t('btn_proceed_checkout')}</button>
+          <div class="payment-box-new mt-3" style="text-align: center; cursor: default; display: block; flex-direction: column;">
+            <div style="font-size: 0.75rem; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; font-weight: 600;">
+              <i class="fas fa-lock" style="margin-right: 4px; color: #4cd964;"></i> 100% Secure Checkout
+            </div>
+            <div style="background: #ffffff; border-radius: 8px; padding: 10px; display: flex; justify-content: center; align-items: center; width: 100%; box-sizing: border-box;">
+              <img src="images/saudi_payment_badge.png" alt="Accepted Payment Methods" style="display: block; width: 100%; height: auto; max-height: 40px; object-fit: contain; filter: invert(0); opacity: 1;">
+            </div>
+          </div>
         </div>
       </div>
     </div>
   `;
+}
+
+function handlePlaceOrder(e) {
+  e.preventDefault();
+  submitOrder();
 }
 
 function updateQty(id, delta) {
@@ -1131,52 +1202,888 @@ function submitOrder() {
   const orderId = Math.floor(100000 + Math.random() * 900000);
   
   // Collect form data
-  const name = document.querySelector('#checkout-main-form input[placeholder*="Abdullah"]')?.value || 'Guest';
-  const phone = document.querySelector('#checkout-main-form input[placeholder*="+966"]')?.value || '';
-  const addr = document.querySelector('#checkout-main-form input[placeholder*="Street"]')?.value || '';
-  const city = document.getElementById('checkout-city')?.value || 'Riyadh';
+  const nameInput = document.querySelector('#chk-name') || document.querySelector('#checkout-main-form input[placeholder*="Abdullah"]');
+  const phoneInput = document.querySelector('#chk-phone') || document.querySelector('#checkout-main-form input[placeholder*="+966"]');
+  const addrInput = document.querySelector('#chk-address') || document.querySelector('#checkout-main-form input[placeholder*="Street"]');
+  const cityInput = document.querySelector('#chk-city') || document.getElementById('checkout-city');
   
-  const message = `🛍️ *New Order from Al-Khayat*\n\n` +
-                  `🔢 *Order ID:* #${orderId}\n` +
-                  `👤 *Name:* ${name}\n` +
-                  `📞 *Phone:* ${phone}\n` +
-                  `📍 *Address:* ${addr}, ${city}\n\n` +
+  const order = {
+    id: '#' + orderId,
+    items: [...cart],
+    total: total,
+    name: nameInput?.value || 'Guest',
+    phone: phoneInput?.value || '',
+    address: addrInput?.value || '',
+    city: cityInput?.value || 'Riyadh',
+    date: new Date().toLocaleDateString(),
+    status: 'Processing',
+    readyDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString(), // 7 days later
+    type: 'order'
+  };
+
+  // Collect Payment Method
+  const selectedPayment = document.querySelector('input[name="payment"]:checked')?.value || 'cod';
+  let paymentText = 'Cash on Delivery';
+  if (selectedPayment === 'card') paymentText = 'Card (Mada / Visa)';
+  if (selectedPayment === 'whatsapp') paymentText = 'WhatsApp Pay';
+  if (selectedPayment === 'digital') paymentText = 'Digital (STC / Apple Pay)';
+
+  // Persist Order
+  const orders = JSON.parse(localStorage.getItem('alkhayat_orders') || '[]');
+  orders.push(order);
+  localStorage.setItem('alkhayat_orders', JSON.stringify(orders));
+  
+  const message = `🛍️ *New Order from Namaa Al Qimmah*\n\n` +
+                  `🔢 *Order ID:* ${order.id}\n` +
+                  `👤 *Name:* ${order.name}\n` +
+                  `📞 *Phone:* ${order.phone}\n` +
+                  `📍 *Address:* ${order.address}, ${order.city}\n` +
+                  `💳 *Payment:* ${paymentText}\n\n` +
                   `💰 *Total:* ${total} SAR\n\n` +
                   `Please confirm my order. Thank you!`;
+
+  if (selectedPayment === 'card') {
+    // Show a toast or loading indicator before "redirecting"
+    let toast = document.getElementById('global-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'global-toast';
+      toast.style.cssText = `
+        position:fixed; bottom:30px; left:50%; transform:translateX(-50%); z-index:9999;
+        background:var(--dark-2); color:var(--white); padding:14px 28px; border-radius:50px;
+        border:1px solid var(--gold); font-weight:600; box-shadow:0 8px 30px rgba(0,0,0,0.4);
+        transition: opacity 0.4s, transform 0.4s; font-size:0.9rem;
+        white-space: nowrap;
+      `;
+      document.body.appendChild(toast);
+    }
+    toast.textContent = 'Redirecting to Secure Payment Gateway (Mada)...';
+    toast.style.opacity = '1';
+    toast.style.display = 'block';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+    
+    // Simulate redirection delay for demo
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.display = 'none';
+
+        // Proceed to success page directly in demo
+        const successPage = document.getElementById('page-order-success');
+        if(successPage) {
+          document.getElementById('success-order-id').textContent = order.id;
+          document.getElementById('success-payment').textContent = document.querySelector('input[name="payment"]:checked')?.value.toUpperCase() || 'COD';
+          document.getElementById('success-date').textContent = order.date;
+          document.getElementById('success-total').textContent = `SAR ${total}`;
+          navigateTo('order-success');
+        }
+    }, 2000);
+    cart = [];
+    updateCartUI();
+    return;
+  }
 
   const encoded = encodeURIComponent(message);
   window.open(`https://wa.me/966XXXXXXXXX?text=${encoded}`, '_blank');
   
-  alert(currentLang === 'en' ? 'Order placed! Opening WhatsApp...' : 'تم تقديم الطلب! جاري فتح واتساب...');
+  // Show Success Page
+  const successPage = document.getElementById('page-order-success');
+  if(successPage) {
+    document.getElementById('success-order-id').textContent = order.id;
+    document.getElementById('success-payment').textContent = document.querySelector('input[name="payment"]:checked')?.value.toUpperCase() || 'COD';
+    document.getElementById('success-date').textContent = order.date;
+    document.getElementById('success-total').textContent = `SAR ${total}`;
+    navigateTo('order-success');
+  } else {
+    alert(currentLang === 'en' ? 'Order placed! Opening WhatsApp...' : 'تم تقديم الطلب! جاري فتح واتساب...');
+  }
   
   cart = [];
   updateCartUI();
-  navigateTo('products');
 }
 
-function updateCheckoutSummary() {
-  const container = document.getElementById('checkout-items-list');
+// ============ TRACKING LOGIC V2 ============
+
+// --- Recent Searches ---
+function getRecentSearches() {
+  return JSON.parse(localStorage.getItem('alkhayat_recent_searches') || '[]');
+}
+function addRecentSearch(id) {
+  let recents = getRecentSearches();
+  recents = recents.filter(r => r !== id);
+  recents.unshift(id);
+  if (recents.length > 5) recents = recents.slice(0, 5);
+  localStorage.setItem('alkhayat_recent_searches', JSON.stringify(recents));
+}
+
+function showTrackSuggestions(val) {
+  const container = document.getElementById('tsp-recent');
   if (!container) return;
-  
-  if (cart.length === 0) {
-    container.innerHTML = '<p>Your cart is empty</p>';
-    document.getElementById('summary-subtotal').textContent = 'SAR 0';
-    document.getElementById('summary-grand-total').textContent = 'SAR 0';
+  const recents = getRecentSearches();
+  if (recents.length === 0) { container.innerHTML = ''; return; }
+  const filtered = val ? recents.filter(r => r.toLowerCase().includes(val.toLowerCase())) : recents;
+  if (filtered.length === 0) { container.innerHTML = ''; return; }
+  container.innerHTML = `
+    <span class="tsp-recent-pill" style="background:none;border:none;color:var(--text-muted);font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:0;">🕑 Recent:</span>
+    ${filtered.map(id => `<button class="tsp-recent-pill" onclick="document.getElementById('track-id-input').value='${id}'; handleTrackOrder()">🔍 ${id}</button>`).join('')}
+  `;
+}
+
+function renderRecentSearches() {
+  showTrackSuggestions('');
+}
+
+// Animate tracking stat counter on page open
+function animateTrackHeroStat() {
+  const el = document.getElementById('trk-stat-orders');
+  if (!el || el._animated) return;
+  el._animated = true;
+  const target = Math.floor(Math.random() * 40) + 15; // 15-55
+  let count = 0;
+  const step = () => {
+    count = Math.min(count + 1, target);
+    el.textContent = count;
+    if (count < target) requestAnimationFrame(() => setTimeout(step, 30));
+  };
+  setTimeout(step, 300);
+}
+
+// Seed demo data for testing
+function seedDemoData() {
+  const orders = JSON.parse(localStorage.getItem('alkhayat_orders') || '[]');
+  const bookings = JSON.parse(localStorage.getItem('alkhayat_bookings') || '[]');
+
+  if (!orders.find(o => o.id === '#DEMO001')) {
+    orders.push({
+      id: '#DEMO001', type: 'order',
+      name: 'Abdullah Al-Ahmad', phone: '+966 50 123 4567',
+      address: 'Olaya District, Villa 12', city: 'Riyadh',
+      date: '01/04/2026',
+      status: 'Tailoring',
+      readyDate: new Date(Date.now() + 5 * 24*60*60*1000).toLocaleDateString(),
+      total: 760,
+      submittedAt: '2026-04-01T10:30:00',
+      items: [
+        { name: 'Classic Saudi Thobe', size: 'L', price: 350, qty: 1, img: 'images/product_saudi_thobe.png' },
+        { name: 'Royal Jubba', size: 'XL', price: 410, qty: 1, img: 'images/product_jubba.png' }
+      ],
+      history: [
+        { status: 'Order Placed', date: '01/04/2026', note: 'Your order was received successfully.', time: '10:30 AM' },
+        { status: 'Processing', date: '02/04/2026', note: 'Order confirmed and premium Japanese fabric has been selected.', time: '09:15 AM' },
+        { status: 'Tailoring', date: '03/04/2026', note: 'Our Master Tailor has started cutting and stitching your garment.', time: '11:00 AM' },
+      ]
+    });
+  }
+  if (!bookings.find(b => b.ref === 'BK-DEMO1')) {
+    bookings.push({
+      ref: 'BK-DEMO1', type: 'booking',
+      name: 'Khalid Al-Mansour', phone: '+966 55 987 6543',
+      address: 'Diplomatic Quarter', city: 'Riyadh',
+      date: '10/04/2026', time: '3:00 PM',
+      service: 'Home Measurement',
+      status: 'Confirmed',
+      garment: 'Saudi Thobe',
+      submittedAt: '2026-04-07T14:20:00',
+      history: [
+        { status: 'Request Sent', date: '07/04/2026', note: 'Your booking request was submitted successfully.', time: '2:20 PM' },
+        { status: 'Confirmed', date: '08/04/2026', note: 'A master tailor has been assigned. Your appointment is confirmed.', time: '10:05 AM' },
+      ]
+    });
+  }
+  localStorage.setItem('alkhayat_orders', JSON.stringify(orders));
+  localStorage.setItem('alkhayat_bookings', JSON.stringify(bookings));
+}
+
+function handleTrackOrder() {
+  seedDemoData();
+  renderRecentSearches();
+  const input = document.getElementById('track-id-input').value.trim();
+  const resultContainer = document.getElementById('tracking-result-container');
+  const emptyState = document.getElementById('tracking-empty-state');
+
+  if (!input) {
+    resultContainer.innerHTML = `
+      <div class="trc-not-found" style="background:rgba(255,153,0,0.05); border-color:rgba(255,153,0,0.2);">
+        <div style="font-size:2.5rem;">⚠️</div>
+        <h3 style="color:var(--gold);">Please Enter an ID</h3>
+        <p>Enter your Order ID (e.g. <strong>#DEMO001</strong>) or Booking Reference (e.g. <strong>BK-DEMO1</strong>) above.</p>
+      </div>`;
+    resultContainer.style.display = 'block';
+    if(emptyState) emptyState.style.display = 'none';
     return;
   }
 
-  container.innerHTML = cart.map(c => `
-    <div class="summary-item">
-      <span>${currentLang === 'en' ? c.name_en : c.name_ar} (x${c.qty})</span>
-      <span>SAR ${c.price * c.qty}</span>
+  const orders = JSON.parse(localStorage.getItem('alkhayat_orders') || '[]');
+  const bookings = JSON.parse(localStorage.getItem('alkhayat_bookings') || '[]');
+
+  const item = orders.find(o => o.id === input || o.id === '#' + input || '#' + o.id === input) ||
+               bookings.find(b => b.ref === input);
+
+  if (emptyState) emptyState.style.display = 'none';
+  addRecentSearch(input);
+  renderRecentSearches();
+
+  if (!item) {
+    resultContainer.innerHTML = `
+      <div class="trc-not-found">
+        <div style="font-size:3rem;">🔎</div>
+        <h3>No Record Found</h3>
+        <p>We couldn't find any order or booking with: <strong>"${input}"</strong></p>
+        <p style="font-size:0.82rem;">Double-check your ID. Try demo IDs: <strong>#DEMO001</strong> or <strong>BK-DEMO1</strong></p>
+        <div style="margin-top:24px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <button class="trc-action-btn wa" style="border-radius:14px;" onclick="window.open('https://wa.me/966XXXXXXXXX?text=Hello, I cannot find my order: ${input}','_blank')">💬 Ask on WhatsApp</button>
+        </div>
+      </div>`;
+    resultContainer.style.display = 'block';
+    return;
+  }
+
+  renderTrackingResult(item);
+}
+
+function renderTrackingResult(item) {
+  const rc = document.getElementById('tracking-result-container');
+  const isOrder = item.type === 'order';
+  const status = item.status || 'Pending';
+  const trackId = isOrder ? item.id : item.ref;
+
+  // ---- STEPS ----
+  const orderSteps = [
+    { label: 'Order\nPlaced', icon: '🛒', desc: 'Received' },
+    { label: 'Processing', icon: '⚙️', desc: 'Fabric Selected' },
+    { label: 'Tailoring', icon: '✂️', desc: 'Cutting & Stitching' },
+    { label: 'Quality\nCheck', icon: '🔍', desc: 'Inspection' },
+    { label: 'Ready', icon: '✅', desc: 'Ready for Pickup' }
+  ];
+  const bookingSteps = [
+    { label: 'Request\nSent', icon: '📨', desc: 'Received' },
+    { label: 'Confirmed', icon: '✅', desc: 'Tailor Assigned' },
+    { label: 'Tailor\nAssigned', icon: '👔', desc: 'On the Way' },
+    { label: 'In Progress', icon: '🧵', desc: 'Visit in Progress' },
+    { label: 'Completed', icon: '🏆', desc: 'Done' }
+  ];
+  const steps = isOrder ? orderSteps : bookingSteps;
+
+  const statusToIdx = {
+    'Order Placed': 1, 'Placed': 1,
+    'Processing': 2,
+    'Tailoring': 3,
+    'Quality Check': 4,
+    'Ready': 5, 'Collected': 5, 'Delivered': 5,
+    'Request Sent': 1,
+    'Confirmed': 2,
+    'Tailor Assigned': 3,
+    'In Progress': 4,
+    'Completed': 5, 'Cancelled': 1,
+    'Delivery Requested': 4,
+  };
+  const currentStep = statusToIdx[status] || 1;
+  const progressPct = Math.round((currentStep / steps.length) * 100);
+
+  // ---- STATUS COLOR ----
+  const statusColors = {
+    'Ready': '#28a745', 'Completed': '#28a745', 'Collected': '#28a745', 'Delivered': '#28a745',
+    'Tailoring': '#c9a84c', 'Processing': '#c9a84c', 'In Progress': '#c9a84c', 'Delivery Requested': '#c9a84c',
+    'Confirmed': '#17a2b8', 'Tailor Assigned': '#17a2b8',
+    'Order Placed': '#6c757d', 'Placed': '#6c757d', 'Request Sent': '#6c757d',
+    'Quality Check': '#fd7e14',
+    'Cancelled': '#dc3545'
+  };
+  const statusColor = statusColors[status] || '#c9a84c';
+
+  // ---- GET STEP DATE FROM HISTORY ----
+  function getStepDate(stepLabel) {
+    if (!item.history) return '';
+    const match = item.history.find(h => h.status.toLowerCase().includes(stepLabel.toLowerCase().replace('\n','').trim().split('\n')[0]));
+    return match ? match.date : '';
+  }
+
+  // ---- STEPS HTML ----
+  const stepsHtml = steps.map((s, idx) => {
+    const isDone = idx < currentStep;
+    const isCurrent = idx === currentStep - 1;
+    const dotContent = (isDone && !isCurrent) ? '✓' : s.icon;
+    const stepDate = getStepDate(s.label);
+    const connector = idx < steps.length - 1 ? `<div class="trc-step-conn ${(idx + 1) < currentStep ? 'done' : ''}"></div>` : '';
+    return `
+      <div class="trc-step ${isDone ? 'done' : ''} ${isCurrent ? 'current' : ''}">
+        <div class="trc-step-dot">${dotContent}</div>
+        <div class="trc-step-text">
+          <div class="trc-step-name">${s.label.replace('\n','<br>')}</div>
+          ${stepDate ? `<div class="trc-step-date">${stepDate}</div>` : ''}
+        </div>
+      </div>
+      ${connector}
+    `;
+  }).join('');
+
+  // ---- ETA BAR ----
+  let etaHtml = '';
+  if (isOrder && item.readyDate && status !== 'Collected' && status !== 'Delivered') {
+    const readyDate = new Date(item.readyDate);
+    const today = new Date();
+    const diffMs = readyDate - today;
+    const diffDays = Math.max(0, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+    etaHtml = `
+      <div class="trc-section">
+        <div class="trc-section-title">🗓️ Estimated Ready Date</div>
+        <div class="trc-eta-bar">
+          <div class="trc-eta-left">
+            <div class="trc-eta-icon">📅</div>
+            <div class="trc-eta-text">
+              <strong>${item.readyDate}</strong>
+              <span>Your garment is expected to be ready by this date</span>
+            </div>
+          </div>
+          <div class="trc-eta-countdown">
+            <div class="trc-eta-days">${diffDays}</div>
+            <div class="trc-eta-days-label">Days Remaining</div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // ---- ITEMS HTML ----
+  const itemsHtml = isOrder && item.items ? `
+    <div class="trc-section">
+      <div class="trc-section-title">🧾 Order Items</div>
+      ${item.items.map(it => `
+        <div class="trc-product-row">
+          <div class="trc-product-img">
+            <img src="${it.img || 'images/product_saudi_thobe.png'}" alt="${it.name}" onerror="this.parentElement.innerHTML='✂️'">
+          </div>
+          <div class="trc-product-info">
+            <span class="trc-product-name">${currentLang === 'en' ? it.name : (it.name_ar || it.name)}</span>
+            <span class="trc-product-meta">${it.qty}× &nbsp;·&nbsp; Size: ${it.size || '—'}</span>
+          </div>
+          <div class="trc-product-price">${(it.price * (it.qty||1)).toLocaleString()} SAR</div>
+        </div>
+      `).join('')}
+      <div class="trc-total-row">
+        <span>Grand Total</span>
+        <span class="trc-grand">${(item.total || 0).toLocaleString()} SAR</span>
+      </div>
+    </div>` : '';
+
+  // ---- HISTORY HTML ----
+  const historyHtml = item.history && item.history.length ? `
+    <div class="trc-section">
+      <div class="trc-section-title">📋 Activity Timeline</div>
+      <div class="trc-history">
+        ${[...item.history].reverse().map((h, idx) => `
+          <div class="trc-history-item ${idx === 0 ? 'latest' : ''}">
+            <div class="trc-history-dot"></div>
+            <div class="trc-history-status">${h.status}</div>
+            <div class="trc-history-note">${h.note}</div>
+            <div class="trc-history-date">${h.date}${h.time ? ' · ' + h.time : ''}</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>` : '';
+
+  // ---- CUSTOMER ACTIONS ----
+  let actionsHtml = '';
+  if (isOrder) {
+    if (status === 'Ready') {
+      actionsHtml = `
+        <div class="trc-actions-grid">
+          <button class="trc-action-btn primary" onclick="openDeliveryModal('${trackId}')">🚚 Request Home Delivery</button>
+          <button class="trc-action-btn success" onclick="customerUpdateStatus('${trackId}','order','Collected','Customer confirmed store pickup.')">🏪 I'll Pick Up Myself</button>
+          <button class="trc-action-btn wa" onclick="window.open('https://wa.me/966XXXXXXXXX?text=Hello, I am ready to collect my order ${trackId}','_blank')">💬 WhatsApp Us</button>
+          <button class="trc-action-btn secondary" onclick="openRateModal('${trackId}')">⭐ Rate Your Order</button>
+        </div>
+        <p class="trc-action-note">🎉 Great news! Your garment is ready. Choose how you'd like to receive it.</p>`;
+    } else if (status === 'Collected' || status === 'Delivered') {
+      actionsHtml = `
+        <div class="trc-action-done">🎉 Thank you! Your order has been ${status}. We hope you love your garment!</div>
+        <div style="margin-top:12px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <button class="trc-action-btn secondary" style="border-radius:14px;" onclick="openRateModal('${trackId}')">⭐ Rate Your Experience</button>
+          <button class="trc-action-btn wa" style="border-radius:14px;" onclick="window.open('https://wa.me/966XXXXXXXXX?text=Hello, I would like to place a new order','_blank')">💬 Order Again</button>
+        </div>`;
+    } else {
+      actionsHtml = `
+        <div class="trc-actions-grid">
+          <button class="trc-action-btn primary" onclick="openDeliveryModal('${trackId}')">📅 Schedule Delivery</button>
+          <button class="trc-action-btn wa" onclick="window.open('https://wa.me/966XXXXXXXXX?text=Hello, I have a question about order ${trackId}','_blank')">💬 WhatsApp Support</button>
+        </div>`;
+    }
+  } else {
+    if (status === 'Confirmed' || status === 'Tailor Assigned') {
+      actionsHtml = `
+        <div class="trc-actions-grid">
+          <button class="trc-action-btn primary" onclick="window.open('https://wa.me/966XXXXXXXXX?text=Hi, I need to reschedule my booking ${trackId}','_blank')">📅 Reschedule Visit</button>
+          <button class="trc-action-btn danger" onclick="customerUpdateStatus('${trackId}','booking','Cancelled','Booking cancelled by customer.')">❌ Cancel Booking</button>
+          <button class="trc-action-btn wa" onclick="window.open('https://wa.me/966XXXXXXXXX?text=Hi, I have a question about my booking ${trackId}','_blank')">💬 WhatsApp Us</button>
+        </div>`;
+    } else if (status === 'Completed') {
+      actionsHtml = `
+        <div class="trc-action-done">✅ Your booking is complete! Thank you for choosing Al-Khayat Tailoring.</div>
+        <div style="margin-top:12px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+          <button class="trc-action-btn secondary" style="border-radius:14px;" onclick="openRateModal('${trackId}')">⭐ Rate Your Visit</button>
+          <button class="trc-action-btn wa" style="border-radius:14px;" onclick="window.open('https://wa.me/966XXXXXXXXX?text=Hello, I would like to make a new booking','_blank')">💬 Book Again</button>
+        </div>`;
+    } else if (status === 'Cancelled') {
+      actionsHtml = `
+        <div class="trc-action-done" style="background:rgba(220,53,69,0.08);border-color:rgba(220,53,69,0.2);color:#dc3545;">❌ This booking was cancelled.</div>
+        <div style="margin-top:12px; text-align:center;">
+          <button class="trc-action-btn primary" style="border-radius:14px; display:inline-flex;" onclick="navigateTo('booking')">📅 Make New Booking</button>
+        </div>`;
+    }
+  }
+
+  // ---- SUBMITTED DATE ----
+  const submittedStr = item.submittedAt
+    ? new Date(item.submittedAt).toLocaleDateString('en-US', { weekday:'short', year:'numeric', month:'short', day:'numeric' })
+    : (item.date || '');
+
+  // ---- RENDER ----
+  rc.innerHTML = `
+    <div class="track-result-card-v2 reveal visible">
+
+      <!-- HEADER -->
+      <div class="trc-header">
+        <div class="trc-id-block">
+          <div class="trc-type-tag ${isOrder ? 'order' : 'booking'}">${isOrder ? '📦 Order' : '📅 Booking'}</div>
+          <div class="trc-id-num">${trackId}</div>
+          <div class="trc-submitted">${isOrder ? 'Ordered on' : 'Booked on'} ${submittedStr}</div>
+        </div>
+        <div class="trc-status-pill" style="background:${statusColor}18; color:${statusColor}; border:1px solid ${statusColor}40;">
+          <span class="trc-pulse" style="background:${statusColor}"></span>
+          ${status}
+        </div>
+      </div>
+
+      <!-- PROGRESS -->
+      <div class="trc-progress-section">
+        <div class="trc-progress-label">
+          <span>Progress</span>
+          <span style="color:var(--gold); font-weight:800;">${progressPct}%</span>
+        </div>
+        <div class="trc-progress-bar-wrap">
+          <div class="trc-progress-bar" id="trk-progress-bar" style="width:0%"></div>
+        </div>
+        <div class="trc-steps">${stepsHtml}</div>
+      </div>
+
+      <!-- ETA -->
+      ${etaHtml}
+
+      <!-- INFO GRID -->
+      <div class="trc-section">
+        <div class="trc-section-title">📋 Order Details</div>
+        <div class="trc-info-grid">
+          <div class="trc-info-box">
+            <label>Customer</label>
+            <span>${item.name}</span>
+          </div>
+          <div class="trc-info-box">
+            <label>Phone</label>
+            <span>${item.phone || '—'}</span>
+          </div>
+          <div class="trc-info-box">
+            <label>${isOrder ? 'City' : 'Visit Date'}</label>
+            <span>${isOrder ? item.city : item.date}</span>
+          </div>
+          <div class="trc-info-box">
+            <label>${isOrder ? 'Ready Date' : 'Time Slot'}</label>
+            <span>${isOrder ? (item.readyDate || '—') : (item.time || '—')}</span>
+          </div>
+          ${!isOrder ? `<div class="trc-info-box"><label>Service</label><span>${item.service || '—'}</span></div>` : ''}
+          ${!isOrder ? `<div class="trc-info-box"><label>Garment</label><span>${item.garment || '—'}</span></div>` : ''}
+        </div>
+      </div>
+
+      <!-- ITEMS -->
+      ${itemsHtml}
+
+      <!-- HISTORY -->
+      ${historyHtml}
+
+      <!-- ACTIONS -->
+      <div class="trc-section">
+        <div class="trc-section-title">⚡ Quick Actions</div>
+        ${actionsHtml}
+      </div>
+
     </div>
-  `).join('');
+  `;
 
+  rc.style.display = 'block';
+
+  // Animate progress bar after render
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      const bar = document.getElementById('trk-progress-bar');
+      if (bar) bar.style.width = progressPct + '%';
+    }, 200);
+  });
+}
+
+function customerUpdateStatus(trackId, type, newStatus, historyNote) {
+  const key = type === 'order' ? 'alkhayat_orders' : 'alkhayat_bookings';
+  const items = JSON.parse(localStorage.getItem(key) || '[]');
+  const idx = items.findIndex(i => (type === 'order' ? i.id : i.ref) === trackId);
+  if (idx === -1) return;
+
+  items[idx].status = newStatus;
+  if (!items[idx].history) items[idx].history = [];
+  items[idx].history.push({
+    status: newStatus,
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}),
+    note: historyNote
+  });
+  localStorage.setItem(key, JSON.stringify(items));
+
+  renderTrackingResult(items[idx]);
+  showToast(`✅ Status updated to: ${newStatus}`);
+}
+
+function openDeliveryModal(orderId) {
+  document.getElementById('del-order-id').value = orderId;
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  document.getElementById('del-date').min = tomorrow.toISOString().split('T')[0];
+  document.getElementById('delivery-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDeliveryModal() {
+  document.getElementById('delivery-modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function submitDeliveryRequest(e) {
+  e.preventDefault();
+  const orderId = document.getElementById('del-order-id').value;
+  const address = document.getElementById('del-address').value;
+  const date = document.getElementById('del-date').value;
+  const slot = document.getElementById('del-slot').value;
+  const notes = document.getElementById('del-notes').value;
+
+  const msg = encodeURIComponent(
+    `🚚 *Delivery Request — Namaa Al Qimmah*\n` +
+    `━━━━━━━━━━━━━━━━━━━\n` +
+    `🔢 *Order ID:* ${orderId}\n` +
+    `📍 *Address:* ${address}\n` +
+    `📅 *Date:* ${date}\n` +
+    `🕐 *Time Slot:* ${slot}\n` +
+    `📝 *Notes:* ${notes || 'None'}\n` +
+    `━━━━━━━━━━━━━━━━━━━\n` +
+    `Please confirm the delivery schedule. Thank you!`
+  );
+
+  customerUpdateStatus(orderId, 'order', 'Delivery Requested', `Home delivery requested for ${date} (${slot}).`);
+  closeDeliveryModal();
+  window.open(`https://wa.me/966XXXXXXXXX?text=${msg}`, '_blank');
+  showToast('🚚 Delivery request sent via WhatsApp!');
+}
+
+// ---- Rating System ----
+function openRateModal(orderId) {
+  document.getElementById('rate-order-ref').value = orderId;
+  setRating(5);
+  document.getElementById('rate-order-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRateModal() {
+  document.getElementById('rate-order-modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function setRating(val) {
+  document.getElementById('rate-val').value = val;
+  document.querySelectorAll('#rate-stars-row .rate-star').forEach((star, idx) => {
+    star.classList.toggle('active', idx < val);
+  });
+}
+
+function submitOrderRating() {
+  const rating = parseInt(document.getElementById('rate-val').value);
+  const comment = document.getElementById('rate-comment').value.trim();
+  const orderId = document.getElementById('rate-order-ref').value;
+
+  const ratingData = {
+    orderId,
+    rating,
+    comment,
+    date: new Date().toISOString(),
+    name: 'Customer',
+    role: 'Verified Order',
+    text: comment || `⭐ Rated ${rating}/5 stars for order ${orderId}`,
+    image: '👤',
+    color: '#c9a84c',
+  };
+
+  const ratings = JSON.parse(localStorage.getItem('alkhayat_order_ratings') || '[]');
+  ratings.push(ratingData);
+  localStorage.setItem('alkhayat_order_ratings', JSON.stringify(ratings));
+
+  // Also add to user reviews for testimonials
+  if (comment) {
+    userReviews.unshift(ratingData);
+    localStorage.setItem('alkhayat_user_reviews', JSON.stringify(userReviews));
+    renderTestimonials();
+  }
+
+  closeRateModal();
+  showToast(`⭐ Thank you for your ${rating}-star rating!`);
+
+  // Reset form
+  document.getElementById('rate-comment').value = '';
+}
+
+function showToast(message) {
+  let toast = document.getElementById('global-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'global-toast';
+    toast.style.cssText = `
+      position:fixed; bottom:30px; left:50%; transform:translateX(-50%); z-index:9999;
+      background:var(--dark-2); color:var(--white); padding:14px 28px; border-radius:50px;
+      border:1px solid var(--gold); font-weight:600; box-shadow:0 8px 30px rgba(0,0,0,0.4);
+      transition: opacity 0.4s, transform 0.4s; font-size:0.9rem;
+      white-space: nowrap;
+    `;
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.style.opacity = '1';
+  toast.style.display = 'block';
+  toast.style.transform = 'translateX(-50%) translateY(0)';
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(-50%) translateY(10px)';
+    setTimeout(() => { toast.style.display = 'none'; }, 400);
+  }, 3000);
+}
+
+
+function seedDemoData() {
+  const orders = JSON.parse(localStorage.getItem('alkhayat_orders') || '[]');
+  const bookings = JSON.parse(localStorage.getItem('alkhayat_bookings') || '[]');
+
+  if (!orders.find(o => o.id === '#DEMO001')) {
+    orders.push({
+      id: '#DEMO001', type: 'order',
+      name: 'Abdullah Al-Ahmad', phone: '+966 50 123 4567',
+      address: 'Olaya District, Villa 12', city: 'Riyadh',
+      date: '01/04/2026',
+      status: 'Tailoring',
+      readyDate: new Date(Date.now() + 5 * 24*60*60*1000).toLocaleDateString(),
+      total: 760,
+      items: [
+        { name: 'Classic Saudi Thobe', size: 'L', price: 350, qty: 1, img: 'images/product_saudi_thobe.png' },
+        { name: 'Royal Jubba', size: 'XL', price: 410, qty: 1, img: 'images/product_jubba.png' }
+      ],
+      history: [
+        { status: 'Order Placed', date: '01/04/2026', note: 'Your order was received successfully.' },
+        { status: 'Processing', date: '02/04/2026', note: 'Order confirmed and fabric selected.' },
+        { status: 'Tailoring', date: '03/04/2026', note: 'Our Master Tailor started cutting and stitching.' },
+      ]
+    });
+  }
+  if (!bookings.find(b => b.ref === 'BK-DEMO1')) {
+    bookings.push({
+      ref: 'BK-DEMO1', type: 'booking',
+      name: 'Khalid Al-Mansour', phone: '+966 55 987 6543',
+      address: 'Diplomatic Quarter', city: 'Riyadh',
+      date: '10/04/2026', time: '3:00 PM',
+      service: 'Home Measurement',
+      status: 'Confirmed',
+      garment: 'Saudi Thobe',
+      history: [
+        { status: 'Request Sent', date: '07/04/2026', note: 'Your booking request was received.' },
+        { status: 'Confirmed', date: '08/04/2026', note: 'A master tailor has been assigned to you.' },
+      ]
+    });
+  }
+  localStorage.setItem('alkhayat_orders', JSON.stringify(orders));
+  localStorage.setItem('alkhayat_bookings', JSON.stringify(bookings));
+}
+
+
+
+
+
+// ============ MAP LOGIC ============
+// ============ MAP LOGIC V2 & VIP SERVICES ============
+const STORE_LAT = 24.7136; // Riyadh coordinates mapped to store
+const STORE_LNG = 46.6753;
+
+function initMapPage() {
+  // Empty init - now everything starts via user action 'calculateRoute()'
+}
+
+function openHomeServiceModal(serviceType) {
+  const m = document.getElementById('vip-service-modal');
+  if(m) {
+    const typeInput = document.getElementById('vip-service-type');
+    const feeDisplay = document.getElementById('vip-fee-display');
+    const feeNote = document.getElementById('vip-fee-note');
+    if (typeInput) typeInput.value = serviceType || 'vip_catalog';
+    
+    if (serviceType === 'own_fabric') {
+      if (feeDisplay) feeDisplay.innerText = 'SAR 50';
+      if (feeNote) feeNote.innerText = 'Visit & Delivery fee applied (you are using your own fabric). Payable upon muallim arrival.';
+    } else {
+      if (feeDisplay) feeDisplay.innerHTML = '<span style="text-decoration:line-through; color:var(--text-muted); margin-right:8px; font-size:0.8rem;">SAR 50</span><span style="color:#28a745;">FREE</span>';
+      if (feeNote) feeNote.innerText = 'Delivery and Visit Fee waived because you are selecting our fabric. Thank you!';
+    }
+    
+    m.style.display = 'flex';
+    m.classList.add('visible');
+  }
+}
+
+function calculateRoute() {
+  const panel = document.getElementById('route-panel');
+  if(panel) {
+    panel.style.display = 'block';
+    
+    // Check permission & location
+    if (navigator.geolocation) {
+      document.getElementById('route-msg').innerText = "Requesting location permission...";
+      navigator.geolocation.getCurrentPosition(position => {
+        const uLat = position.coords.latitude;
+        const uLng = position.coords.longitude;
+        
+        // Calculate Distance
+        const distKm = calculateDistance(uLat, uLng, STORE_LAT, STORE_LNG);
+        const timeMinutes = Math.round(distKm * 2.5); // Estimate 40km/h average city drive speed
+        
+        // Show visualizer
+        document.getElementById('route-msg').innerText = "Route optimized successfully via City Center.";
+        
+        // Animate counter
+        animateValue('route-time', 0, timeMinutes, 1500, ' min');
+        animateValue('route-dist', 0, parseFloat(distKm.toFixed(1)), 1500, ' km');
+        
+        // Trigger car animation
+        const car = document.querySelector('.sim-car-moving');
+        if(car) {
+          car.style.left = '0%';
+          setTimeout(() => {
+            car.style.left = '90%'; // Car drives towards the store
+          }, 100);
+        }
+      }, () => {
+        document.getElementById('route-msg').innerText = "Location access denied. Driving to store from regular routes takes about 20-30 mins.";
+      });
+    } else {
+      document.getElementById('route-msg').innerText = "Geolocation not supported by browser.";
+    }
+  }
+}
+
+function animateValue(id, start, end, duration, suffix) {
+  const obj = document.getElementById(id);
+  if (!obj) return;
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    const val = (progress * (end - start)).toFixed(end % 1 === 0 ? 0 : 1);
+    obj.innerHTML = val + suffix;
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    } else {
+      obj.innerHTML = end + suffix;
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+function submitVIPBooking(e) {
+  e.preventDefault();
+  const name = document.getElementById('vip-name').value;
+  const phone = document.getElementById('vip-phone').value;
+  const address = document.getElementById('vip-address').value;
+  const date = document.getElementById('vip-date').value;
+  const time = document.getElementById('vip-time').value;
+  const serviceType = document.getElementById('vip-service-type').value;
+
+  let serviceDesc = serviceType === 'own_fabric' 
+    ? "Has Own Fabric (SAR 50 Visit Fee Appplies)" 
+    : "Selecting Fabric from Catalog (FREE Visit & Delivery)";
+
+  const msg = `*VIP Home Service Booking* 🌟%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Address:* ${address}%0A*Preferred Schedule:* ${date} at ${time}%0A*Service:* ${serviceDesc}%0A%0A_Please contact me for confirmation._`;
+  
+  // Close modal and redirect to WA
+  document.getElementById('vip-service-modal').style.display = 'none';
+  window.open(`https://wa.me/966XXXXXXXXX?text=${msg}`, '_blank');
+}
+
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371; // km
+  const dLat = (lat2-lat1) * Math.PI / 180;
+  const dLon = (lon2-lon1) * Math.PI / 180;
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+          Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+          Math.sin(dLon/2) * Math.sin(dLon/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
+}
+
+
+function updateCheckoutSummary() {
   const subtotal = cart.reduce((s, c) => s + c.price * c.qty, 0);
-  const total = subtotal + 25;
+  const shipping = cart.length > 0 ? 25 : 0;
+  const total = subtotal + shipping;
 
-  document.getElementById('summary-subtotal').textContent = `SAR ${subtotal}`;
-  document.getElementById('summary-grand-total').textContent = `SAR ${total}`;
+  // Update New UI Elements
+  const subEl = document.getElementById('chk-subtotal-new');
+  if (subEl) subEl.textContent = subtotal.toFixed(2) + ' SAR';
+  const shipEl = document.getElementById('chk-shipping-new');
+  if (shipEl) shipEl.textContent = shipping.toFixed(2) + ' SAR';
+  const grandEl = document.getElementById('chk-grand-total-new');
+  if (grandEl) grandEl.textContent = total.toFixed(2) + ' SAR';
+
+  // Address Reflection
+  const addrDisplay = document.getElementById('chk-display-address');
+  const cityDisplay = document.getElementById('chk-display-city');
+  const addrInput = document.getElementById('chk-address');
+  const cityInput = document.getElementById('chk-city');
+  if (addrDisplay && addrInput && addrInput.value) {
+    addrDisplay.textContent = addrInput.value;
+  }
+  if (cityDisplay && cityInput && cityInput.value) {
+    cityDisplay.textContent = cityInput.value + ', Saudi Arabia';
+  }
+
+  // Payment Method Reflection
+  const paymentDisplay = document.getElementById('chk-display-payment');
+  const selectedPayment = document.querySelector('input[name="payment"]:checked')?.value;
+  if (paymentDisplay) {
+    if (selectedPayment === 'card') {
+      paymentDisplay.innerHTML = '💳 Card (Mada / Visa / MasterCard)';
+    } else if (selectedPayment === 'whatsapp') {
+      paymentDisplay.innerHTML = '💬 WhatsApp Pay';
+    } else {
+      paymentDisplay.innerHTML = '💵 Cash on Delivery';
+    }
+  }
+
+  // Fallback for old elements (if still present)
+  const container = document.getElementById('checkout-items-list');
+  if (container) {
+    if (cart.length === 0) {
+      container.innerHTML = '<p>Your cart is empty</p>';
+    } else {
+      container.innerHTML = cart.map(c => `
+        <div class="summary-item">
+          <span>${currentLang === 'en' ? c.name_en : c.name_ar} (x${c.qty})</span>
+          <span>SAR ${c.price * c.qty}</span>
+        </div>
+      `).join('');
+    }
+  }
+
+  const oldSub = document.getElementById('summary-subtotal');
+  if (oldSub) oldSub.textContent = `SAR ${subtotal}`;
+  const oldGrand = document.getElementById('summary-grand-total');
+  if (oldGrand) oldGrand.textContent = `SAR ${total}`;
 }
 
 function openCart() {
@@ -1520,7 +2427,7 @@ function renderBookingSummary() {
   document.getElementById('booking-summary').innerHTML = `
     <div class="summary-card">
       ${rows.map(([label, value, icon]) => `
-        <div class="summary-row">
+        <div class="bk-summary-row">
           <span class="sum-icon">${icon}</span>
           <span class="sum-label">${label}</span>
           <span class="sum-value">${value}</span>
@@ -1545,6 +2452,8 @@ function submitBooking() {
     garment:  document.getElementById('bk-garment').value,
     notes:    document.getElementById('bk-notes').value.trim(),
     submittedAt: new Date().toISOString(),
+    status: 'Pending',
+    type: 'booking'
   };
   const bookings = JSON.parse(localStorage.getItem('alkhayat_bookings') || '[]');
   bookings.push(booking);
@@ -1579,7 +2488,7 @@ function bookViaWhatsApp(bk) {
   };
   const svcLbl = serviceLabels[b.service]?.en || b.service;
   const msg = encodeURIComponent(
-    `📋 *New Booking — Al-Khayat Tailoring*\n` +
+    `📋 *New Booking — Namaa Al Qimmah Gents Tailor*\n` +
     `━━━━━━━━━━━━━━━━━━━\n` +
     `🛠️ *Service:* ${svcLbl}\n` +
     `📅 *Date:* ${b.date}\n` +
@@ -1591,7 +2500,7 @@ function bookViaWhatsApp(bk) {
     `👘 *Garment:* ${b.garment}\n` +
     (b.notes ? `📝 *Notes:* ${b.notes}\n` : '') +
     `━━━━━━━━━━━━━━━━━━━\n` +
-    `Sent from AL-KHAYAT Website`
+    `Sent from NAMAA AL QIMMAH Website`
   );
   window.open(`https://wa.me/966XXXXXXXXX?text=${msg}`, '_blank');
 }

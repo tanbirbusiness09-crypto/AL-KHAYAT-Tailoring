@@ -16,11 +16,18 @@
 
 <!-- Navbar -->
 <nav class="navbar" id="navbar">
-  <a href="#" class="nav-logo" onclick="navigateTo('home');return false">AL-KHAYAT <span>| الخياط</span></a>
+  <a href="#" class="nav-logo" onclick="navigateTo('home');return false">
+    <div class="logo-wrapper">
+      <img src="images/logo.svg" alt="Namaa Al Qimmah Logo" class="nav-logo-img">
+    </div>
+    <div class="logo-text">NAMAA <span>AL QIMMAH</span></div>
+  </a>
   <ul class="nav-links">
     <li><a href="#" class="active" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a></li>
     <li><a href="#" onclick="navigateTo('products');return false" data-i18n="nav_products">Products</a></li>
     <li><a href="#" onclick="navigateTo('categories-page');return false" data-i18n="nav_categories">Categories</a></li>
+    <li><a href="#" onclick="navigateTo('map');return false" data-i18n="nav_map">Map</a></li>
+    <li><a href="#" onclick="navigateTo('tracking');return false" data-i18n="nav_tracking">Track Order</a></li>
     <li><a href="#" onclick="navigateTo('about-page');return false" data-i18n="nav_about">About</a></li>
     <li><a href="#" onclick="navigateTo('privacy');return false" data-i18n="nav_privacy">Privacy</a></li>
   </ul>
@@ -66,6 +73,8 @@
   <a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a>
   <a href="#" onclick="navigateTo('products');return false" data-i18n="nav_products">Products</a>
   <a href="#" onclick="navigateTo('categories-page');return false" data-i18n="nav_categories">Categories</a>
+  <a href="#" onclick="navigateTo('map');return false" data-i18n="nav_map">Map</a>
+  <a href="#" onclick="navigateTo('tracking');return false" data-i18n="nav_tracking">Track Order</a>
   <a href="#" onclick="navigateTo('about-page');return false" data-i18n="nav_about">About</a>
   <a href="#" onclick="navigateTo('privacy');return false" data-i18n="nav_privacy">Privacy</a>
   <a href="#" onclick="navigateTo('booking');return false" class="mobile-book-btn-switch">
@@ -464,8 +473,431 @@
       <div class="breadcrumb"><a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a> / <span data-i18n="nav_privacy">Privacy</span></div>
     </div>
   </div>
+  
+  <section class="section content-page reveal">
+    <div class="container">
+      <div class="privacy-card">
+        <h2 data-i18n="priv_h1">1. Information Collection</h2>
+        <p data-i18n="priv_p1">We collect personal information such as name, phone number, and measurements solely to provide bespoke tailoring services.</p>
+        
+        <h2 data-i18n="priv_h2">2. How We Use Data</h2>
+        <p data-i18n="priv_p2">Your data is used to process orders, schedule home visits, and communicate project status via WhatsApp or phone.</p>
+        
+        <h2 data-i18n="priv_h3">3. Data Security</h2>
+        <p data-i18n="priv_p3">We implement industry-standard encryption to protect your measurements and personal details from unauthorized access.</p>
+        
+        <h2 data-i18n="priv_h4">4. Third Parties</h2>
+        <p data-i18n="priv_p4">We do not sell or share your personal information with third-party marketing agencies. Data is shared only with logistics partners for delivery.</p>
+        
+        <div class="chk-separator my-8"></div>
+        <p class="text-sm text-center opacity-70">Last updated: April 7, 2026</p>
+      </div>
+    </div>
   </section>
 </div>
+
+<!-- ============ MAP & SERVICES PAGE V2 ============ -->
+<div class="page" id="page-map">
+  <!-- Premium Store Hero -->
+  <div class="map-v2-hero">
+    <div class="map-hero-bg">
+      <img src="images/store_exterior.png" alt="Namaa Al Qimmah Tailor Store">
+      <div class="map-hero-overlay"></div>
+    </div>
+    <div class="map-hero-content reveal">
+      <div class="store-badge">📍 Riyadh Flagship Store</div>
+      <h1>Namaa Al Qimmah <br><span>Premium Tailor</span></h1>
+      <p class="store-address">8395, 3358 Ahmad At Tarabulsi, Az Zahra, Riyadh 12984</p>
+      <div class="store-ratings">
+        <span class="stars">★★★★★</span>
+        <span class="rating-score">4.9</span>
+        <a href="https://maps.app.goo.gl/Fq5jBHCs39KDgyAG9" target="_blank" class="rating-reviews">(342 Google Reviews)</a>
+      </div>
+      <div class="hero-actions">
+        <a href="https://maps.app.goo.gl/Fq5jBHCs39KDgyAG9" target="_blank" class="btn-primary map-btn-open">Open in Google Maps</a>
+        <button class="btn-outline map-btn-route" onclick="calculateRoute()">🚘 Get Directions</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="section map-interactive-section">
+    <div class="container pb-40">
+      
+      <!-- Store Hours Schedule -->
+      <div class="store-schedule-wrapper reveal">
+        <div class="schedule-header">
+          <div class="schedule-icon">🕒</div>
+          <div>
+            <h3>Store Opening Hours</h3>
+            <p>Visit us during our active hours for premium tailoring.</p>
+          </div>
+        </div>
+        <div class="schedule-grid">
+          <div class="schedule-row">
+            <span class="s-day">Saturday</span>
+            <span class="s-time">09:00 AM - 11:00 PM</span>
+            <span class="s-status open">Full Day</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-day">Sunday</span>
+            <span class="s-time">09:00 AM - 11:00 PM</span>
+            <span class="s-status open">Full Day</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-day">Monday</span>
+            <span class="s-time">09:00 AM - 11:00 PM</span>
+            <span class="s-status open">Full Day</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-day">Tuesday</span>
+            <span class="s-time">09:00 AM - 11:00 PM</span>
+            <span class="s-status open">Full Day</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-day">Wednesday</span>
+            <span class="s-time">09:00 AM - 11:00 PM</span>
+            <span class="s-status open">Full Day</span>
+          </div>
+          <div class="schedule-row">
+            <span class="s-day">Thursday</span>
+            <span class="s-time">09:00 AM - 11:00 PM</span>
+            <span class="s-status open">Full Day</span>
+          </div>
+          <div class="schedule-row highlight">
+            <span class="s-day">Friday</span>
+            <span class="s-time">04:00 PM - 11:00 PM</span>
+            <span class="s-status half">Half Schedule</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Interactive Direction Panel (Hidden initially) -->
+      <div id="route-panel" class="route-panel-v2" style="display:none;">
+        <div class="route-panel-header">
+          <h3>Your Journey to Elegance</h3>
+          <button onclick="document.getElementById('route-panel').style.display='none'" class="close-route">×</button>
+        </div>
+        <div class="route-visualizer">
+          <!-- 3D simulated road animation wrapper -->
+          <div class="sim-road-wrapper">
+            <div class="sim-marker-start">📍 You</div>
+            <div class="sim-road-line"><div class="sim-car-moving">🚘</div></div>
+            <div class="sim-marker-end">🏢 Store</div>
+          </div>
+        </div>
+        <div class="route-stats">
+          <div class="rs-box">
+            <div class="rs-icon">⏱️</div>
+            <div class="rs-info">
+              <label>Est. Travel Time</label>
+              <h4 id="route-time">--</h4>
+            </div>
+          </div>
+          <div class="rs-box">
+            <div class="rs-icon">📏</div>
+            <div class="rs-info">
+              <label>Total Distance</label>
+              <h4 id="route-dist">--</h4>
+            </div>
+          </div>
+        </div>
+        <div class="route-msg" id="route-msg">Calculating your optimized route...</div>
+      </div>
+
+      <!-- Service Selection Matrix -->
+      <div class="services-matrix-v2 reveal">
+        <div class="section-header center">
+          <p class="section-label" data-i18n="service_label">Tailoring Methods</p>
+          <h2 class="section-title">How Would You Like to Proceed?</h2>
+          <p style="color:var(--text-light); max-width: 600px; margin: 10px auto;">Choose how you want to book your tailoring. We offer flexible options, and <strong>Delivery is FREE</strong> if you purchase fabric from us!</p>
+        </div>
+
+        <div class="matrix-grid">
+          
+          <!-- Option 1: Own Cloth, Home Measurement -->
+          <div class="matrix-card">
+            <div class="matrix-img">
+              <img src="images/home_measurement.png" alt="Own Cloth Home Measurement">
+            </div>
+            <div class="matrix-body">
+              <div class="matrix-badge">Home Visit</div>
+              <h3>I Have My Own Fabric</h3>
+              <p>Book online and our Muallim will visit your home to take measurements. We'll pick up your fabric, tailor it, and deliver the finished garment to your doorstep.</p>
+              <ul class="matrix-perks">
+                <li>✔️ Professional fitting at home</li>
+                <li>✔️ Sew & Deliver back to you</li>
+                <li>💰 <strong>Cost:</strong> Sewing Fee + Home Visit/Delivery Fee</li>
+              </ul>
+              <button class="btn-outline w-full mt-4" onclick="openHomeServiceModal('own_fabric')">Book Visit (Have Fabric)</button>
+            </div>
+          </div>
+
+          <!-- Option 2: VIP Catalog at Home -->
+          <div class="matrix-card highlight-card">
+            <div class="matrix-img">
+              <img src="images/measuring_customer.png" alt="VIP Consultation">
+            </div>
+            <div class="matrix-body">
+              <div class="matrix-badge gold">VIP Service</div>
+              <h3>Select Fabric via Catalog At Home</h3>
+              <p>Our Muallim brings our premium fabric catalogs directly to your home. Touch, feel, and select your fabric. Get measured instantly.</p>
+              <ul class="matrix-perks">
+                <li>✔️ Premium catalogs delivered to you</li>
+                <li>✔️ Measure & pick at home</li>
+                <li>🎁 <strong>FREE Delivery / Visit Fee</strong> (since you buy fabric from us)</li>
+              </ul>
+              <button class="btn-primary w-full mt-4" style="background-color:#c9a84c; color:#1a1a1a;" onclick="openHomeServiceModal('buy_fabric')">Book VIP Catalog Visit</button>
+            </div>
+          </div>
+
+          <!-- Option 3: Online Site Purchase -->
+          <div class="matrix-card">
+            <div class="matrix-img">
+              <img src="images/product_fabric.png" alt="Buy Fabric Online">
+            </div>
+            <div class="matrix-body">
+              <div class="matrix-badge outline">Online Order</div>
+              <h3>Buy Online + Home Measurement</h3>
+              <p>Select your fabric online directly from our site. You only pay for the fabric now. The Muallim visits your home to measure, and you pay the sewing fee later!</p>
+              <ul class="matrix-perks">
+                <li>✔️ Select fabric from website</li>
+                <li>✔️ Pay for fabric only at checkout</li>
+                <li>🎁 <strong>FREE Delivery / Visit Fee</strong></li>
+              </ul>
+              <button class="btn-outline w-full mt-4" onclick="navigateTo('products')">Browse Fabrics Online</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- VIP Home Service Modal -->
+<div class="modal-overlay" id="vip-service-modal" style="display:none; align-items:center; justify-content:center;">
+  <div class="modal-container delivery-modal-box" style="max-width:480px; background:var(--dark-2); border-radius:24px; padding:30px;">
+    <button class="modal-close" onclick="document.getElementById('vip-service-modal').style.display='none'" style="top:15px; right:20px;">×</button>
+    <h3 style="margin-bottom:12px; font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--gold);">Book VIP Home Visit</h3>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:24px;">The Muallim will bring our premium catalogs to your home.</p>
+    
+    <form onsubmit="submitVIPBooking(event)">
+      <div class="form-group" style="margin-bottom:16px;">
+        <label style="display:block; font-size:0.8rem; font-weight:700; color:var(--text-light); margin-bottom:8px;">Full Name *</label>
+        <input type="text" id="vip-name" required placeholder="e.g. Khalid Al-Mansour" style="width:100%; padding:14px; border-radius:12px; background:var(--dark-3); border:1px solid var(--border); color:var(--white);">
+      </div>
+      <div class="form-group" style="margin-bottom:16px;">
+        <label style="display:block; font-size:0.8rem; font-weight:700; color:var(--text-light); margin-bottom:8px;">Phone Number *</label>
+        <input type="tel" id="vip-phone" required placeholder="+966 5X XXX XXXX" style="width:100%; padding:14px; border-radius:12px; background:var(--dark-3); border:1px solid var(--border); color:var(--white);">
+      </div>
+      <div class="form-group" style="margin-bottom:16px;">
+        <label style="display:block; font-size:0.8rem; font-weight:700; color:var(--text-light); margin-bottom:8px;">Home Address *</label>
+        <input type="text" id="vip-address" required placeholder="Neighborhood, Street, Villa No." style="width:100%; padding:14px; border-radius:12px; background:var(--dark-3); border:1px solid var(--border); color:var(--white);">
+      </div>
+      <div class="form-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px;">
+        <div class="form-group">
+          <label style="display:block; font-size:0.8rem; font-weight:700; color:var(--text-light); margin-bottom:8px;">Date *</label>
+          <input type="date" id="vip-date" required style="width:100%; padding:14px; border-radius:12px; background:var(--dark-3); border:1px solid var(--border); color:var(--white); font-family:inherit;">
+        </div>
+        <div class="form-group">
+          <label style="display:block; font-size:0.8rem; font-weight:700; color:var(--text-light); margin-bottom:8px;">Time *</label>
+          <input type="time" id="vip-time" required style="width:100%; padding:14px; border-radius:12px; background:var(--dark-3); border:1px solid var(--border); color:var(--white); font-family:inherit;">
+        </div>
+      </div>
+      
+      <div style="background:rgba(212,175,55,0.1); border:1px solid rgba(212,175,55,0.3); border-radius:12px; padding:16px; margin-bottom:24px;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="color:var(--text-light);">Visit & Delivery Fee</span>
+          <span style="color:var(--white); font-weight:700;" id="vip-fee-display">Varies</span>
+        </div>
+        <p style="font-size:0.75rem; color:var(--text-muted); margin:0;" id="vip-fee-note">Will be calculated based on your choice.</p>
+        <input type="hidden" id="vip-service-type" value="">
+      </div>
+
+      <button type="submit" class="btn-primary" style="width:100%; padding:16px; border-radius:14px; font-weight:800;">Confirm via WhatsApp 📱</button>
+    </form>
+  </div>
+</div>
+
+<!-- ============ TRACKING PAGE ============ -->
+<div class="page" id="page-tracking">
+
+  <!-- Premium Hero -->
+  <div class="track-page-hero-v2">
+    <div class="track-hero-bg-pattern"></div>
+    <div class="track-hero-inner reveal">
+      <div class="track-hero-badge-v2">📦 Real-Time Order Tracking</div>
+      <h1 class="track-hero-title">Track Your <span>Order</span></h1>
+      <p class="track-hero-sub">Enter your Order ID or Booking Reference for live status updates, estimated delivery dates, and self-service actions — all in one place.</p>
+      <div class="track-hero-stats">
+        <div class="ths">
+          <div class="ths-num" id="trk-stat-orders">0</div>
+          <div class="ths-label">Orders Tracked Today</div>
+        </div>
+        <div class="ths-divider"></div>
+        <div class="ths">
+          <div class="ths-num">6</div>
+          <div class="ths-label">Branches Nationwide</div>
+        </div>
+        <div class="ths-divider"></div>
+        <div class="ths">
+          <div class="ths-num">98%</div>
+          <div class="ths-label">On-Time Delivery Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section track-main-section">
+    <div class="container">
+
+      <!-- SEARCH PANEL V2 -->
+      <div class="track-search-panel-v2 reveal">
+        <div class="tsp-top">
+          <div class="tsp-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+          <div class="tsp-form">
+            <label class="tsp-label">Order ID or Booking Reference</label>
+            <div class="tsp-row">
+              <input type="text" id="track-id-input" placeholder="e.g. #DEMO001 or BK-DEMO1" class="tsp-input" onkeydown="if(event.key==='Enter') handleTrackOrder()" oninput="showTrackSuggestions(this.value)" autocomplete="off">
+              <button class="tsp-search-btn" onclick="handleTrackOrder()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                Track
+              </button>
+            </div>
+            <!-- Recent Searches -->
+            <div class="tsp-recent" id="tsp-recent"></div>
+          </div>
+        </div>
+        <div class="tsp-demos">
+          <span class="tsp-demo-label">🎯 Try demo IDs:</span>
+          <button class="tsp-demo-pill" onclick="document.getElementById('track-id-input').value='#DEMO001'; handleTrackOrder()">#DEMO001 — Order</button>
+          <button class="tsp-demo-pill" onclick="document.getElementById('track-id-input').value='BK-DEMO1'; handleTrackOrder()">BK-DEMO1 — Booking</button>
+        </div>
+      </div>
+
+      <!-- RESULT CONTAINER -->
+      <div id="tracking-result-container" style="display:none; margin-top: 40px;"></div>
+
+      <!-- EMPTY STATE -->
+      <div id="tracking-empty-state" class="track-empty-v2 reveal" style="margin-top:40px;">
+        <div class="tev-hero">
+          <div class="tev-icon">📦</div>
+          <h2>Where is My Order?</h2>
+          <p>Enter your Order ID or Booking Reference above to see live status, progress, and delivery options.</p>
+        </div>
+        <div class="tev-steps">
+          <div class="tev-step">
+            <div class="tev-step-num">1</div>
+            <div class="tev-step-icon">🛒</div>
+            <h4>Place Your Order</h4>
+            <p>Receive a unique Order ID at checkout or booking confirmation.</p>
+          </div>
+          <div class="tev-arrow">→</div>
+          <div class="tev-step">
+            <div class="tev-step-num">2</div>
+            <div class="tev-step-icon">🔍</div>
+            <h4>Enter Your ID</h4>
+            <p>Type your Order ID or Booking Reference in the search box above.</p>
+          </div>
+          <div class="tev-arrow">→</div>
+          <div class="tev-step">
+            <div class="tev-step-num">3</div>
+            <div class="tev-step-icon">⚡</div>
+            <h4>Live Status</h4>
+            <p>See real-time progress, manage delivery, and contact us directly.</p>
+          </div>
+        </div>
+        <div class="tev-whatsapp-box">
+          <div class="tev-wa-icon">💬</div>
+          <div class="tev-wa-text">
+            <strong>Need help?</strong>
+            <p>Chat with us directly on WhatsApp for instant order updates</p>
+          </div>
+          <button class="tev-wa-btn" onclick="window.open('https://wa.me/966XXXXXXXXX?text=Hello, I need help tracking my order','_blank')">
+            WhatsApp Us
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DELIVERY REQUEST MODAL -->
+  <div class="modal-overlay" id="delivery-modal" onclick="closeDeliveryModal()">
+    <div class="modal-container delivery-modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeDeliveryModal()">×</button>
+      <div class="delivery-modal-header">
+        <div style="font-size: 2.5rem;">🚚</div>
+        <h3>Request Home Delivery</h3>
+        <p>We'll contact you to schedule the delivery of your ready garment.</p>
+      </div>
+      <form id="delivery-form" onsubmit="submitDeliveryRequest(event)" style="padding: 30px;">
+        <input type="hidden" id="del-order-id">
+        <div class="form-group">
+          <label>Delivery Address</label>
+          <textarea id="del-address" rows="2" placeholder="Street, Building, District..." required class="form-control-styled"></textarea>
+        </div>
+        <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="form-group">
+            <label>Preferred Date</label>
+            <input type="date" id="del-date" required class="form-control-styled">
+          </div>
+          <div class="form-group">
+            <label>Time Slot</label>
+            <select id="del-slot" class="form-control-styled">
+              <option value="9am-12pm">9 AM – 12 PM</option>
+              <option value="12pm-3pm">12 PM – 3 PM</option>
+              <option value="3pm-6pm">3 PM – 6 PM</option>
+              <option value="6pm-9pm">6 PM – 9 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Special Instructions (Optional)</label>
+          <input type="text" id="del-notes" placeholder="Leave at door, call first..." class="form-control-styled">
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%; margin-top:20px; padding:16px; border-radius:12px; font-size:1rem;">
+          📲 Send Delivery Request via WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- RATE ORDER MODAL -->
+  <div class="modal-overlay" id="rate-order-modal" onclick="closeRateModal()">
+    <div class="modal-container rate-modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeRateModal()">×</button>
+      <div style="text-align:center; padding: 40px 30px 20px;">
+        <div style="font-size:3rem; margin-bottom:12px;">⭐</div>
+        <h3 style="font-family:'Playfair Display',serif; font-size:1.6rem; margin-bottom:8px;">Rate Your Experience</h3>
+        <p style="color:var(--text-light); font-size:0.9rem;">Your feedback helps us serve you better</p>
+      </div>
+      <div style="padding: 0 30px 30px;">
+        <div class="rate-stars-row" id="rate-stars-row">
+          <span class="rate-star active" data-val="1" onclick="setRating(1)">★</span>
+          <span class="rate-star active" data-val="2" onclick="setRating(2)">★</span>
+          <span class="rate-star active" data-val="3" onclick="setRating(3)">★</span>
+          <span class="rate-star active" data-val="4" onclick="setRating(4)">★</span>
+          <span class="rate-star active" data-val="5" onclick="setRating(5)">★</span>
+        </div>
+        <input type="hidden" id="rate-val" value="5">
+        <input type="hidden" id="rate-order-ref" value="">
+        <div style="margin-top:20px;">
+          <label style="color:var(--text-light); font-size:0.85rem; display:block; margin-bottom:8px;">Additional Comments (Optional)</label>
+          <textarea id="rate-comment" rows="3" placeholder="Tell us what you loved or how we can improve..." class="form-control-styled"></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%; margin-top:16px; padding:15px; border-radius:12px;" onclick="submitOrderRating()">
+          ✅ Submit Rating
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 
 <!-- ============ CHECKOUT PAGE ============ -->
 <div class="page" id="page-checkout">
@@ -502,14 +934,23 @@
                 </div>
                  <div class="form-group chk-input-wrap">
                    <label>Shipping Address</label>
-                   <div class="address-input-wrapper">
-                     <textarea id="chk-address" rows="2" required placeholder="Street, Building, Apartment" oninput="updateCheckoutSummary()"></textarea>
-                     <button type="button" class="geo-btn" onclick="autoDetectCheckoutLocation()" title="Auto-detect location" style="margin-top: 8px;">
-                       <span class="geo-btn-icon">📍</span>
-                       <span class="geo-btn-text" id="chk-geo-btn-text">Use My Location</span>
+                   <div class="address-input-wrapper" style="position: relative;">
+                     <input type="text" id="chk-address" required placeholder="Street, Building, Apartment" oninput="updateCheckoutSummary()" style="padding-right: 50px;">
+                     <button type="button" class="geo-btn icon-only-btn" onclick="autoDetectCheckoutLocation()" title="Auto-detect location" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: var(--dark-2); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; padding: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: all 0.3s; margin: 0; overflow: hidden;">
+                       <span class="geo-btn-icon" style="font-size: 1.1rem; line-height: 1; position: relative;">
+                         <span class="loc-bounce" style="display: inline-block;">📍</span>
+                       </span>
                      </button>
                    </div>
-                   <div class="geo-status" id="chk-geo-status"></div>
+                   <style>
+                     @keyframes locBounce {
+                       0%, 100% { transform: translateY(0); }
+                       50% { transform: translateY(-4px); }
+                     }
+                     .loc-bounce { animation: locBounce 1.5s infinite; }
+                     .icon-only-btn:hover { background: var(--gold) !important; transform: translateY(-50%) scale(1.1) !important; }
+                   </style>
+                   <div class="geo-status" id="chk-geo-status" style="font-size: 0.8rem; margin-top: 5px;"></div>
                  </div>
                 <div class="form-group chk-input-wrap">
                   <label>City</label>
@@ -529,15 +970,36 @@
                   <label class="payment-option">
                     <input type="radio" name="payment" value="cod" checked onchange="updateCheckoutSummary()">
                     <div class="payment-box-new">
-                      <span>💵 Cash on Delivery</span>
+                      <span style="display: flex; align-items: center; gap: 12px; font-weight: 500;">
+                        <span style="font-size: 1.8rem; line-height: 1;">💵</span> Cash on Delivery
+                      </span>
+                    </div>
+                  </label>
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="card" onchange="updateCheckoutSummary()">
+                    <div class="payment-box-new">
+                      <span style="display: flex; align-items: center; gap: 12px; font-weight: 500;">
+                        <span style="font-size: 1.8rem; line-height: 1;">💳</span> Card Payment
+                      </span>
                     </div>
                   </label>
                   <label class="payment-option">
                     <input type="radio" name="payment" value="whatsapp" onchange="updateCheckoutSummary()">
                     <div class="payment-box-new">
-                      <span>💬 WhatsApp Pay</span>
+                      <span style="display: flex; align-items: center; gap: 12px; font-weight: 500;">
+                        <span style="font-size: 1.8rem; line-height: 1;">💬</span> WhatsApp Pay
+                      </span>
                     </div>
                   </label>
+                </div>
+                <!-- Payment Badge added -->
+                <div class="payment-box-new mt-3" style="text-align: center; cursor: default; display: block; flex-direction: column;">
+                  <div style="font-size: 0.75rem; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; font-weight: 600;">
+                    <i class="fas fa-lock" style="margin-right: 4px; color: #4cd964;"></i> 100% Secure Checkout
+                  </div>
+                  <div style="background: #ffffff; border-radius: 8px; padding: 10px; display: flex; justify-content: center; align-items: center; width: 100%; box-sizing: border-box;">
+                    <img src="images/saudi_payment_badge.png" alt="Accepted Payment Methods" style="display: block; width: 100%; height: auto; max-height: 40px; object-fit: contain; filter: invert(0); opacity: 1;">
+                  </div>
                 </div>
               </form>
            </div>
@@ -773,71 +1235,82 @@
 
     <!-- STEP 3: Personal Info + Fabric Chooser -->
     <div class="booking-step" id="bstep-3">
-      <div class="booking-step-header">
-        <h2 data-i18n="book_s3_title">Your Information</h2>
-        <p data-i18n="book_s3_desc">We'll use this to confirm your booking</p>
-      </div>
       <div class="step3-layout">
-        <!-- LEFT: Form -->
+        <!-- LEFT: Info + Form Split -->
         <div class="step3-left">
-          <form class="booking-form" id="booking-form" onsubmit="return false">
-            <div class="form-row">
-              <div class="form-group">
-                <label data-i18n="form_name">Full Name *</label>
-                <input type="text" id="bk-name" placeholder="" data-i18n-ph="form_name_ph" required>
-              </div>
-              <div class="form-group">
-                <label data-i18n="form_phone">Phone Number *</label>
-                <input type="tel" id="bk-phone" placeholder="" data-i18n-ph="form_phone_ph" required>
-              </div>
+          <div class="booking-form-split-wrap reveal">
+            <!-- Form Info Part -->
+            <div class="booking-form-info-side">
+               <h2 data-i18n="book_s3_title">Your Information</h2>
+               <p data-i18n="book_s3_desc">We'll use this to confirm your booking</p>
+               <div class="form-badge-icon">👔</div>
             </div>
-            <div class="form-group">
-              <label data-i18n="form_address">Delivery / Visit Address *</label>
-              <div class="address-input-wrapper">
-                <input type="text" id="bk-address" placeholder="" data-i18n-ph="form_address_ph" required>
-                <button type="button" class="geo-btn" onclick="autoDetectLocation()" title="Auto-detect location">
-                  <span class="geo-btn-icon">📍</span>
-                  <span class="geo-btn-text" id="geo-btn-text">Use My Location</span>
-                </button>
-              </div>
-              <div class="geo-status" id="geo-status"></div>
+            
+            <!-- Form Input Part -->
+            <div class="booking-form-inputs-side">
+              <form class="booking-form-new" id="booking-form" onsubmit="return false">
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label data-i18n="form_name">Full Name *</label>
+                    <input type="text" id="bk-name" placeholder="" data-i18n-ph="form_name_ph" required>
+                  </div>
+                  <div class="form-group">
+                    <label data-i18n="form_phone">Phone Number *</label>
+                    <input type="tel" id="bk-phone" placeholder="" data-i18n-ph="form_phone_ph" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label data-i18n="form_address">Delivery / Visit Address *</label>
+                  <div class="address-input-wrapper-new">
+                    <input type="text" id="bk-address" placeholder="" data-i18n-ph="form_address_ph" required>
+                    <button type="button" class="geo-btn-mini" onclick="autoDetectLocation()" title="Auto-detect location">
+                      📍 <span>Use GPS</span>
+                    </button>
+                  </div>
+                  <div class="geo-status" id="geo-status"></div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label data-i18n="form_city">City</label>
+                    <select id="bk-city">
+                      <option value="riyadh" data-i18n="city_riyadh">Riyadh</option>
+                      <option value="jeddah" data-i18n="city_jeddah">Jeddah</option>
+                      <option value="dammam" data-i18n="city_dammam">Dammam</option>
+                      <option value="mecca" data-i18n="city_mecca">Mecca</option>
+                      <option value="medina" data-i18n="city_medina">Medina</option>
+                      <option value="other" data-i18n="city_other">Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label data-i18n="form_garment">Garment Type</label>
+                    <select id="bk-garment">
+                      <option value="thobe" data-i18n="filter_thobe">Saudi Thobe</option>
+                      <option value="emirati" data-i18n="filter_emirati">Emirati Kandura</option>
+                      <option value="qatari" data-i18n="filter_qatari">Qatari Thobe</option>
+                      <option value="kuwaiti" data-i18n="filter_kuwaiti">Kuwaiti Dishdasha</option>
+                      <option value="jubba" data-i18n="filter_jubba">Jubba</option>
+                      <option value="bisht">Bisht</option>
+                      <option value="other" data-i18n="city_other">Other / Not Sure</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label data-i18n="form_notes">Special Notes (Optional)</label>
+                  <textarea id="bk-notes" rows="2" placeholder="" data-i18n-ph="form_notes_ph"></textarea>
+                </div>
+
+                <div class="form-group-check">
+                  <label class="checkbox-label-new">
+                    <input type="checkbox" id="bk-whatsapp" checked>
+                    <span data-i18n="form_wa">Send booking confirmation via WhatsApp</span>
+                  </label>
+                </div>
+              </form>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label data-i18n="form_city">City</label>
-                <select id="bk-city">
-                  <option value="riyadh" data-i18n="city_riyadh">Riyadh</option>
-                  <option value="jeddah" data-i18n="city_jeddah">Jeddah</option>
-                  <option value="dammam" data-i18n="city_dammam">Dammam</option>
-                  <option value="mecca" data-i18n="city_mecca">Mecca</option>
-                  <option value="medina" data-i18n="city_medina">Medina</option>
-                  <option value="other" data-i18n="city_other">Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label data-i18n="form_garment">Garment Type</label>
-                <select id="bk-garment">
-                  <option value="thobe" data-i18n="filter_thobe">Saudi Thobe</option>
-                  <option value="emirati" data-i18n="filter_emirati">Emirati Kandura</option>
-                  <option value="qatari" data-i18n="filter_qatari">Qatari Thobe</option>
-                  <option value="kuwaiti" data-i18n="filter_kuwaiti">Kuwaiti Dishdasha</option>
-                  <option value="jubba" data-i18n="filter_jubba">Jubba</option>
-                  <option value="bisht">Bisht</option>
-                  <option value="other" data-i18n="city_other">Other / Not Sure</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label data-i18n="form_notes">Special Notes (Optional)</label>
-              <textarea id="bk-notes" rows="3" placeholder="" data-i18n-ph="form_notes_ph"></textarea>
-            </div>
-            <div class="form-group form-whatsapp">
-              <label class="checkbox-label">
-                <input type="checkbox" id="bk-whatsapp" checked>
-                <span data-i18n="form_wa">Send booking confirmation via WhatsApp</span>
-              </label>
-            </div>
-          </form>
+          </div>
         </div>
 
         <!-- RIGHT: Fabric Chooser Panel -->
@@ -1054,22 +1527,35 @@
           <!-- Payment Section -->
           <div class="checkout-card">
             <h3 class="form-h"><span class="icon">💳</span> <span>Payment Method</span></h3>
-            <div class="payment-methods">
+            
+            <div class="payment-badge-container" style="text-align: center; margin-bottom: 20px;">
+              <img src="images/saudi_payment_badge.png" alt="Secure Saudi Payment Gateways" style="max-height: 48px; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            </div>
+
+            <div class="payment-methods" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
               <label class="pay-option">
                 <input type="radio" name="payment" value="cod" checked>
                 <div class="pay-box">
                   <span class="icon">💵</span>
-                  <span>Cash on Delivery</span>
+                  <span style="font-size: 0.9rem;">Cash on Delivery</span>
                 </div>
               </label>
               <label class="pay-option">
-                <input type="radio" name="payment" value="mada">
+                <input type="radio" name="payment" value="card">
                 <div class="pay-box">
                   <span class="icon">💳</span>
-                  <span>Mada / Visa</span>
+                  <span style="font-size: 0.9rem;">Mada / Visa</span>
+                </div>
+              </label>
+              <label class="pay-option">
+                <input type="radio" name="payment" value="digital">
+                <div class="pay-box">
+                  <span class="icon">📱</span>
+                  <span style="font-size: 0.9rem;">STC / Apple Pay</span>
                 </div>
               </label>
             </div>
+            <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 15px;">All transactions are secure and encrypted.</p>
           </div>
 
           <button type="submit" class="btn-primary submit-order-btn">
@@ -1135,6 +1621,67 @@
   </div>
 </div>
 
+<!-- Delivery Request Modal (Tracking) -->
+<div class="modal-overlay" id="delivery-modal" style="display: none; align-items: center; justify-content: center;">
+  <div class="modal-container delivery-modal-box" style="max-width: 450px; background: var(--dark-2); border-radius: 24px; padding: 30px;">
+    <button class="modal-close" onclick="closeDeliveryModal()" style="top: 15px; right: 20px;">×</button>
+    <h3 style="margin-bottom: 20px; font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--gold);">Schedule Delivery</h3>
+    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">Please provide the details below so we can arrange the delivery of your garment.</p>
+    <form onsubmit="submitDeliveryRequest(event)">
+      <input type="hidden" id="del-order-id">
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display:block; font-size:0.8rem; font-weight:700; color:var(--text-light); margin-bottom:8px;">Full Address *</label>
+        <input type="text" id="del-address" required placeholder="Neighborhood, Street, Building No." style="width:100%; padding: 14px; border-radius: 12px; background: var(--dark-3); border: 1px solid var(--border); color: var(--white);">
+      </div>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display:block; font-size:0.8rem; font-weight:700; color:var(--text-light); margin-bottom:8px;">Preferred Date *</label>
+        <input type="date" id="del-date" required style="width:100%; padding: 14px; border-radius: 12px; background: var(--dark-3); border: 1px solid var(--border); color: var(--white); font-family: inherit;">
+      </div>
+      <div class="form-group" style="margin-bottom: 16px;">
+        <label style="display:block; font-size:0.8rem; font-weight:700; color:var(--text-light); margin-bottom:8px;">Preferred Time Slot *</label>
+        <select id="del-slot" required style="width:100%; padding: 14px; border-radius: 12px; background: var(--dark-3); border: 1px solid var(--border); color: var(--white); font-family: inherit;">
+          <option value="Morning (9 AM - 12 PM)">🌞 Morning (9 AM - 12 PM)</option>
+          <option value="Afternoon (12 PM - 4 PM)">⛅ Afternoon (12 PM - 4 PM)</option>
+          <option value="Evening (4 PM - 9 PM)">🌙 Evening (4 PM - 9 PM)</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-bottom: 24px;">
+        <label style="display:block; font-size:0.8rem; font-weight:700; color:var(--text-light); margin-bottom:8px;">Notes (Optional)</label>
+        <input type="text" id="del-notes" placeholder="Delivery instructions..." style="width:100%; padding: 14px; border-radius: 12px; background: var(--dark-3); border: 1px solid var(--border); color: var(--white);">
+      </div>
+      <button type="submit" class="btn-primary" style="width: 100%; padding: 16px; border-radius: 14px; font-weight: 800;">
+        Confirm Delivery
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Order Rating Modal (Tracking) -->
+<div class="modal-overlay" id="rate-order-modal" style="display: none; align-items: center; justify-content: center;">
+  <div class="modal-container rate-modal-box" style="padding: 36px 30px;">
+    <button class="modal-close" onclick="closeRateModal()" style="top: 15px; right: 20px;">×</button>
+    <div style="text-align: center;">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 12px;">Rate Your Order</h3>
+      <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 24px;">How was your experience with Al-Khayat?</p>
+      <input type="hidden" id="rate-order-ref">
+      <input type="hidden" id="rate-val" value="5">
+      <div class="rate-stars-row" id="rate-stars-row">
+        <span class="rate-star active" onclick="setRating(1)">★</span>
+        <span class="rate-star active" onclick="setRating(2)">★</span>
+        <span class="rate-star active" onclick="setRating(3)">★</span>
+        <span class="rate-star active" onclick="setRating(4)">★</span>
+        <span class="rate-star active" onclick="setRating(5)">★</span>
+      </div>
+      <div style="color: var(--gold); font-size: 0.85rem; font-weight: 700; margin-bottom: 24px;">Tap a star to rate</div>
+      <textarea id="rate-comment" placeholder="Tell us more about your premium tailoring experience..." rows="3" style="width: 100%; padding: 16px; border-radius: 16px; background: var(--dark-3); border: 1px solid var(--border); color: var(--white); font-family: inherit; margin-bottom: 24px; resize: none;"></textarea>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button class="btn-outline" onclick="closeRateModal()" style="padding: 14px 24px; border-radius: 14px;">Cancel</button>
+        <button class="btn-primary" onclick="submitOrderRating()" style="flex: 1; padding: 14px 24px; border-radius: 14px; font-weight: 800;">Submit Feedback</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Cart Drawer -->
 <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="closeCart()"></div>
 <div class="cart-drawer" id="cart-drawer">
@@ -1155,7 +1702,10 @@
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#" class="nav-logo" onclick="navigateTo('home');return false">AL-KHAYAT <span>| الخياط</span></a>
+      <a href="#" class="nav-logo" onclick="navigateTo('home');return false">
+        <img src="images/logo.svg" alt="Namaa Al Qimmah Logo" class="nav-logo-img">
+        <div class="logo-text">NAMAA <span>AL QIMMAH</span></div>
+      </a>
       <p data-i18n="footer_desc">Premium bespoke tailoring in Saudi Arabia.</p>
     </div>
     <div>
@@ -1188,7 +1738,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p data-i18n="footer_copy">© 2026 Al-Khayat Premium Tailoring. All rights reserved.</p>
+    <p data-i18n="footer_copy">© 2026 Namaa Al Qimmah Gents Tailor. All rights reserved.</p>
     <div class="footer-social">
       <a href="https://wa.me/966XXXXXXXXX" target="_blank">📱</a>
       <a href="https://instagram.com/alkhayat" target="_blank">📷</a>
