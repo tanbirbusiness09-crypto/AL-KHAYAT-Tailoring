@@ -23,7 +23,7 @@
     <div class="logo-text">NAMAA <span>AL QIMMAH</span></div>
   </a>
   <ul class="nav-links">
-    <li><a href="#" class="active" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a></li>
+    
     <li><a href="#" onclick="navigateTo('products');return false" data-i18n="nav_products">Products</a></li>
     <li><a href="#" onclick="navigateTo('categories-page');return false" data-i18n="nav_categories">Categories</a></li>
     <li><a href="#" onclick="navigateTo('map');return false" data-i18n="nav_map">Map</a></li>
@@ -37,7 +37,7 @@
         <span class="book-switch-thumb">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M12 18l2 2 4-4"></path></svg>
         </span>
-        <span class="book-switch-text" data-i18n="book_now_btn">Book Now</span>
+        
       </span>
     </a>
 
@@ -61,6 +61,13 @@
         </span>
       </span>
     </button>
+    <a href="#" onclick="openSearch();return false" class="nav-book-btn-switch search-switch">
+      <span class="book-switch-track">
+        <span class="book-switch-thumb">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+      </span>
+    </a>
     <div class="cart-icon" onclick="openCart()">🛒<span class="cart-badge">0</span></div>
     <button class="menu-toggle" onclick="toggleMobileMenu()">
       <span></span><span></span><span></span>
@@ -70,7 +77,7 @@
 
 <!-- Mobile Menu -->
 <div class="mobile-menu">
-  <a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a>
+  
   <a href="#" onclick="navigateTo('products');return false" data-i18n="nav_products">Products</a>
   <a href="#" onclick="navigateTo('categories-page');return false" data-i18n="nav_categories">Categories</a>
   <a href="#" onclick="navigateTo('map');return false" data-i18n="nav_map">Map</a>
@@ -696,6 +703,7 @@
         <input type="text" id="vip-address" required placeholder="Neighborhood, Street, Villa No." style="width:100%; padding:14px; border-radius:12px; background:var(--dark-3); border:1px solid var(--border); color:var(--white);">
       </div>
       <div class="form-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px;">
+
         <div class="form-group">
           <label style="display:block; font-size:0.8rem; font-weight:700; color:var(--text-light); margin-bottom:8px;">Date *</label>
           <input type="date" id="vip-date" required style="width:100%; padding:14px; border-radius:12px; background:var(--dark-3); border:1px solid var(--border); color:var(--white); font-family:inherit;">
@@ -1120,274 +1128,251 @@
 
 <!-- ============ BOOKING PAGE ============ -->
 <div class="page" id="page-booking">
-  <div class="page-hero booking-hero">
-    <img src="images/shop_interior.png" alt="Book Appointment">
-    <div class="page-hero-content">
-      <h1 data-i18n="book_title">Book a Home Visit</h1>
-      <p data-i18n="book_subtitle">Custom tailoring delivered to your doorstep</p>
-      <div class="breadcrumb"><a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a> / <span data-i18n="nav_book">Book Now</span></div>
+  <div class="booking-redesign-container reveal">
+    <!-- Premium Hero Section -->
+    <div class="booking-hero-refined">
+       <img src="images/shop_interior.png" alt="Bespoke" class="hero-bg-img">
+       <div class="hero-content-glass">
+         <div class="booking-header-redesign">
+           <h1 data-i18n="book_title">Book Your Appointment</h1>
+           <p data-i18n="book_subtitle">Premium bespoke tailoring at your convenience</p>
+         </div>
+       </div>
     </div>
-  </div>
 
-  <!-- Progress Steps -->
-  <div class="booking-progress">
-    <div class="bp-step active" id="bp1">
-      <div class="bp-num">1</div>
-      <span data-i18n="bp_service">Service</span>
-    </div>
-    <div class="bp-line"></div>
-    <div class="bp-step" id="bp2">
-      <div class="bp-num">2</div>
-      <span data-i18n="bp_datetime">Date & Time</span>
-    </div>
-    <div class="bp-line"></div>
-    <div class="bp-step" id="bp3">
-      <div class="bp-num">3</div>
-      <span data-i18n="bp_details">Your Info</span>
-    </div>
-    <div class="bp-line"></div>
-    <div class="bp-step" id="bp4">
-      <div class="bp-num">✓</div>
-      <span data-i18n="bp_confirm">Confirm</span>
-    </div>
-  </div>
 
-  <section class="section booking-section">
-
-    <!-- STEP 1: Choose Service -->
-    <div class="booking-step active" id="bstep-1">
-      <div class="booking-step-header">
-        <h2 data-i18n="book_s1_title">Choose a Service</h2>
-        <p data-i18n="book_s1_desc">What would you like us to do for you?</p>
+    <!-- Stepper Flow -->
+    <div class="booking-stepper">
+      <div class="stepper-track">
+        <div class="stepper-progress" id="booking-progress-bar"></div>
       </div>
-      <div class="services-grid">
-        <div class="service-card" onclick="selectService(this,'home_measure')">
-          <div class="service-icon">📏</div>
-          <h3 data-i18n="svc_measure">Home Measurement</h3>
-          <p data-i18n="svc_measure_d">Our master tailor visits your home for precise body measurements</p>
-          <div class="service-price" data-i18n="svc_free">Free Service</div>
-        </div>
-        <div class="service-card" onclick="selectService(this,'home_delivery')">
-          <div class="service-icon">🚚</div>
-          <h3 data-i18n="svc_delivery">Home Delivery</h3>
-          <p data-i18n="svc_delivery_d">Receive your completed order delivered to your door</p>
-          <div class="service-price" data-i18n="svc_delivery_p">SAR 20 – 50</div>
-        </div>
-        <div class="service-card" onclick="selectService(this,'custom_order')">
-          <div class="service-icon">✂️</div>
-          <h3 data-i18n="svc_custom">Custom Order</h3>
-          <p data-i18n="svc_custom_d">Place a fully custom thobe, jubba or bisht order from home</p>
-          <div class="service-price" data-i18n="svc_custom_p">Starts SAR 280</div>
-        </div>
-        <div class="service-card" onclick="selectService(this,'fabric_consult')">
-          <div class="service-icon">🧵</div>
-          <h3 data-i18n="svc_fabric">Fabric Consultation</h3>
-          <p data-i18n="svc_fabric_d">Expert brings fabric samples to your home for selection</p>
-          <div class="service-price" data-i18n="svc_free">Free Service</div>
-        </div>
-        <div class="service-card" onclick="selectService(this,'alteration')">
-          <div class="service-icon">🔧</div>
-          <h3 data-i18n="svc_alter">Alterations</h3>
-          <p data-i18n="svc_alter_d">Adjustments and repairs done at your convenience</p>
-          <div class="service-price" data-i18n="svc_alter_p">From SAR 30</div>
-        </div>
-        <div class="service-card" onclick="selectService(this,'vip_package')">
-          <div class="service-icon">👑</div>
-          <h3 data-i18n="svc_vip">VIP Package</h3>
-          <p data-i18n="svc_vip_d">Full-service: consultation, measurement, fitting & delivery at home</p>
-          <div class="service-price" data-i18n="svc_vip_p">SAR 150 (credited on order)</div>
-        </div>
+      <div class="step-item active" id="bp1">
+        <div class="step-circle">1</div>
+        <span data-i18n="bp_service">Service</span>
       </div>
-      <div class="booking-nav">
-        <button class="btn-primary" onclick="bookingNext(1)" id="btn-step1-next" disabled data-i18n="book_next">Next Step →</button>
+      <div class="step-item" id="bp2">
+        <div class="step-circle">2</div>
+        <span data-i18n="bp_datetime">Schedule</span>
+      </div>
+      <div class="step-item" id="bp3">
+        <div class="step-circle">3</div>
+        <span data-i18n="bp_details">Details</span>
+      </div>
+      <div class="step-item" id="bp4">
+        <div class="step-circle">✓</div>
+        <span data-i18n="bp_confirm">Review</span>
       </div>
     </div>
 
-    <!-- STEP 2: Date & Time -->
-    <div class="booking-step" id="bstep-2">
-      <div class="booking-step-header">
-        <h2 data-i18n="book_s2_title">Pick a Date & Time</h2>
-        <p data-i18n="book_s2_desc">Choose when you'd like us to visit</p>
-      </div>
-      <div class="datetime-container">
-        <div class="calendar-wrapper">
-          <div class="calendar-nav">
-            <button class="cal-arrow" onclick="changeMonth(-1)">‹</button>
-            <h3 id="cal-month-label"></h3>
-            <button class="cal-arrow" onclick="changeMonth(1)">›</button>
-          </div>
-          <div class="calendar-days-header">
-            <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
-          </div>
-          <div class="calendar-grid" id="calendar-grid"></div>
-        </div>
-        <div class="time-slots-wrapper">
-          <h4 data-i18n="book_time">Available Time Slots</h4>
-          <div class="time-slots" id="time-slots"></div>
-          <div class="selected-datetime" id="selected-datetime-display"></div>
-        </div>
-      </div>
-      <div class="booking-nav">
-        <button class="btn-outline" onclick="bookingBack(2)" data-i18n="book_back">← Back</button>
-        <button class="btn-primary" onclick="bookingNext(2)" id="btn-step2-next" disabled data-i18n="book_next">Next Step →</button>
-      </div>
-    </div>
-
-    <!-- STEP 3: Personal Info + Fabric Chooser -->
-    <div class="booking-step" id="bstep-3">
-      <div class="step3-layout">
-        <!-- LEFT: Info + Form Split -->
-        <div class="step3-left">
-          <div class="booking-form-split-wrap reveal">
-            <!-- Form Info Part -->
-            <div class="booking-form-info-side">
-               <h2 data-i18n="book_s3_title">Your Information</h2>
-               <p data-i18n="book_s3_desc">We'll use this to confirm your booking</p>
-               <div class="form-badge-icon">👔</div>
-            </div>
-            
-            <!-- Form Input Part -->
-            <div class="booking-form-inputs-side">
-              <form class="booking-form-new" id="booking-form" onsubmit="return false">
-                <div class="form-grid-2">
-                  <div class="form-group">
-                    <label data-i18n="form_name">Full Name *</label>
-                    <input type="text" id="bk-name" placeholder="" data-i18n-ph="form_name_ph" required>
+    <!-- Glass Card Content -->
+    <div class="booking-glass-card">
+      
+      <!-- STEP 1 & 2: Unified Flow -->
+      <div class="booking-step active" id="bstep-unified">
+        <div class="booking-grid-unified">
+          
+          <!-- LEFT: Services Selection -->
+          <div class="booking-side-services">
+            <h3 class="step-inner-title" data-i18n="phase_1">Choose a Service</h3>
+            <div class="services-list-new">
+               <div class="svc-item-new" onclick="selectUnifiedService(this,'home_measure')">
+                  <div class="svc-icon-box">📏</div>
+                  <div class="svc-info">
+                    <h4 data-i18n="svc_measure">Home Measurement</h4>
+                    <p data-i18n="svc_free">Professional muallim visit for precise fitting</p>
                   </div>
-                  <div class="form-group">
-                    <label data-i18n="form_phone">Phone Number *</label>
-                    <input type="tel" id="bk-phone" placeholder="" data-i18n-ph="form_phone_ph" required>
+               </div>
+               <div class="svc-item-new" onclick="selectUnifiedService(this,'home_delivery')">
+                  <div class="svc-icon-box">🚚</div>
+                  <div class="svc-info">
+                    <h4 data-i18n="svc_delivery">Home Delivery</h4>
+                    <p data-i18n="svc_delivery_p">Safe and reliable garment delivery</p>
                   </div>
-                </div>
-
-                <div class="form-group">
-                  <label data-i18n="form_address">Delivery / Visit Address *</label>
-                  <div class="address-input-wrapper-new">
-                    <input type="text" id="bk-address" placeholder="" data-i18n-ph="form_address_ph" required>
-                    <button type="button" class="geo-btn-mini" onclick="autoDetectLocation()" title="Auto-detect location">
-                      📍 <span>Use GPS</span>
-                    </button>
+               </div>
+               <div class="svc-item-new" onclick="selectUnifiedService(this,'custom_order')">
+                  <div class="svc-icon-box">✂️</div>
+                  <div class="svc-info">
+                    <h4 data-i18n="svc_custom">Custom Order</h4>
+                    <p data-i18n="svc_custom_p">Bespoke design from scratch</p>
                   </div>
-                  <div class="geo-status" id="geo-status"></div>
-                </div>
-
-                <div class="form-grid-2">
-                  <div class="form-group">
-                    <label data-i18n="form_city">City</label>
-                    <select id="bk-city">
-                      <option value="riyadh" data-i18n="city_riyadh">Riyadh</option>
-                      <option value="jeddah" data-i18n="city_jeddah">Jeddah</option>
-                      <option value="dammam" data-i18n="city_dammam">Dammam</option>
-                      <option value="mecca" data-i18n="city_mecca">Mecca</option>
-                      <option value="medina" data-i18n="city_medina">Medina</option>
-                      <option value="other" data-i18n="city_other">Other</option>
-                    </select>
+               </div>
+               <div class="svc-item-new" onclick="selectUnifiedService(this,'fabric_consult')">
+                  <div class="svc-icon-box">🧵</div>
+                  <div class="svc-info">
+                    <h4 data-i18n="svc_fabric">Fabric Consultation</h4>
+                    <p data-i18n="svc_free">Explore our premium catalog</p>
                   </div>
-                  <div class="form-group">
-                    <label data-i18n="form_garment">Garment Type</label>
-                    <select id="bk-garment">
-                      <option value="thobe" data-i18n="filter_thobe">Saudi Thobe</option>
-                      <option value="emirati" data-i18n="filter_emirati">Emirati Kandura</option>
-                      <option value="qatari" data-i18n="filter_qatari">Qatari Thobe</option>
-                      <option value="kuwaiti" data-i18n="filter_kuwaiti">Kuwaiti Dishdasha</option>
-                      <option value="jubba" data-i18n="filter_jubba">Jubba</option>
-                      <option value="bisht">Bisht</option>
-                      <option value="other" data-i18n="city_other">Other / Not Sure</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label data-i18n="form_notes">Special Notes (Optional)</label>
-                  <textarea id="bk-notes" rows="2" placeholder="" data-i18n-ph="form_notes_ph"></textarea>
-                </div>
-
-                <div class="form-group-check">
-                  <label class="checkbox-label-new">
-                    <input type="checkbox" id="bk-whatsapp" checked>
-                    <span data-i18n="form_wa">Send booking confirmation via WhatsApp</span>
-                  </label>
-                </div>
-              </form>
+               </div>
             </div>
           </div>
+
+          <!-- RIGHT: Calendar -->
+          <div class="booking-side-schedule">
+            <h3 class="step-inner-title" data-i18n="phase_2">Select Date & Time</h3>
+            <div class="cal-container-unified">
+              <div class="cal-month-header-unified">
+                <button class="cal-nav-btn" onclick="changeMonth(-1)">‹</button>
+                <h4 id="cal-month-label-unified">April 2026</h4>
+                <button class="cal-nav-btn" onclick="changeMonth(1)">›</button>
+              </div>
+              <div class="calendar-days-header-unified">
+                <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+              </div>
+              <div class="calendar-grid-unified" id="calendar-grid-unified"></div>
+            </div>
+
+            <div class="time-slots-container">
+              <h4 class="mini-label">Available Slots</h4>
+              <div class="time-slots-unified" id="time-slots-unified"></div>
+            </div>
+
+            <div class="booking-summary-unified" id="selection-summary-unified">
+              <div class="si-empty">Select service and schedule to proceed</div>
+            </div>
+
+            <button class="btn-primary-redesign" id="btn-unified-next" onclick="unifiedNext()" disabled>
+              Continue to Details →
+            </button>
+          </div>
+
         </div>
+      </div>
 
-        <!-- RIGHT: Fabric Chooser Panel -->
-        <div class="step3-right">
-          <div class="fabric-chooser-panel">
-            <h4 class="fabric-panel-title">🧵 Optional: Choose Fabric</h4>
-            <p class="fabric-panel-sub">Select a fabric for your order (optional)</p>
-
-            <!-- Filter Tags -->
-            <div class="fabric-filter-tags" id="fabric-filter-tags">
-              <button class="ftag active" onclick="filterFabricPanel('all',this)">All</button>
-              <button class="ftag" onclick="filterFabricPanel('japanese',this)">🇯🇵 Japanese</button>
-              <button class="ftag" onclick="filterFabricPanel('chinese',this)">🇨🇳 Chinese</button>
-              <button class="ftag" onclick="filterFabricPanel('korean',this)">🇰🇷 Korean</button>
-              <button class="ftag" onclick="filterFabricPanel('turkish',this)">🇹🇷 Turkish</button>
-              <button class="ftag" onclick="filterFabricPanel('new',this)">🆕 New</button>
-              <button class="ftag" onclick="filterFabricPanel('bestseller',this)">🔥 Best Seller</button>
-              <button class="ftag" onclick="filterFabricPanel('discount',this)">🏷️ Discount</button>
+      <!-- STEP 3: Details -->
+      <div class="booking-step" id="bstep-3">
+        <div class="booking-form-grid dual-column">
+          <div class="form-main">
+            <div class="inner-step-sub">
+                <h3 data-i18n="book_s3_title">Personal Information</h3>
+                <p data-i18n="book_s3_desc">Provide your contact and location details</p>
             </div>
+            <form id="booking-form" onsubmit="return false">
+              <div class="form-row">
+                <div class="form-group-redesign">
+                  <label data-i18n="form_name">Full Name</label>
+                  <input type="text" id="bk-name" placeholder="Khalid Al-Mansour" required>
+                </div>
+                <div class="form-group-redesign">
+                  <label data-i18n="form_phone">Phone Number</label>
+                  <input type="tel" id="bk-phone" placeholder="+966 5X XXX XXXX" required>
+                </div>
+              </div>
 
-            <!-- Fabric List -->
-            <div class="fabric-panel-list" id="fabric-panel-list"></div>
+              <div class="form-group-redesign">
+                <label data-i18n="form_address">Visit Address</label>
+                <div class="input-with-action">
+                  <input type="text" id="bk-address" placeholder="Neighborhood, Street, Villa No." required>
+                  <button type="button" class="btn-geo" onclick="autoDetectLocation()">
+                    <span>GPS</span>
+                  </button>
+                </div>
+              </div>
 
-            <!-- Selected Fabric Info -->
-            <div class="fabric-selected-info" id="fabric-selected-info" style="display:none">
-              <div class="fsi-label">Selected Fabric:</div>
-              <div class="fsi-name" id="fsi-name"></div>
-              <div class="fsi-price" id="fsi-price"></div>
-              <button class="fsi-clear" onclick="clearFabricSelection()">✕ Remove</button>
-            </div>
+              <div class="form-row">
+                <div class="form-group-redesign">
+                  <label data-i18n="form_city">City</label>
+                  <select id="bk-city">
+                    <option value="riyadh">Riyadh</option>
+                    <option value="jeddah">Jeddah</option>
+                    <option value="dammam">Dammam</option>
+                  </select>
+                </div>
+                <div class="form-group-redesign">
+                  <label data-i18n="form_garment">Garment Type</label>
+                  <select id="bk-garment">
+                    <option value="thobe">Saudi Thobe</option>
+                    <option value="suit">Suit / Shirt</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group-redesign">
+                <label data-i18n="form_notes">Special Instructions</label>
+                <textarea id="bk-notes" rows="2" placeholder="Any specific requirements..."></textarea>
+              </div>
+
+              <div class="form-check-redesign">
+                <label class="custom-checkbox">
+                  <input type="checkbox" id="bk-whatsapp" checked>
+                  <span class="checkmark"></span>
+                  <span data-i18n="form_wa">Send confirmation via WhatsApp</span>
+                </label>
+              </div>
+            </form>
+          </div>
+
+          <!-- RIGHT: Fabric Selector -->
+          <div class="form-fabric-selection">
+             <div class="inner-step-sub">
+                <h3>Select Fabric (Optional)</h3>
+                <p>Choose your preferred material for the thobe</p>
+             </div>
+             
+             <div class="fabric-selection-grid" id="fabric-selection-grid">
+               <!-- Injected via JS -->
+             </div>
+
+             <div class="cost-estimate-container">
+                <h4 class="mini-label">Order Estimate</h4>
+                <div id="cost-preview-box" class="cost-preview-box">
+                    <div class="cost-placeholder">Select a fabric to see estimate</div>
+                </div>
+             </div>
+          </div>
+
+          <!-- Step 3 Actions (Spans full width) -->
+          <div class="form-actions-full">
+            <button class="btn-secondary-redesign" onclick="bookingBack(3)">← Back</button>
+            <button class="btn-primary-redesign" onclick="bookingNext(3)">Review Appointment →</button>
           </div>
         </div>
       </div>
 
-      <div class="booking-nav step3-nav">
-        <button class="btn-outline" onclick="bookingBack(3)" data-i18n="book_back">← Back</button>
-        <button class="btn-primary" onclick="bookingNext(3)" data-i18n="book_review">Review Booking →</button>
-      </div>
-    </div>
+      <!-- STEP 4: Review -->
+      <div class="booking-step" id="bstep-4">
+        <div class="step-header-compact">
+          <h3 data-i18n="book_s4_title">Review & Confirm</h3>
+          <p data-i18n="book_s4_desc">Check your details before finalizing</p>
+        </div>
 
-    <!-- STEP 4: Confirmation -->
-    <div class="booking-step" id="bstep-4">
-      <div class="booking-step-header">
-        <h2 data-i18n="book_s4_title">Review & Confirm</h2>
-        <p data-i18n="book_s4_desc">Please check your details before confirming</p>
-      </div>
-      <div class="booking-summary" id="booking-summary"></div>
-      <div class="booking-nav" style="justify-content:center; gap:16px; flex-wrap:wrap">
-        <button class="btn-outline" onclick="bookingBack(4)" data-i18n="book_back">← Edit</button>
-        <button class="btn-primary btn-confirm" onclick="submitBooking()" data-i18n="book_confirm">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>Confirm Appointment</span>
-        </button>
-        <button class="btn-whatsapp" onclick="bookViaWhatsApp()" data-i18n="book_wa">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 01-2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          <span>Book via WhatsApp</span>
-        </button>
-      </div>
-    </div>
+        <div class="booking-summary-redesign" id="booking-summary">
+          <!-- Injected via JS -->
+        </div>
 
-    <!-- SUCCESS STATE -->
-    <div class="booking-success" id="booking-success" style="display:none">
-      <div class="success-icon">🎉</div>
-      <h2 data-i18n="success_title">Booking Confirmed!</h2>
-      <p data-i18n="success_msg">Thank you! We'll contact you shortly to confirm your appointment.</p>
-      <div class="success-ref" id="success-ref"></div>
-      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px">
-        <button class="btn-primary" onclick="navigateTo('home')" data-i18n="success_home">Back to Home</button>
-        <button class="btn-whatsapp" onclick="bookViaWhatsApp()" data-i18n="book_wa">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          <span>WhatsApp Us</span>
-        </button>
+        <div class="form-actions-center">
+          <button class="btn-secondary-redesign" onclick="bookingBack(4)">Back to Edit</button>
+          <button class="btn-primary-redesign btn-gold-glitter" onclick="submitBooking()">
+            <span data-i18n="book_confirm">Confirm Appointment</span>
+          </button>
+        </div>
       </div>
-    </div>
 
-  </section>
+      <!-- SUCCESS STATE -->
+      <div class="booking-success" id="booking-success" style="display:none">
+        <div class="success-animation-box">
+          <svg class="checkmark-svg" viewBox="0 0 52 52">
+            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+        </div>
+        <h2 data-i18n="success_title">Booking Confirmed!</h2>
+        <p data-i18n="success_msg">Your bespoke journey has begun. We will contact you shortly.</p>
+        <div class="success-ref-box">
+          <span class="ref-label">Reference ID:</span>
+          <span id="success-ref" class="ref-id">---</span>
+        </div>
+        <div class="success-actions">
+          <button class="btn-primary-redesign" onclick="navigateTo('home')">Back to Home</button>
+          <button class="btn-whatsapp-redesign" onclick="bookViaWhatsApp()">
+            Chat on WhatsApp
+          </button>
+        </div>
+      </div>
+
 </div>
+</div>
+</div>
+
 
 <!-- ============ PRODUCT MODAL ============ -->
 <div class="modal-overlay" id="product-modal" onclick="if(event.target===this)closeModal()">
@@ -1478,114 +1463,6 @@
       
       <div id="cart-page-content">
         <!-- Rendered by JS -->
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ============ CHECKOUT PAGE ============ -->
-<div class="page" id="page-checkout">
-  <section class="section checkout-section">
-    <div class="checkout-grid container">
-      <!-- Checkout Form -->
-      <div class="checkout-form-side">
-        <h2 class="section-title left-align" data-i18n="cart_checkout">Checkout</h2>
-        <form id="checkout-main-form" onsubmit="event.preventDefault();submitOrder()">
-          <!-- Delivery Section -->
-          <div class="checkout-card">
-            <h3 class="form-h"><span class="icon">📍</span> <span data-i18n="bp_details">Delivery Details</span></h3>
-            <div class="form-grid">
-              <div class="input-group">
-                <label data-i18n="form_name">Full Name</label>
-                <input type="text" placeholder="e.g. Abdullah Al-Fahad" required>
-              </div>
-              <div class="input-group">
-                <label data-i18n="form_phone">Phone Number</label>
-                <input type="tel" placeholder="+966 5X XXX XXXX" required>
-              </div>
-              <div class="input-group full-width">
-                <label data-i18n="form_address">Street Address</label>
-                <input type="text" placeholder="Neighborhood, Street, House Num" required>
-              </div>
-              <div class="input-group">
-                <label data-i18n="form_city">City</label>
-                <select id="checkout-city" required>
-                  <option value="riyadh" data-i18n="city_riyadh">Riyadh</option>
-                  <option value="jeddah" data-i18n="city_jeddah">Jeddah</option>
-                  <option value="dammam" data-i18n="city_dammam">Dammam</option>
-                  <option value="mecca" data-i18n="city_mecca">Mecca</option>
-                  <option value="medina" data-i18n="city_medina">Medina</option>
-                </select>
-              </div>
-              <div class="input-group">
-                <label data-i18n="form_notes">Order Notes (Optional)</label>
-                <input type="text" placeholder="Any special requests...">
-              </div>
-            </div>
-          </div>
-
-          <!-- Payment Section -->
-          <div class="checkout-card">
-            <h3 class="form-h"><span class="icon">💳</span> <span>Payment Method</span></h3>
-            
-            <div class="payment-badge-container" style="text-align: center; margin-bottom: 20px;">
-              <img src="images/saudi_payment_badge.png" alt="Secure Saudi Payment Gateways" style="max-height: 48px; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            </div>
-
-            <div class="payment-methods" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
-              <label class="pay-option">
-                <input type="radio" name="payment" value="cod" checked>
-                <div class="pay-box">
-                  <span class="icon">💵</span>
-                  <span style="font-size: 0.9rem;">Cash on Delivery</span>
-                </div>
-              </label>
-              <label class="pay-option">
-                <input type="radio" name="payment" value="card">
-                <div class="pay-box">
-                  <span class="icon">💳</span>
-                  <span style="font-size: 0.9rem;">Mada / Visa</span>
-                </div>
-              </label>
-              <label class="pay-option">
-                <input type="radio" name="payment" value="digital">
-                <div class="pay-box">
-                  <span class="icon">📱</span>
-                  <span style="font-size: 0.9rem;">STC / Apple Pay</span>
-                </div>
-              </label>
-            </div>
-            <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 15px;">All transactions are secure and encrypted.</p>
-          </div>
-
-          <button type="submit" class="btn-primary submit-order-btn">
-            ✅ Place Order Now
-          </button>
-        </form>
-      </div>
-
-      <!-- Summary Side -->
-      <div class="checkout-summary-side">
-        <div class="checkout-card sticky-summary">
-          <h3 class="form-h">Order Summary</h3>
-          <div id="checkout-items-list" class="summary-items">
-            <!-- Items injected by JS -->
-          </div>
-          <div class="summary-totals">
-            <div class="total-row">
-              <span>Subtotal</span>
-              <span id="summary-subtotal">SAR 0</span>
-            </div>
-            <div class="total-row">
-              <span>Delivery Fee</span>
-              <span id="summary-delivery">SAR 25</span>
-            </div>
-            <div class="total-row grand-total">
-              <span>Grand Total</span>
-              <span id="summary-grand-total">SAR 0</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1711,7 +1588,7 @@
     <div>
       <h4 data-i18n="footer_quick">Quick Links</h4>
       <ul class="footer-links">
-        <li><a href="#" onclick="navigateTo('home');return false" data-i18n="nav_home">Home</a></li>
+        
         <li><a href="#" onclick="navigateTo('products');return false" data-i18n="nav_products">Products</a></li>
         <li><a href="#" onclick="navigateTo('about-page');return false" data-i18n="nav_about">About</a></li>
         <li><a href="#" onclick="navigateTo('privacy');return false" data-i18n="nav_privacy">Privacy</a></li>
@@ -1748,7 +1625,8 @@
   </div>
 </footer>
 
-<script src="app.js"></script>
+    <script src="products_data.js"></script>
+    <script src="app.js"></script>
 <script>
 // Handle categories page rendering
 const origNav = navigateTo;
@@ -1781,6 +1659,79 @@ function toggleTheme() {
     document.body.classList.add('light-mode');
   }
 })();
+
+// ========== MOBILE BOTTOM NAV ACTIVE STATE ==========
+function setMobNav(activeId) {
+  document.querySelectorAll('.mob-nav-item').forEach(el => el.classList.remove('active'));
+  const el = document.getElementById(activeId);
+  if (el) el.classList.add('active');
+}
+
+// Sync cart badge to mobile nav
+const _origUpdateCart = window.updateCartCount;
+function syncMobCartBadge() {
+  const mainBadge = document.querySelector('.cart-badge');
+  const mobBadge = document.getElementById('mob-cart-badge');
+  if (mainBadge && mobBadge) mobBadge.textContent = mainBadge.textContent;
+}
+const cartObserver = new MutationObserver(syncMobCartBadge);
+document.addEventListener('DOMContentLoaded', () => {
+  const badge = document.querySelector('.cart-badge');
+  if (badge) cartObserver.observe(badge, { childList: true, characterData: true, subtree: true });
+  syncMobCartBadge();
+});
+
 </script>
+<!-- Search Overlay -->
+<div class="search-overlay" id="search-overlay">
+  <div class="search-container">
+    <div class="search-header">
+      <div class="search-input-wrap">
+        <svg class="search-icon-inner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="ajax-search-input" placeholder="Search for products, fabrics..." onkeyup="handleAjaxSearch()">
+      </div>
+      <button class="search-close-btn" onclick="closeSearch()">✕</button>
+    </div>
+    <div class="search-results-wrapper">
+      <div class="search-results-grid" id="search-results-grid">
+        <!-- Results will be injected here via JS -->
+      </div>
+      <div id="search-empty-state" class="search-empty-state" style="display:none;">
+        <div class="empty-icon">🔍</div>
+        <p>No products found matching your search.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Bottom Navigation Bar (App-Style) -->
+<nav class="mobile-bottom-nav" id="mobile-bottom-nav">
+  <a href="#" class="mob-nav-item active" id="mob-nav-home" onclick="navigateTo('home');setMobNav('mob-nav-home');return false;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    <span>Home</span>
+  </a>
+  <a href="#" class="mob-nav-item" id="mob-nav-products" onclick="navigateTo('products');setMobNav('mob-nav-products');return false;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+    <span>Products</span>
+  </a>
+  <a href="#" class="mob-nav-item mob-nav-center" id="mob-nav-search" onclick="openSearch();return false;">
+    <div class="mob-nav-center-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    </div>
+    <span>Search</span>
+  </a>
+  <a href="#" class="mob-nav-item" id="mob-nav-booking" onclick="navigateTo('booking');setMobNav('mob-nav-booking');return false;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M12 18l2 2 4-4"></path></svg>
+    <span>Book</span>
+  </a>
+  <a href="#" class="mob-nav-item" id="mob-nav-cart" onclick="openCart();return false;">
+    <div style="position:relative;display:inline-flex;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+      <span class="mob-cart-badge" id="mob-cart-badge">0</span>
+    </div>
+    <span>Cart</span>
+  </a>
+</nav>
+
 </body>
 </html>

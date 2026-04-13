@@ -44,7 +44,8 @@ const translations = {
     about_page_title: "About Us", about_page_desc: "Our story of craftsmanship",
     privacy_title: "Privacy Policy", privacy_desc: "Your privacy matters to us",
     filter_all: "All", filter_thobe: "Saudi Thobes", filter_jubba: "Jubbas",
-    filter_saideria: "Saiderias", filter_fabric: "Fabrics",
+    filter_saideria: "Saiderias", filter_fabric: "Fabrics", filter_accessories: "Accessories", filter_bisht: "Bisht", filter_price: "Price Filter",
+    FILTER_ACCESSORIES: "Accessories", FILTER_BISHT: "Bisht", FILTER_PRICE: "Price Filter",
     filter_qatari: "Qatari Thobes", filter_kuwaiti: "Kuwaiti Thobes", filter_emirati: "Emirati Thobes",
     cart_title: "Shopping Cart", cart_empty: "Your cart is empty",
     cart_total: "Total", cart_checkout: "Checkout",
@@ -83,6 +84,7 @@ const translations = {
     book_s2_title: "Pick a Date & Time", book_s2_desc: "Choose when you'd like us to visit",
     book_s3_title: "Your Information", book_s3_desc: "We'll use this to confirm your booking",
     book_s4_title: "Review & Confirm", book_s4_desc: "Please check your details before confirming",
+    phase_1: "Phase 1", phase_2: "Phase 2",
     book_next: "Next Step →", book_back: "← Back", book_review: "Review Booking →",
     book_confirm: "✅ Confirm Booking", book_wa: "💬 Book via WhatsApp", book_time: "Available Time Slots",
     svc_measure: "Home Measurement", svc_measure_d: "Our master tailor visits your home for precise body measurements",
@@ -110,7 +112,19 @@ const translations = {
     sum_service: "Service", sum_date: "Date", sum_time: "Time",
     sum_name: "Name", sum_phone: "Phone", sum_address: "Address", sum_city: "City", sum_garment: "Garment",
     book_now_btn: "Book Now",
+    your_info: "Your Information",
+    your_info_desc: "This information helps us prepare for your visit and communicate via WhatsApp.",
+    tip_1: "📍 Use GPS for faster routing",
+    tip_2: "✅ Double check your phone number",
+    tip_3: "🧶 Adding fabric is optional",
+    book_fabric_title: "Fabric Choice",
+    book_fabric_desc: "Pick a fabric now or during visit",
+    selected_fabric: "Selected Fabric:",
+    clear_selection: "Remove Selected",
+    form_gps: "GPS",
+    form_geo_status: "Location Detection",
     summary_v_total: "VAT 15% (Included)",
+
     summary_subtotal_header: "Subtotal",
     summary_title: "Order Summary",
     summary_sub: "Subtotal",
@@ -125,8 +139,12 @@ const translations = {
     cart_qty_header: "Quantity",
     cart_subtotal_header: "Subtotal",
     btn_proceed_checkout: "Proceed to Checkout",
-    summary_total: "Total"
+    summary_total: "Total",
+    origin_jp_short: "Japan",
+    origin_cn_short: "China",
+    filter_new: "New"
   },
+
   ar: {
     nav_home: "الرئيسية", nav_products: "المنتجات", nav_categories: "الفئات",
     nav_about: "من نحن", nav_privacy: "الخصوصية", lang_btn: "English",
@@ -171,7 +189,8 @@ const translations = {
     about_page_title: "من نحن", about_page_desc: "قصة حرفتنا",
     privacy_title: "سياسة الخصوصية", privacy_desc: "خصوصيتك تهمنا",
     filter_all: "الكل", filter_thobe: "ثياب سعودية", filter_jubba: "جُبب",
-    filter_saideria: "صداري", filter_fabric: "أقمشة",
+    filter_saideria: "صداري", filter_fabric: "أقمشة", filter_accessories: "إكسسوارات", filter_bisht: "بشوت", filter_price: "السعر",
+    FILTER_ACCESSORIES: "إكسسوارات", FILTER_BISHT: "بشوت", FILTER_PRICE: "السعر",
     filter_qatari: "ثياب قطرية", filter_kuwaiti: "ثياب كويتية", filter_emirati: "ثياب إماراتية",
     cart_title: "سلة التسوق", cart_empty: "سلة التسوق فارغة",
     cart_total: "المجموع", cart_checkout: "إتمام الشراء",
@@ -208,6 +227,7 @@ const translations = {
     book_s2_title: "اختر تاريخاً ووقتاً", book_s2_desc: "حدد متى تريد زيارتنا",
     book_s3_title: "بياناتك الشخصية", book_s3_desc: "سنستخدم هذه البيانات لتأكيد حجزك",
     book_s4_title: "مراجعة وتأكيد", book_s4_desc: "يرجى مراجعة بياناتك قبل التأكيد",
+    phase_1: "المرحلة الأولى", phase_2: "المرحلة الثانية",
     book_next: "الخطوة التالية ←", book_back: "→ رجوع", book_review: "مراجعة الحجز ←",
     book_confirm: "✅ تأكيد الحجز", book_wa: "💬 احجز عبر واتساب", book_time: "أوقات متاحة",
     svc_measure: "قياس منزلي", svc_measure_d: "معلمنا الخبير يزور منزلك لأخذ قياسات دقيقة للجسم",
@@ -235,7 +255,19 @@ const translations = {
     sum_service: "الخدمة", sum_date: "التاريخ", sum_time: "الوقت",
     sum_name: "الاسم", sum_phone: "الهاتف", sum_address: "العنوان", sum_city: "المدينة", sum_garment: "الزي",
     book_now_btn: "احجز الآن",
+    your_info: "معلوماتك الشخصية",
+    your_info_desc: "تساعدنا هذه المعلومات في التحضير لزيارتك والتواصل معك عبر الواتساب.",
+    tip_1: "📍 استخدم الـ GPS لتحديد الموقع بدقة",
+    tip_2: "✅ تأكد من صحة رقم الجوال",
+    tip_3: "🧶 اختيار القماش اختياري حالياً",
+    book_fabric_title: "اختيار القماش",
+    book_fabric_desc: "اختر القماش الآن أو أثناء الزيارة",
+    selected_fabric: "القماش المختار:",
+    clear_selection: "إزالة الاختيار",
+    form_gps: "تحديد الموقع",
+    form_geo_status: "حالة تحديد الموقع",
     nav_map: "الفروع",
+
     nav_tracking: "تتبع الطلب",
     map_title: "فروعنا",
     map_desc: "ابحث عن أقرب متجر لنماء القمة إليك.",
@@ -248,342 +280,104 @@ const translations = {
     summary_sub: "المجموع الفرعي",
     summary_shipping: "رسوم الشحن",
     summary_total: "المجموع الكلي",
-    btn_proceed_checkout: "متابعة الشراء"
+    btn_proceed_checkout: "متابعة الشراء",
+    origin_jp_short: "اليابان",
+    origin_cn_short: "الصين",
+    filter_new: "جديد"
   }
+
 };
 
 // ============ PRODUCTS DATA ============
-const products = [
-  // ===== SAUDI THOBES =====
-  { id:1, cat:"thobe", img:"images/product_saudi_thobe.png",
-    name_en:"Classic Saudi Thobe", name_ar:"ثوب سعودي كلاسيكي",
-    desc_en:"Premium white Saudi thobe with mandarin collar, crafted from finest Japanese fabric. Custom-tailored to your exact measurements.",
-    desc_ar:"ثوب سعودي أبيض فاخر بياقة ماندارين، مصنوع من أجود الأقمشة اليابانية. مفصّل حسب مقاساتك بالضبط.",
-    price:350, old_price:450, badge:"Featured", sizes:["S","M","L","XL","XXL"] },
-  { id:8, cat:"thobe", img:"images/product_saudi_thobe.png",
-    name_en:"Royal Saudi Thobe", name_ar:"ثوب سعودي ملكي",
-    desc_en:"Ultra-premium Saudi thobe with hand-stitched collar, French seams throughout. Bespoke tailoring included.",
-    desc_ar:"ثوب سعودي فاخر جداً بياقة مخيطة يدوياً وخياطات فرنسية. خياطة مفصلة مشمولة.",
-    price:550, old_price:700, badge:"Exclusive", sizes:["S","M","L","XL","XXL"] },
-  { id:12, cat:"thobe", img:"images/product_saudi_thobe.png",
-    name_en:"Summer Saudi Thobe", name_ar:"ثوب سعودي صيفي",
-    desc_en:"Lightweight summer Saudi thobe with breathable fabric. Custom-tailored for hot weather comfort.",
-    desc_ar:"ثوب سعودي صيفي خفيف بقماش يسمح بمرور الهواء. مفصّل للراحة في الأجواء الحارة.",
-    price:290, old_price:0, badge:"New", sizes:["S","M","L","XL","XXL"] },
-
-  // ===== EMIRATI THOBES (Kandura) =====
-  { id:2, cat:"emirati", img:"images/product_emirati_thobe.png",
-    name_en:"Classic Emirati Kandura", name_ar:"كندورة إماراتية كلاسيكية",
-    desc_en:"Elegant Emirati style kandura with tassel (tarboosh) collar detail. Custom-tailored with premium Chinese fabric.",
-    desc_ar:"كندورة إماراتية أنيقة بتفاصيل شراشيب (طربوش) الياقة. مفصّلة بأقمشة صينية فاخرة.",
-    price:380, old_price:0, badge:"New", sizes:["S","M","L","XL","XXL"] },
-  { id:13, cat:"emirati", img:"images/product_emirati_thobe.png",
-    name_en:"Premium Emirati Kandura", name_ar:"كندورة إماراتية فاخرة",
-    desc_en:"Premium Emirati kandura with gold-tipped tarboosh and cufflinks detail. Tailored to perfection with Japanese fabric.",
-    desc_ar:"كندورة إماراتية فاخرة بطربوش مذهب وتفاصيل أزرار أكمام. مفصّلة بإتقان بقماش ياباني.",
-    price:480, old_price:580, badge:"Premium", sizes:["S","M","L","XL","XXL"] },
-  { id:14, cat:"emirati", img:"images/product_emirati_thobe.png",
-    name_en:"Emirati Wedding Kandura", name_ar:"كندورة إماراتية للأعراس",
-    desc_en:"Luxurious Emirati kandura for weddings and special occasions. Hand-embroidered collar with gold thread. Custom-made.",
-    desc_ar:"كندورة إماراتية فاخرة للأعراس والمناسبات الخاصة. ياقة مطرزة يدوياً بخيط ذهبي. مصنوعة حسب الطلب.",
-    price:650, old_price:0, badge:"Exclusive", sizes:["S","M","L","XL","XXL"] },
-  { id:15, cat:"emirati", img:"images/product_emirati_thobe.png",
-    name_en:"Everyday Emirati Kandura", name_ar:"كندورة إماراتية يومية",
-    desc_en:"Comfortable everyday Emirati kandura with wrinkle-resistant fabric. Custom-tailored for daily wear.",
-    desc_ar:"كندورة إماراتية مريحة للاستخدام اليومي بقماش مقاوم للتجعد. مفصّلة للارتداء اليومي.",
-    price:320, old_price:0, badge:"", sizes:["S","M","L","XL","XXL"] },
-
-  // ===== QATARI THOBES =====
-  { id:3, cat:"qatari", img:"images/product_qatari_thobe.png",
-    name_en:"Classic Qatari Thobe", name_ar:"ثوب قطري كلاسيكي",
-    desc_en:"Distinguished Qatari style thobe with side pockets and unique collar design. Custom-tailored to your measurements.",
-    desc_ar:"ثوب قطري مميز بجيوب جانبية وتصميم ياقة فريد. مفصّل حسب مقاساتك.",
-    price:360, old_price:420, badge:"", sizes:["S","M","L","XL","XXL"] },
-  { id:16, cat:"qatari", img:"images/product_qatari_thobe.png",
-    name_en:"Premium Qatari Thobe", name_ar:"ثوب قطري فاخر",
-    desc_en:"Premium Qatari thobe with distinctive collar and cuff design. Hand-stitched with finest Japanese fabric.",
-    desc_ar:"ثوب قطري فاخر بتصميم ياقة وأكمام مميز. مخيط يدوياً بأجود الأقمشة اليابانية.",
-    price:450, old_price:550, badge:"Premium", sizes:["S","M","L","XL","XXL"] },
-  { id:17, cat:"qatari", img:"images/product_qatari_thobe.png",
-    name_en:"Qatari Formal Thobe", name_ar:"ثوب قطري رسمي",
-    desc_en:"Formal Qatari thobe for official occasions. Crisp finish with structured collar. Bespoke tailoring included.",
-    desc_ar:"ثوب قطري رسمي للمناسبات الرسمية. لمسة أنيقة بياقة مهيكلة. خياطة مفصلة مشمولة.",
-    price:520, old_price:0, badge:"New", sizes:["S","M","L","XL","XXL"] },
-  { id:18, cat:"qatari", img:"images/product_qatari_thobe.png",
-    name_en:"Qatari Summer Thobe", name_ar:"ثوب قطري صيفي",
-    desc_en:"Lightweight Qatari summer thobe with breathable cotton blend. Perfect for Gulf summer. Custom-tailored.",
-    desc_ar:"ثوب قطري صيفي خفيف بمزيج قطني يسمح بمرور الهواء. مثالي لصيف الخليج. مفصّل حسب الطلب.",
-    price:340, old_price:0, badge:"", sizes:["S","M","L","XL","XXL"] },
-
-  // ===== KUWAITI THOBES (Dishdasha) =====
-  { id:4, cat:"kuwaiti", img:"images/product_kuwaiti_thobe.png",
-    name_en:"Classic Kuwaiti Dishdasha", name_ar:"دشداشة كويتية كلاسيكية",
-    desc_en:"Classic Kuwaiti dishdasha with two-button collar and chest pocket. Custom-tailored with premium fabric.",
-    desc_ar:"دشداشة كويتية كلاسيكية بياقة بزرين وجيب صدري. مفصّلة بأقمشة فاخرة.",
-    price:340, old_price:0, badge:"", sizes:["S","M","L","XL","XXL"] },
-  { id:19, cat:"kuwaiti", img:"images/product_kuwaiti_thobe.png",
-    name_en:"Premium Kuwaiti Dishdasha", name_ar:"دشداشة كويتية فاخرة",
-    desc_en:"Premium Kuwaiti dishdasha with pearl buttons and French-stitched seams. Custom-made with Japanese fabric.",
-    desc_ar:"دشداشة كويتية فاخرة بأزرار لؤلؤية وخياطات فرنسية. مصنوعة حسب الطلب بقماش ياباني.",
-    price:460, old_price:550, badge:"Premium", sizes:["S","M","L","XL","XXL"] },
-  { id:20, cat:"kuwaiti", img:"images/product_kuwaiti_thobe.png",
-    name_en:"Kuwaiti Royal Dishdasha", name_ar:"دشداشة كويتية ملكية",
-    desc_en:"Royal Kuwaiti dishdasha for formal events. Silk-blend fabric with hand-finished details. Bespoke tailoring.",
-    desc_ar:"دشداشة كويتية ملكية للمناسبات الرسمية. قماش مخلوط بالحرير بتفاصيل يدوية. خياطة مفصلة.",
-    price:600, old_price:0, badge:"Exclusive", sizes:["S","M","L","XL","XXL"] },
-  { id:21, cat:"kuwaiti", img:"images/product_kuwaiti_thobe.png",
-    name_en:"Kuwaiti Casual Dishdasha", name_ar:"دشداشة كويتية كاجوال",
-    desc_en:"Comfortable casual Kuwaiti dishdasha for everyday wear. Soft cotton fabric, custom-tailored.",
-    desc_ar:"دشداشة كويتية مريحة للاستخدام اليومي. قماش قطني ناعم، مفصّلة حسب الطلب.",
-    price:280, old_price:0, badge:"New", sizes:["S","M","L","XL","XXL"] },
-
-  // ===== JUBBAS =====
-  { id:5, cat:"jubba", img:"images/product_jubba.png",
-    name_en:"Premium Jubba", name_ar:"جُبة فاخرة",
-    desc_en:"Cream jubba with elegant chest embroidery, perfect for special occasions.",
-    desc_ar:"جُبة كريمية بتطريز صدري أنيق، مثالية للمناسبات الخاصة.",
-    price:280, old_price:350, badge:"Sale", sizes:["S","M","L","XL","XXL"] },
-  { id:9, cat:"jubba", img:"images/product_jubba.png",
-    name_en:"Moroccan Jubba", name_ar:"جُبة مغربية",
-    desc_en:"Elegant Moroccan-style jubba with intricate geometric embroidery.",
-    desc_ar:"جُبة بأسلوب مغربي أنيق بتطريز هندسي معقد.",
-    price:320, old_price:0, badge:"New", sizes:["S","M","L","XL","XXL"] },
-
-  // ===== SAIDERIAS =====
-  { id:6, cat:"saideria", img:"images/product_saideria.png",
-    name_en:"Classic Saideria", name_ar:"صدرية كلاسيكية",
-    desc_en:"Premium cotton saideria, the essential undergarment for your thobe.",
-    desc_ar:"صدرية قطنية فاخرة، القطعة الأساسية تحت الثوب.",
-    price:85, old_price:0, badge:"", sizes:["S","M","L","XL","XXL"] },
-  { id:11, cat:"saideria", img:"images/product_saideria.png",
-    name_en:"Premium Saideria Set (3 Pack)", name_ar:"طقم صداري فاخر (٣ قطع)",
-    desc_en:"Set of 3 premium cotton saiderias in white. Essential undergarments.",
-    desc_ar:"طقم ٣ صداري قطنية فاخرة باللون الأبيض. قطع أساسية.",
-    price:200, old_price:250, badge:"Pack", sizes:["S","M","L","XL","XXL"] },
-
-  // ===== FABRICS (20+ items) =====
-  { id:7, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Japanese Toyobo Premium White", name_ar:"قماش تويوبو ياباني أبيض فاخر",
-    desc_en:"Premium Japanese Toyobo white fabric, 3.5m. Luxurious feel with subtle sheen. The gold standard of thobe fabrics.",
-    desc_ar:"قماش تويوبو ياباني أبيض فاخر، ٣.٥ متر. ملمس فاخر مع لمعة خفيفة. المعيار الذهبي لأقمشة الثياب.",
-    price:220, old_price:280, badge:"Premium", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:10, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Chinese Premium Cotton", name_ar:"قطن صيني فاخر",
-    desc_en:"High-quality Chinese cotton fabric, 3.5m. Breathable and comfortable for everyday thobes.",
-    desc_ar:"قماش قطني صيني عالي الجودة، ٣.٥ متر. قابل للتنفس ومريح للثياب اليومية.",
-    price:150, old_price:0, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:22, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Japanese Toyobo Royal", name_ar:"قماش تويوبو ياباني ملكي",
-    desc_en:"Top-tier Japanese Toyobo Royal edition, 3.5m. Ultra-smooth with elegant drape. For premium custom thobes.",
-    desc_ar:"قماش تويوبو ياباني إصدار ملكي فائق الجودة، ٣.٥ متر. ناعم جداً بانسدال أنيق. للثياب المفصّلة الفاخرة.",
-    price:320, old_price:400, badge:"Best Seller", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:23, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Japanese Toyobo Diamond", name_ar:"قماش تويوبو ياباني دايموند",
-    desc_en:"Japanese Toyobo Diamond grade fabric, 3.5m. Crystal-like sheen with wrinkle resistance. Premium choice.",
-    desc_ar:"قماش تويوبو ياباني درجة دايموند، ٣.٥ متر. لمعة كالكريستال مع مقاومة التجعد. الخيار الفاخر.",
-    price:350, old_price:0, badge:"New", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:24, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Japanese Getzner White", name_ar:"قماش جيتسنر ياباني أبيض",
-    desc_en:"Japanese Getzner premium white fabric, 3.5m. Renowned for durability and color retention.",
-    desc_ar:"قماش جيتسنر ياباني أبيض فاخر، ٣.٥ متر. مشهور بالمتانة وثبات اللون.",
-    price:280, old_price:340, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:25, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Chinese Silky Cotton Blend", name_ar:"قماش صيني مزيج قطن حريري",
-    desc_en:"Chinese silky cotton blend fabric, 3.5m. Soft touch with natural breathability. Great value for quality.",
-    desc_ar:"قماش صيني مزيج قطن حريري، ٣.٥ متر. ملمس ناعم مع تهوية طبيعية. قيمة ممتازة للجودة.",
-    price:130, old_price:0, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:26, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Chinese Royal Poplin", name_ar:"قماش بوبلين صيني ملكي",
-    desc_en:"Chinese Royal Poplin fabric, 3.5m. Crisp finish with excellent structure. Ideal for formal thobes.",
-    desc_ar:"قماش بوبلين صيني ملكي، ٣.٥ متر. لمسة نظيفة مع هيكل ممتاز. مثالي للثياب الرسمية.",
-    price:160, old_price:200, badge:"Sale", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:27, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Chinese Premium Twill", name_ar:"قماش تويل صيني فاخر",
-    desc_en:"Premium Chinese twill weave fabric, 3.5m. Diagonal texture adds elegance. Suitable for all thobe styles.",
-    desc_ar:"قماش تويل صيني فاخر منسوج، ٣.٥ متر. نسيج مائل يضيف أناقة. مناسب لجميع أنماط الثياب.",
-    price:140, old_price:0, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:28, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Korean Premium White", name_ar:"قماش كوري أبيض فاخر",
-    desc_en:"Korean premium white fabric, 3.5m. Excellent wrinkle resistance with modern finish. Popular choice.",
-    desc_ar:"قماش كوري أبيض فاخر، ٣.٥ متر. مقاومة ممتازة للتجعد بلمسة عصرية. خيار شائع.",
-    price:190, old_price:240, badge:"Popular", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:29, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Korean Silk Touch", name_ar:"قماش كوري لمسة حرير",
-    desc_en:"Korean Silk Touch fabric, 3.5m. Silky smooth finish with excellent drape. For elegant custom thobes.",
-    desc_ar:"قماش كوري لمسة حرير، ٣.٥ متر. لمسة حريرية ناعمة مع انسدال ممتاز. للثياب المفصّلة الأنيقة.",
-    price:210, old_price:0, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:30, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Turkish Cotton Satin", name_ar:"قماش قطن ساتان تركي",
-    desc_en:"Turkish cotton satin fabric, 3.5m. Lustrous finish with exceptional softness. Imported from Istanbul.",
-    desc_ar:"قماش قطن ساتان تركي، ٣.٥ متر. لمعة أنيقة مع نعومة استثنائية. مستورد من إسطنبول.",
-    price:200, old_price:260, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:31, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Turkish Premium Linen Blend", name_ar:"قماش كتان تركي فاخر",
-    desc_en:"Turkish linen-cotton blend fabric, 3.5m. Natural texture with superior breathability. Perfect for summer.",
-    desc_ar:"قماش مزيج كتان وقطن تركي، ٣.٥ متر. ملمس طبيعي مع تهوية فائقة. مثالي للصيف.",
-    price:180, old_price:0, badge:"New", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:32, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Egyptian Cotton Supreme", name_ar:"قماش قطن مصري سوبريم",
-    desc_en:"Egyptian long-staple cotton fabric, 3.5m. World-renowned quality with ultra-soft hand feel. Luxury tier.",
-    desc_ar:"قماش قطن مصري طويل التيلة، ٣.٥ متر. جودة عالمية مع ملمس فائق النعومة. المستوى الفاخر.",
-    price:260, old_price:320, badge:"Premium", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:33, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Egyptian Cotton Classic", name_ar:"قماش قطن مصري كلاسيكي",
-    desc_en:"Classic Egyptian cotton fabric, 3.5m. Reliable quality with smooth finish. Excellent for everyday thobes.",
-    desc_ar:"قماش قطن مصري كلاسيكي، ٣.٥ متر. جودة موثوقة بلمسة ناعمة. ممتاز للثياب اليومية.",
-    price:175, old_price:0, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:34, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Italian Wool Blend", name_ar:"قماش صوف إيطالي",
-    desc_en:"Italian wool-blend fabric, 3.5m. Perfect for winter thobes. Warm yet lightweight with premium drape.",
-    desc_ar:"قماش مزيج صوف إيطالي، ٣.٥ متر. مثالي لثياب الشتاء. دافئ وخفيف مع انسدال فاخر.",
-    price:300, old_price:380, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:35, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"European Swiss Voile", name_ar:"قماش فوال سويسري أوروبي",
-    desc_en:"European Swiss Voile fabric, 3.5m. Extremely lightweight and sheer. Perfect for hot summer thobes.",
-    desc_ar:"قماش فوال سويسري أوروبي، ٣.٥ متر. خفيف للغاية وشفاف. مثالي لثياب الصيف الحار.",
-    price:240, old_price:0, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:36, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Indian Cotton Premium", name_ar:"قماش قطن هندي فاخر",
-    desc_en:"Indian premium cotton fabric, 3.5m. Traditional quality with modern finish. Budget-friendly premium choice.",
-    desc_ar:"قماش قطن هندي فاخر، ٣.٥ متر. جودة تقليدية بلمسة عصرية. خيار فاخر بسعر معقول.",
-    price:110, old_price:140, badge:"Value", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:37, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Indian Muslin Super Fine", name_ar:"قماش موسلين هندي ناعم جداً",
-    desc_en:"Indian super fine muslin fabric, 3.5m. Ultra-light and breathable. Heritage weaving technique.",
-    desc_ar:"قماش موسلين هندي ناعم جداً، ٣.٥ متر. خفيف جداً وقابل للتنفس. تقنية نسج تراثية.",
-    price:120, old_price:0, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:38, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Japanese Toyobo Ivory", name_ar:"قماش تويوبو ياباني عاجي",
-    desc_en:"Japanese Toyobo in elegant ivory shade, 3.5m. Subtle warm tone with same premium Toyobo quality.",
-    desc_ar:"قماش تويوبو ياباني بلون عاجي أنيق، ٣.٥ متر. لون دافئ خفيف بنفس جودة تويوبو الفاخرة.",
-    price:230, old_price:0, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:39, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Japanese Toyobo Cream", name_ar:"قماش تويوبو ياباني كريمي",
-    desc_en:"Japanese Toyobo in cream shade, 3.5m. Warm elegant tone perfect for winter jubbas and thobes.",
-    desc_ar:"قماش تويوبو ياباني بلون كريمي، ٣.٥ متر. لون دافئ أنيق مثالي لجُبب وثياب الشتاء.",
-    price:225, old_price:280, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:40, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Chinese Polyester Blend", name_ar:"قماش بوليستر صيني",
-    desc_en:"Chinese polyester-cotton blend, 3.5m. Wrinkle-free and easy maintenance. Affordable everyday option.",
-    desc_ar:"قماش مزيج بوليستر وقطن صيني، ٣.٥ متر. خالي من التجعد وسهل العناية. خيار يومي بأسعار معقولة.",
-    price:90, old_price:0, badge:"Budget", sizes:["3m","3.5m","4m","4.5m"] },
-  { id:41, cat:"fabric", img:"images/product_white_fabric.png",
-    name_en:"Korean Oxford White", name_ar:"قماش أكسفورد كوري أبيض",
-    desc_en:"Korean Oxford weave white fabric, 3.5m. Textured finish with excellent body. Ideal for structured thobes.",
-    desc_ar:"قماش أكسفورد كوري أبيض منسوج، ٣.٥ متر. لمسة محبّبة مع هيكل ممتاز. مثالي للثياب المهيكلة.",
-    price:195, old_price:0, badge:"", sizes:["3m","3.5m","4m","4.5m"] },
-  { id: 42, cat: "fabric", img: "images/product_white_fabric.png",
-    name_en: "Japanese Pure Silk", name_ar: "حرير ياباني خالص",
-    desc_en: "Pure Japanese silk fabric, 3.5m. The ultimate luxury for special occasion thobes and bisht lining.",
-    desc_ar: "قماش حرير ياباني خالص، ٣.٥ متر. الفخامة المطلقة لثياب المناسبات الخاصة وبطانة البشت.",
-    price: 450, old_price: 0, badge: "Luxury", sizes: ["3m", "3.5m", "4m", "4.5m"] },
-  
-  // ===== IPRODUCT COLLECTION (NEW ARRIVALS) =====
-  { id: 101, cat: "thobe", img: "iproduct/classic-cream-color-men-Zipper-CM3126.png",
-    name_en: "Classic Cream Zipper Thobe", name_ar: "ثوب كريمي كلاسيكي سحاب",
-    desc_en: "Elegant cream thobe with hidden zipper, premium summer fabric.", desc_ar: "ثوب كريمي أنيق بسحاب مخفي، قماش صيفي فاخر.",
-    price: 380, old_price: 450, badge: "New", sizes: ["S", "M", "L", "XL"] },
-  { id: 102, cat: "thobe", img: "iproduct/Classic-Cream-Color-Youth-Zipper-CCY3125.png",
-    name_en: "Youth Cream Zipper Thobe", name_ar: "ثوب شبابي كريمي سحاب",
-    desc_en: "Durable and stylish youth thobe, perfect for daily wear.", desc_ar: "ثوب شبابي متين وأنيق، مثالي للارتداء اليومي.",
-    price: 250, old_price: 0, badge: "Popular", sizes: ["24", "26", "28", "30"] },
-  { id: 103, cat: "kids", img: "iproduct/classic_summer_beige_3280_saudi_thobe_Kids_alshiaka-2.png",
-    name_en: "Kids Summer Beige Thobe", name_ar: "ثوب أطفال صيفي بيج",
-    desc_en: "Soft and breathable beige thobe for kids. Al-Shiaka quality.", desc_ar: "ثوب بيج ناعم للأطفال، جودة الشياكة.",
-    price: 180, old_price: 220, badge: "Sale", sizes: ["18", "20", "22"] },
-  { id: 104, cat: "kids", img: "iproduct/classic_thobe_black_summer_3276_boys.png",
-    name_en: "Boys Summer Black Thobe", name_ar: "ثوب أولاد صيفي أسود",
-    desc_en: "Modern black thobe for boys, stylish mandarin collar.", desc_ar: "ثوب أسود عصري للأولاد، ياقة ماندارين أنيقة.",
-    price: 190, old_price: 0, badge: "New", sizes: ["20", "22", "24", "26"] },
-  { id: 105, cat: "thobe", img: "iproduct/summer-pine-green-band-collar-zipper-thobe-youth-1.png",
-    name_en: "Youth Pine Green Zipper Thobe", name_ar: "ثوب شبابي أخضر سحاب",
-    desc_en: "Distinctive pine green thobe with modern zipper design.", desc_ar: "ثوب أخضر صنوبري مميز بتصميم سحاب عصري.",
-    price: 260, old_price: 320, badge: "Trending", sizes: ["28", "30", "32", "34"] },
-  { id: 106, cat: "thobe", img: "iproduct/v1969-semiramis-White-zipper-men-thobe-silk-classic-1.png",
-    name_en: "V1969 White Silk Zipper Thobe", name_ar: "ثوب V1969 أبيض حرير",
-    desc_en: "V1969 edition white thobe with silky finish and zipper.", desc_ar: "ثوب V1969 أبيض بلمسة حريرية وسحاب.",
-    price: 450, old_price: 550, badge: "Luxury", sizes: ["M", "L", "XL", "XXL"] },
-  { id: 107, cat: "thobe", img: "iproduct/men-thobe-saudi-cream-rethobe-fashion-trendy-bottons-eid-ramadan-1.png",
-    name_en: "Saudi Cream Trending Thobe", name_ar: "ثوب سعودي كريمي ترند",
-    desc_en: "Trendy Saudi thobe with unique button details for Eid.", desc_ar: "ثوب سعودي كريمي عصري بتفاصيل أزرار فريدة للعيد.",
-    price: 420, old_price: 0, badge: "Eid Special", sizes: ["S", "M", "L", "XL"] },
-  { id: 108, cat: "thobe", img: "iproduct/ChatGPT-Image-24-%D9%81%D8%A8%D8%B1%D8%A7%D9%8A%D8%B1-2026%D8%8C-11_15_33-%D9%85-898x1347.png",
-    name_en: "Premium Embroidered Thobe", name_ar: "ثوب مطرز فاخر",
-    desc_en: "High-end thobe with exquisite embroidery on chest and collar.", desc_ar: "ثوب فاخر مع تطريز رائع على الصدر والياقة.",
-    price: 580, old_price: 750, badge: "Premium", sizes: ["L", "XL", "XXL"] },
-  { id: 109, cat: "thobe", img: "iproduct/classic_summer_beige_3280_saudi_thobe_youth_alshiaka-1.png",
-    name_en: "Youth Al-Shiaka Beige Thobe", name_ar: "ثوب الشياكة شبابي بيج",
-    desc_en: "Authentic Al-Shiaka beige thobe for youth.", desc_ar: "ثوب الشياكة الأصلي باللون البيج للشباب.",
-    price: 240, old_price: 0, badge: "", sizes: ["26", "28", "30", "32"] },
-  { id: 110, cat: "thobe", img: "iproduct/classic_thobe_summer_black_youth_3276_2.png",
-    name_en: "Youth Summer Black Thobe", name_ar: "ثوب شبابي صيفي أسود",
-    desc_en: "Cool and comfortable black thobe for summer evenings.", desc_ar: "ثوب أسود بارد ومريح لأمسيات الصيف.",
-    price: 230, old_price: 290, badge: "New", sizes: ["28", "30", "32"] },
-  { id: 111, cat: "kids", img: "iproduct/classic_summer_beige_3280_saudi_thobe_Kids_alshiaka-3.png",
-    name_en: "Kids Al-Shiaka Beige (Style 2)", name_ar: "ثوب الشياكة صيفي للأطفال",
-    desc_en: "Elegant beige thobe for kids with classic features.", desc_ar: "ثوب بيج أنيق للأطفال بميزات كلاسيكية.",
-    price: 185, old_price: 0, badge: "", sizes: ["20", "22", "24"] },
-  { id: 112, cat: "thobe", img: "iproduct/classic_summer_beige_3280_saudi_thobe_youth_alshiaka-2.png",
-    name_en: "Youth Summer Beige Style", name_ar: "ثوب شبابي صيفي بيج",
-    desc_en: "Lightweight and stylish summer thobe for youth.", desc_ar: "ثوب صيفي خفيف وأنيق للشباب.",
-    price: 245, old_price: 310, badge: "New", sizes: ["30", "32", "34"] },
-  { id: 113, cat: "thobe", img: "iproduct/classic-cream-color-men-Zipper-CM3126-1.png",
-    name_en: "Cream Men's Zipper (Alternative)", name_ar: "ثوب كريمي سحاب (ستايل ٢)",
-    desc_en: "Premium cream thobe with distinct zipper details.", desc_ar: "ثوب كريمي فاخر بتفاصيل سحاب مميزة.",
-    price: 390, old_price: 0, badge: "", sizes: ["M", "L", "XL"] },
-  { id: 114, cat: "thobe", img: "iproduct/men-thobe-saudi-cream-rethobe-fashion-trendy-bottons-eid-ramadan-2-1.png",
-    name_en: "Ret Thobe Eid Collection", name_ar: "ثوب ريثوب مجموعة العيد",
-    desc_en: "Limited edition Eid collection with intricate button work.", desc_ar: "مجموعة العيد إصدار محدود بلمسات أزرار معقدة.",
-    price: 430, old_price: 520, badge: "Exclusive", sizes: ["S", "M", "L", "XL"] },
-  { id: 115, cat: "thobe", img: "iproduct/men-thobe-saudi-cream-rethobe-fashion-trendy-bottons-eid-ramadan-3-1.png",
-    name_en: "Ramadan Prime Saudi Thobe", name_ar: "ثوب رمضان الفاخر",
-    desc_en: "Special Ramadan edition thobe, extremely comfortable and polished.", desc_ar: "ثوب إصدار رمضان الخاص، مريح للغاية ومصقول.",
-    price: 440, old_price: 0, badge: "Popular", sizes: ["L", "XL", "XXL"] },
-  { id: 116, cat: "thobe", img: "iproduct/men-thobe-saudi-cream-rethobe-fashion-trendy-metal-bottons-eid-ramadan-1.png",
-    name_en: "Metal Stud Saudi Thobe", name_ar: "ثوب سعودي بأزرار حديدية",
-    desc_en: "Modern Saudi thobe with metallic button accents.", desc_ar: "ثوب سعودي عصري بلمسات أزرار معدنية.",
-    price: 425, old_price: 0, badge: "Trending", sizes: ["S", "M", "L"] },
-  { id: 117, cat: "thobe", img: "iproduct/summer-pine-green-band-collar-zipper-thobe-youth-2.png",
-    name_en: "Youth Forest Green Thobe", name_ar: "ثوب شبابي أخضر غامق",
-    desc_en: "Deep green summer thobe with band collar and zipper.", desc_ar: "ثوب صيفي أخضر غامق بياقة شريط وسحاب.",
-    price: 270, old_price: 340, badge: "New", sizes: ["28", "30", "32", "34"] },
-  { id: 118, cat: "thobe", img: "iproduct/v1969-semiramis-White-zipper-men-thobe-silk-classic-2.png",
-    name_en: "V1969 Silk White (Style 2)", name_ar: "ثوب V1969 أبيض حريري",
-    desc_en: "Premium V1969 silk-finish thobe for luxury seekers.", desc_ar: "ثوب V1969 الفاخر لمحبي التميز بلمسة حريرية.",
-    price: 460, old_price: 580, badge: "Premium", sizes: ["M", "L", "XL", "XXL"] },
-  { id: 119, cat: "thobe", img: "iproduct/ChatGPT-Image-7-%D9%85%D8%A7%D8%B1%D8%B3-2026%D8%8C-12_07_56-%D8%B5.png",
-    name_en: "Elite Designer White Thobe", name_ar: "ثوب نُخبة المصممين أبيض",
-    desc_en: "The pinnacle of our designer collection, white perfection.", desc_ar: "قمة مجموعة المصممين لدينا، كمال اللون الأبيض.",
-    price: 590, old_price: 800, badge: "Limited", sizes: ["XL", "XXL"] },
-  { id: 120, cat: "thobe", img: "iproduct/men-thobe-saudi-cream-rethobe-fashion-trendy-bottons-eid-ramadan-5-683x1024.png",
-    name_en: "Modern Saudi Thobe Style 5", name_ar: "ثوب سعودي عصري (نموذج ٥)",
-    desc_en: "A modern take on the classic Saudi thobe with sophisticated tailoring.", desc_ar: "لمسة عصرية على الثوب السعودي الكلاسيكي بخياطة راقية.",
-    price: 435, old_price: 0, badge: "Trending", sizes: ["S", "M", "L", "XL"] },
-  { id: 121, cat: "thobe", img: "iproduct/ChatGPT-Image-7-%D9%85%D8%A7%D8%B1%D8%B3-2026%D8%8C-12_07_56-%D8%B5-898x1347_1.png",
-    name_en: "Designer Series Ivory Thobe", name_ar: "ثوب عاجي مجموعة المصممين",
-    desc_en: "Exquisite ivory thobe from our exclusive designer series collection.", desc_ar: "ثوب عاجي رائع من مجموعة المصممين الحصرية لدينا.",
-    price: 495, old_price: 650, badge: "Featured", sizes: ["M", "L", "XL"] },
-  { id: 122, cat: "thobe", img: "iproduct/men-thobe-saudi-cream-rethobe-fashion-trendy-bottons-eid-ramadan-1.png",
-    name_en: "Exclusive Royal Velvet Trim Thobe", name_ar: "ثوب ملكي حصري بحواف مخملية",
-    desc_en: "A masterpiece of tailoring with delicate velvet trimming on collar and cuffs.", desc_ar: "تحفة فنية في الخياطة مع حواف مخملية ناعمة على الياقة والأكمام.",
-    price: 650, old_price: 850, badge: "Featured", sizes: ["M", "L", "XL"] },
-];
-
-// ============ BRANCHES DATA ============
-const shopBranches = [
-  { id: 1, name_en: "Riyadh Main Branch", name_ar: "فرع الرياض الرئيسي", addr_en: "Olaya St, Riyadh", addr_ar: "شارع العليا، الرياض", lat: 24.7136, lng: 46.6753, type: "Showroom" },
-  { id: 2, name_en: "Jeddah Al-Balad", name_ar: "فرع جدة البلد", addr_en: "Old Jeddah St", addr_ar: "شارع جدة القديم", lat: 21.4858, lng: 39.1925, type: "Boutique" },
-  { id: 3, name_en: "Dammam Central", name_ar: "وسط الدمام", addr_en: "King Faisal Rd", addr_ar: "طريق الملك فيصل", lat: 26.4207, lng: 50.0888, type: "Tailoring Hub" },
-  { id: 4, name_en: "Mecca Holy Branch", name_ar: "فرع مكة المكرمة", addr_en: "Ibrahim Al-Khalil Rd", addr_ar: "شارع إبراهيم الخليل", lat: 21.4225, lng: 39.8262, type: "Premium" },
-  { id: 5, name_en: "Medina Munawwarah", name_ar: "فرع المدينة المنورة", addr_en: "Prince Mohammad St", addr_ar: "شارع الأمير محمد", lat: 24.4672, lng: 39.6068, type: "Showroom" },
-  { id: 6, name_en: "Riyadh Diplomatic", name_ar: "حي السفارات", addr_en: "DQ Square, Riyadh", addr_ar: "ساحة حي السفارات", lat: 24.6793, lng: 46.6267, type: "VIP Studio" },
-];
+let products = [...defaultProducts];
+let categories = [...defaultCategories];
+const shopBranches = [...defaultBranches];
 
 // Preprocess products to add origin and isBestseller metadata for filters
+function syncDynamicProducts() {
+  try {
+    const dynamicProductsRaw = localStorage.getItem('namaa_products');
+    if (!dynamicProductsRaw) return;
+    
+    const dynamicProducts = JSON.parse(dynamicProductsRaw);
+    dynamicProducts.forEach(p => {
+      // Find if product exists by ID
+      const index = products.findIndex(sp => String(sp.id) === String(p.id));
+      
+      const mappedProduct = {
+        id: p.id,
+        cat: (p.category || 'thobe').toLowerCase(),
+        img: p.image || p.img || 'images/product_saudi_thobe.png',
+        name_en: p.name_en || p.name || 'Premium Product',
+        name_ar: p.name_ar || p.name || 'منتج فاخر',
+        desc_en: p.desc_en || p.desc || '',
+        desc_ar: p.desc_ar || p.desc || '',
+        price: parseFloat(p.price) || 0,
+        old_price: 0,
+        badge: p.badge || 'New',
+        sizes: p.sizes || ["S","M","L","XL","XXL"],
+        origin: 'other',
+        isBestseller: false
+      };
+
+      if (index !== -1) {
+        // Update existing from Admin Panel data
+        products[index] = { ...products[index], ...mappedProduct };
+      } else if (p.status === 'Active') {
+        // Add new
+        products.unshift(mappedProduct);
+      }
+    });
+  } catch (e) {
+    console.error("Sync Error:", e);
+  }
+}
+
+syncDynamicProducts();
+
+function syncDynamicBanners() {
+  try {
+    const bannersRaw = localStorage.getItem('namaa_banners');
+    if (!bannersRaw) return;
+    
+    const banners = JSON.parse(bannersRaw);
+    const heroContainer = document.querySelector('.hero');
+    if (!heroContainer) return;
+    
+    heroContainer.innerHTML = banners.map((b, i) => `
+      <div class="hero-slide ${i === 0 ? 'active' : ''}">
+        <img src="${b.image}" alt="${b.title_en}">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="hero-subtitle">${currentLang === 'en' ? b.sub_en : b.sub_ar}</p>
+          <h1 class="hero-title">${currentLang === 'en' ? b.title_en : b.title_ar}</h1>
+          <div class="hero-btns">
+            <a href="#" class="btn-primary" onclick="navigateTo('products');return false" data-i18n="btn_shop">Shop Now</a>
+            <a href="#" class="btn-outline" onclick="navigateTo('categories-page');return false" data-i18n="btn_collection">View Collection</a>
+          </div>
+        </div>
+      </div>
+    `).join('') + `
+      <div class="slider-dots">${banners.map((_, i) => `<div class="slider-dot ${i === 0 ? 'active' : ''}"></div>`).join('')}</div>
+      <div class="slider-arrows">
+        <button class="slider-arrow" onclick="prevSlide()">◀</button>
+        <button class="slider-arrow" onclick="nextSlide()">▶</button>
+      </div>
+    `;
+    
+    // Re-initialize slider variables
+    if(typeof initHeroSlider === 'function') initHeroSlider();
+  } catch (e) {
+    console.error("Banner Sync Error:", e);
+  }
+}
+
+syncDynamicBanners();
+
 products.forEach(p => {
-  p.origin = p.name_en.includes('Japanese') || p.name_en.includes('Toyobo') ? 'japanese'
-           : p.name_en.includes('Chinese') ? 'chinese'
-           : p.name_en.includes('European') || p.name_en.includes('Swiss') || p.name_en.includes('Italian') ? 'european'
+  p.origin = (p.name_en && (p.name_en.includes('Japanese') || p.name_en.includes('Toyobo'))) ? 'japanese'
+           : (p.name_en && p.name_en.includes('Chinese')) ? 'chinese'
+           : (p.name_en && (p.name_en.includes('European') || p.name_en.includes('Swiss') || p.name_en.includes('Italian'))) ? 'european'
            : 'other';
   p.isBestseller = ['Best Seller', 'Featured', 'Exclusive', 'Popular'].includes(p.badge);
 });
@@ -592,24 +386,6 @@ let currentCategory = 'all';
 let currentOriginFilter = 'all';
 let currentGridLayout = 4; // Default to 4 as requested
 
-const categories = [
-  { id:"thobe", img:"images/product_saudi_thobe.png", name_en:"Saudi Thobes", name_ar:"الثياب السعودية", count:3,
-    desc_en:"Custom-tailored Saudi thobes crafted to your measurements", desc_ar:"ثياب سعودية مفصّلة حسب مقاساتك" },
-  { id:"emirati", img:"images/product_emirati_thobe.png", name_en:"Emirati Kanduras", name_ar:"الكندورة الإماراتية", count:4,
-    desc_en:"Bespoke Emirati kanduras with traditional tarboosh — custom-made", desc_ar:"كندورات إماراتية بالطربوش التقليدي — مصنوعة حسب الطلب" },
-  { id:"qatari", img:"images/product_qatari_thobe.png", name_en:"Qatari Thobes", name_ar:"الثياب القطرية", count:4,
-    desc_en:"Custom-tailored Qatari thobes with distinctive collar design", desc_ar:"ثياب قطرية مفصّلة بتصميم ياقة مميز" },
-  { id:"kuwaiti", img:"images/product_kuwaiti_thobe.png", name_en:"Kuwaiti Dishdashas", name_ar:"الدشاديش الكويتية", count:4,
-    desc_en:"Bespoke Kuwaiti dishdashas — expertly custom-tailored", desc_ar:"دشاديش كويتية — مفصّلة بخبرة حسب الطلب" },
-  { id:"jubba", img:"images/product_jubba.png", name_en:"Jubbas", name_ar:"الجُبب", count:2,
-    desc_en:"Elegant jubbas with embroidery for special occasions", desc_ar:"جُبب أنيقة بتطريز للمناسبات الخاصة" },
-  { id:"saideria", img:"images/product_saideria.png", name_en:"Saiderias", name_ar:"الصداري", count:2,
-    desc_en:"Premium cotton saiderias — essential undergarments", desc_ar:"صداري قطنية فاخرة — القطع الأساسية" },
-  { id:"fabric", img:"images/product_white_fabric.png", name_en:"Fabrics", name_ar:"الأقمشة", count:22,
-    desc_en:"Japanese, Chinese, Korean, Turkish, Egyptian & European fabrics", desc_ar:"أقمشة يابانية وصينية وكورية وتركية ومصرية وأوروبية" },
-  { id:"kids", img:"iproduct/classic_summer_beige_3280_saudi_thobe_Kids_alshiaka-2.png", name_en:"Kids Collection", name_ar:"مجموعة الأطفال", count:5,
-    desc_en:"High-quality thobes for kids and boys — comfort meets style", desc_ar:"ثياب عالية الجودة للأطفال والأولاد — الراحة تلتقي بالأناقة" },
-];
 
 // ============ STATE ============
 let currentLang = 'en';
@@ -710,11 +486,14 @@ function t(key) { return translations[currentLang][key] || key; }
 function applyTranslations() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    const val = t(key);
-    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = val;
-    else el.innerHTML = val;
+    el.innerHTML = t(key);
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    el.placeholder = t(key);
   });
 }
+
 
 // ============ NAVIGATION ============
 function navigateTo(page) {
@@ -725,7 +504,10 @@ function navigateTo(page) {
   document.querySelector(`.nav-links a[onclick*="${page}"]`)?.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
   closeMobileMenu();
-  if (page === 'products') renderAllProducts();
+  if (page === 'products') {
+    syncDynamicProducts();
+    renderAllProducts();
+  }
   if (page === 'cart') renderCartPage();
   if (page === 'tracking') animateTrackHeroStat();
 }
@@ -789,20 +571,28 @@ function productCard(p) {
   return `<div class="product-card reveal">
     ${badge}
     <div class="product-img">
-      <img src="${p.img}" alt="${name}" loading="lazy" onclick="openProductModal(${p.id})" style="cursor: pointer;">
+      <img src="${p.img}" alt="${name}" loading="lazy" onclick="openProductModal(${p.id})">
+      <div class="product-card-overlay" onclick="openProductModal(${p.id})">
+        <div class="view-btn-eye">👁️</div>
+        <div class="view-btn-text">${currentLang === 'en' ? 'QUICK VIEW' : 'عرض سريع'}</div>
+      </div>
       <div class="product-actions">
-        <button class="product-action-btn wishlist-btn ${isWishlisted ? 'active' : ''}" onclick="toggleWishlist(${p.id}, this)" title="Wishlist">❤️</button>
-        <button class="product-action-btn" onclick="addToCart(${p.id})" title="${t('add_to_cart')}">🛒</button>
+        <button class="product-action-btn wishlist-btn ${isWishlisted ? 'active' : ''}" onclick="toggleWishlist(${p.id}, this); event.stopPropagation();" title="Wishlist">❤️</button>
+        <button class="product-action-btn" onclick="addToCart(${p.id}); event.stopPropagation();" title="${t('add_to_cart')}">🛒</button>
       </div>
     </div>
-    <div class="product-info">
+    <div class="product-info" onclick="openProductModal(${p.id})">
       <div class="product-category">${catDisplay}</div>
       <div class="product-name">${name}</div>
       <div class="product-price-row">
-        <span class="price-current">${srIcon} ${p.price}</span>
-        ${oldPrice}
-        <span class="stat-item"><span class="icon">🔥</span> ${salesCount} <small>${salesStr}</small></span>
-        <span class="stat-item"><span class="icon">⭐</span> ${reviews.toFixed(1)} <small>(${reviewCount})</small></span>
+        <div class="price-wrap-main">
+          <span class="price-current">${srIcon} ${p.price}</span>
+          ${oldPrice}
+        </div>
+        <div class="st-stats">
+          <span class="stat-item"><span class="icon">🔥</span> ${salesCount} <small>${salesStr}</small></span>
+          <span class="stat-item"><span class="icon">⭐</span> ${reviews.toFixed(1)} <small>(${reviewCount})</small></span>
+        </div>
       </div>
     </div>
   </div>`;
@@ -1860,49 +1650,6 @@ function showToast(message) {
 }
 
 
-function seedDemoData() {
-  const orders = JSON.parse(localStorage.getItem('alkhayat_orders') || '[]');
-  const bookings = JSON.parse(localStorage.getItem('alkhayat_bookings') || '[]');
-
-  if (!orders.find(o => o.id === '#DEMO001')) {
-    orders.push({
-      id: '#DEMO001', type: 'order',
-      name: 'Abdullah Al-Ahmad', phone: '+966 50 123 4567',
-      address: 'Olaya District, Villa 12', city: 'Riyadh',
-      date: '01/04/2026',
-      status: 'Tailoring',
-      readyDate: new Date(Date.now() + 5 * 24*60*60*1000).toLocaleDateString(),
-      total: 760,
-      items: [
-        { name: 'Classic Saudi Thobe', size: 'L', price: 350, qty: 1, img: 'images/product_saudi_thobe.png' },
-        { name: 'Royal Jubba', size: 'XL', price: 410, qty: 1, img: 'images/product_jubba.png' }
-      ],
-      history: [
-        { status: 'Order Placed', date: '01/04/2026', note: 'Your order was received successfully.' },
-        { status: 'Processing', date: '02/04/2026', note: 'Order confirmed and fabric selected.' },
-        { status: 'Tailoring', date: '03/04/2026', note: 'Our Master Tailor started cutting and stitching.' },
-      ]
-    });
-  }
-  if (!bookings.find(b => b.ref === 'BK-DEMO1')) {
-    bookings.push({
-      ref: 'BK-DEMO1', type: 'booking',
-      name: 'Khalid Al-Mansour', phone: '+966 55 987 6543',
-      address: 'Diplomatic Quarter', city: 'Riyadh',
-      date: '10/04/2026', time: '3:00 PM',
-      service: 'Home Measurement',
-      status: 'Confirmed',
-      garment: 'Saudi Thobe',
-      history: [
-        { status: 'Request Sent', date: '07/04/2026', note: 'Your booking request was received.' },
-        { status: 'Confirmed', date: '08/04/2026', note: 'A master tailor has been assigned to you.' },
-      ]
-    });
-  }
-  localStorage.setItem('alkhayat_orders', JSON.stringify(orders));
-  localStorage.setItem('alkhayat_bookings', JSON.stringify(bookings));
-}
-
 
 
 
@@ -2195,8 +1942,19 @@ function initModalZoom(container) {
 const bookingState = {
   service: null, serviceLabel: '',
   selectedDate: null, selectedTime: null,
+  selectedFabric: null, totalCost: 0,
   calYear: null, calMonth: null,
 };
+
+const tailoringFee = 150; 
+const bookingFabrics = [
+  { id: 22, name_en: "Japanese Toyobo Royal", name_ar: "تویوبو যাপানি রয়াল", price: 320, meters: 3.5, img: "images/product_white_fabric.png", badge: "Hot", rating: 5 },
+  { id: 23, name_en: "Japanese Toyobo Diamond", name_ar: "তویوبো যাপানি ডায়মন্ড", price: 350, meters: 3.5, img: "images/product_white_fabric.png", badge: "New", rating: 4.8 },
+  { id: 7, name_en: "Japanese Toyobo Premium", name_ar: "তویوبো যাপানি প্রিমিয়াম", price: 220, meters: 3.5, img: "images/product_white_fabric.png", badge: "Best Seller", rating: 4.9 },
+  { id: 26, name_en: "Chinese Royal Poplin", name_ar: "চীনা রয়াল পপলিন", price: 160, meters: 3.5, img: "images/product_white_fabric.png", badge: "Sale", rating: 4.5 },
+  { id: 32, name_en: "Egyptian Cotton Supreme", name_ar: "মিশরীয় কটন সুপ্রীম", price: 260, meters: 3.5, img: "images/product_white_fabric.png", badge: "Premium", rating: 4.7 },
+  { id: 34, name_en: "Italian Wool Blend", name_ar: "ইতালীয় উল ব্লেন্ড", price: 300, meters: 3.5, img: "images/product_white_fabric.png", badge: "", rating: 4.6 },
+];
 
 const serviceLabels = {
   home_measure:   { en: 'Home Measurement',    ar: 'قياس منزلي' },
@@ -2214,31 +1972,30 @@ const timeSlots = [
   '06:00 PM','07:00 PM',
 ];
 
-// Initialise calendar state when entering booking page
 function initBookingPage() {
   const now = new Date();
   bookingState.calYear  = now.getFullYear();
   bookingState.calMonth = now.getMonth();
-  // Reset steps
-  showBookingStep(1);
-  renderCalendar();
-  // Reset service selection
+  
+  showBookingStep('unified'); 
+  renderCalendarUnified();
+  
   bookingState.service = null;
-  document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
-  document.getElementById('btn-step1-next').disabled = true;
-  // Reset date/time
   bookingState.selectedDate = null;
   bookingState.selectedTime = null;
-  document.getElementById('btn-step2-next').disabled = true;
-  document.getElementById('selected-datetime-display').innerHTML = '';
-  document.getElementById('time-slots').innerHTML = '';
-  // Hide success
+  
+  document.querySelectorAll('.svc-item-new').forEach(c => c.classList.remove('selected'));
+  const slotContainer = document.getElementById('time-slots-unified');
+  if(slotContainer) slotContainer.innerHTML = '';
+  updateUnifiedSummary();
+  
   const succ = document.getElementById('booking-success');
   if(succ) succ.style.display = 'none';
-  document.querySelector('.booking-section').style.display = '';
+  const progress = document.querySelector('.booking-stepper');
+  if(progress) progress.style.opacity = '1';
 }
 
-// Override navigateTo to init booking page
+// Override navigateTo
 const _origNav2 = window.navigateTo || function(){};
 window.navigateTo = (function(origFn) {
   return function(page) {
@@ -2248,48 +2005,211 @@ window.navigateTo = (function(origFn) {
   };
 })(typeof navigateTo === 'function' ? navigateTo : _origNav2);
 
-// ---- Service Selection ----
-function selectService(el, id) {
-  document.querySelectorAll('.service-card').forEach(c => c.classList.remove('selected'));
-  el.classList.add('selected');
-  bookingState.service = id;
-  bookingState.serviceLabel = serviceLabels[id] || { en: id, ar: id };
-  document.getElementById('btn-step1-next').disabled = false;
-}
-
-// ---- Step Navigation ----
 function showBookingStep(n) {
-  document.querySelectorAll('.booking-step').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.booking-step').forEach(s => s.style.display = 'none');
   const step = document.getElementById('bstep-' + n);
-  if(step) step.classList.add('active');
-  // Update progress indicators
+  if(step) {
+    step.style.display = 'block';
+    step.classList.add('active');
+  }
+  
+  // Update progress bar
+  const progressBar = document.getElementById('booking-progress-bar');
+  let progressWidth = 0;
+  if (n === 'unified') progressWidth = 25;
+  else if (n === 3) progressWidth = 66;
+  else if (n === 4) progressWidth = 100;
+  
+  if (progressBar) progressBar.style.width = progressWidth + '%';
+
+  // Update stepper dots
   for(let i=1; i<=4; i++){
     const bp = document.getElementById('bp'+i);
     if(bp){
-      bp.classList.toggle('active',  i === n);
-      bp.classList.toggle('done',    i < n);
+      const isCurrent = (n === 'unified' && i <= 2) || (n === i);
+      const isDone = (n === 3 && i < 3) || (n === 4 && i < 4) || (n === 'success');
+      bp.classList.toggle('active', isCurrent);
+      bp.classList.toggle('done', isDone);
     }
   }
 }
 
-function bookingNext(step) {
-  if (step === 1) {
-    if (!bookingState.service) return;
-    showBookingStep(2);
-    renderCalendar();
-  } else if (step === 2) {
-    if (!bookingState.selectedDate || !bookingState.selectedTime) {
-      alert(currentLang === 'en' ? 'Please select a date and time.' : 'يرجى اختيار تاريخ ووقت.');
-      return;
+function selectUnifiedService(el, id) {
+  document.querySelectorAll('.svc-item-new').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  bookingState.service = id;
+  bookingState.serviceLabel = serviceLabels[id] || { en: id, ar: id };
+  updateUnifiedSummary();
+}
+
+function renderCalendarUnified() {
+  const year  = bookingState.calYear;
+  const month = bookingState.calMonth;
+  const mNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const mNamesAr = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  
+  const label = document.getElementById('cal-month-label-unified');
+  if(label) label.textContent = (currentLang === 'ar' ? mNamesAr[month] : mNames[month]) + ' ' + year;
+
+  const grid = document.getElementById('calendar-grid-unified');
+  if(!grid) return;
+  grid.innerHTML = '';
+  
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month+1, 0).getDate();
+
+  for(let i=0; i<firstDay; i++){
+    grid.appendChild(document.createElement('div'));
+  }
+
+  for(let d=1; d<=daysInMonth; d++){
+    const dayEl = document.createElement('div');
+    const thisDay = new Date(year, month, d);
+    const isPast = thisDay < today;
+    const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isSelected = bookingState.selectedDate === dateStr;
+
+    dayEl.className = 'cal-day-unified' +
+      (isPast ? ' disabled' : '') +
+      (isSelected ? ' selected' : '') +
+      (thisDay.toDateString() === today.toDateString() ? ' today' : '');
+    dayEl.textContent = d;
+    
+    if(!isPast){
+      dayEl.onclick = () => selectCalDayUnified(dateStr, dayEl);
     }
-    showBookingStep(3);
-    applyBookingPlaceholders();
-  } else if (step === 3) {
-    const name    = document.getElementById('bk-name').value.trim();
-    const phone   = document.getElementById('bk-phone').value.trim();
+    grid.appendChild(dayEl);
+  }
+}
+
+function selectCalDayUnified(dateStr, el) {
+  bookingState.selectedDate = dateStr;
+  bookingState.selectedTime = null;
+  document.querySelectorAll('.cal-day-unified').forEach(d => d.classList.remove('selected'));
+  el.classList.add('selected');
+  renderTimeSlotsUnified();
+  updateUnifiedSummary();
+}
+
+function renderTimeSlotsUnified() {
+  const container = document.getElementById('time-slots-unified');
+  if(!container) return;
+  container.innerHTML = timeSlots.map(slot => `
+    <div class="time-chip" onclick="selectTimeSlotUnified(this,'${slot}')">${slot}</div>
+  `).join('');
+}
+
+function selectTimeSlotUnified(el, slot) {
+  document.querySelectorAll('.time-chip').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  bookingState.selectedTime = slot;
+  updateUnifiedSummary();
+}
+
+function updateUnifiedSummary() {
+  const summary = document.getElementById('selection-summary-unified');
+  const nextBtn = document.getElementById('btn-unified-next');
+  if(!summary || !nextBtn) return;
+  
+  const hasService = !!bookingState.service;
+  const hasDate = !!bookingState.selectedDate;
+  const hasTime = !!bookingState.selectedTime;
+
+  if (!hasService && !hasDate) {
+    summary.innerHTML = `<div class="si-empty">${currentLang === 'en' ? 'Select service and schedule to continue' : 'اختر الخدمة والجدول الزمني للمتابعة'}</div>`;
+    nextBtn.disabled = true;
+    return;
+  }
+
+  const svcLbl = bookingState.serviceLabel?.[currentLang] || '---';
+  const dateStr = bookingState.selectedDate || '---';
+  const timeStr = bookingState.selectedTime || '---';
+
+  summary.innerHTML = `
+    <div class="summary-details-unified">
+      <div class="si-row"><span>Service:</span> <strong>${svcLbl}</strong></div>
+      <div class="si-row"><span>Date:</span> <strong>${dateStr}</strong></div>
+      <div class="si-row"><span>Time:</span> <strong>${timeStr}</strong></div>
+    </div>
+  `;
+
+  nextBtn.disabled = !(hasService && hasDate && hasTime);
+}
+
+function unifiedNext() {
+  showBookingStep(3);
+  renderFabricSelection();
+  if(typeof applyTranslations === 'function') applyTranslations();
+}
+
+function renderFabricSelection() {
+  const container = document.getElementById('fabric-selection-grid');
+  if(!container) return;
+  
+  container.innerHTML = bookingFabrics.map(fab => `
+    <div class="fabric-item-card ${bookingState.selectedFabric?.id === fab.id ? 'selected' : ''}" onclick="selectBookingFabric(${fab.id})">
+      <div class="fab-img-wrap">
+        <img src="${fab.img}" alt="${fab.name_en}">
+        ${fab.badge ? `<span class="fab-badge ${fab.badge.toLowerCase()}">${fab.badge}</span>` : ''}
+      </div>
+      <div class="fab-details">
+        <div class="fab-header">
+            <span class="fab-name">${currentLang === 'ar' ? fab.name_ar : fab.name_en}</span>
+            <span class="fab-price">${fab.price} SAR</span>
+        </div>
+        <div class="fab-footer">
+            <span class="fab-rating">⭐ ${fab.rating} Review</span>
+            <span class="fab-meta">${fab.meters}m Needed</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  updateCostPreview();
+}
+
+function selectBookingFabric(id) {
+  const fab = bookingFabrics.find(f => f.id === id);
+  bookingState.selectedFabric = fab;
+  renderFabricSelection();
+}
+
+function updateCostPreview() {
+  const preview = document.getElementById('cost-preview-box');
+  if(!preview) return;
+
+  if(!bookingState.selectedFabric) {
+    preview.innerHTML = `<div class="cost-placeholder">Select a fabric to see estimate</div>`;
+    return;
+  }
+
+  const fab = bookingState.selectedFabric;
+  bookingState.totalCost = fab.price + tailoringFee;
+
+  preview.innerHTML = `
+    <div class="cost-breakdown">
+      <div class="cost-row"><span>Fabric Rate:</span> <span>${fab.price} SAR</span></div>
+      <div class="cost-row"><span>Tailoring Fee:</span> <span>${tailoringFee} SAR</span></div>
+      <div class="cost-total"><span>Total Estimate:</span> <span>${bookingState.totalCost} SAR</span></div>
+      <div class="cost-note">* Includes basic design and 1 thobe fitting</div>
+    </div>
+  `;
+}
+
+function bookingBack(step) {
+  if (step === 3) showBookingStep('unified');
+  else if (step === 4) showBookingStep(3);
+}
+
+function bookingNext(step) {
+  if (step === 3) {
+    const name = document.getElementById('bk-name').value.trim();
+    const phone = document.getElementById('bk-phone').value.trim();
     const address = document.getElementById('bk-address').value.trim();
+    
     if (!name || !phone || !address) {
-      alert(currentLang === 'en' ? 'Please fill in all required fields (*).' : 'يرجى ملء جميع الحقول المطلوبة (*).');
+      alert(currentLang === 'en' ? 'Please fill all required fields.' : 'يرجى تعبئة جميع الحقول المطلوبة');
       return;
     }
     renderBookingSummary();
@@ -2297,154 +2217,65 @@ function bookingNext(step) {
   }
 }
 
-function bookingBack(step) {
-  showBookingStep(step - 1);
-}
-
-function applyBookingPlaceholders() {
-  const ph = {
-    'bk-name':    t('form_name_ph'),
-    'bk-phone':   t('form_phone_ph'),
-    'bk-address': t('form_address_ph'),
-    'bk-notes':   t('form_notes_ph'),
-  };
-  Object.entries(ph).forEach(([id, val]) => {
-    const el = document.getElementById(id);
-    if(el) el.placeholder = val;
-  });
-}
-
-// ---- Calendar ----
-function renderCalendar() {
-  const year  = bookingState.calYear;
-  const month = bookingState.calMonth;
-  const mNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const mNamesAr = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
-  const label = document.getElementById('cal-month-label');
-  if(label) label.textContent = (currentLang === 'ar' ? mNamesAr[month] : mNames[month]) + ' ' + year;
-
-  const grid = document.getElementById('calendar-grid');
-  if(!grid) return;
-  grid.innerHTML = '';
-  const today = new Date();
-  today.setHours(0,0,0,0);
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month+1, 0).getDate();
-
-  // Empty cells before first day
-  for(let i=0; i<firstDay; i++){
-    const empty = document.createElement('div');
-    empty.className = 'cal-day empty';
-    grid.appendChild(empty);
-  }
-
-  for(let d=1; d<=daysInMonth; d++){
-    const dayEl   = document.createElement('div');
-    const thisDay = new Date(year, month, d);
-    const isPast  = thisDay < today;
-    const isFri   = thisDay.getDay() === 5; // Friday = day off (optional)
-    const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const isSelected = bookingState.selectedDate === dateStr;
-
-    dayEl.className = 'cal-day' +
-      (isPast || isFri ? ' disabled' : '') +
-      (isSelected ? ' selected' : '') +
-      (thisDay.toDateString() === today.toDateString() ? ' today' : '');
-    dayEl.textContent = d;
-    if(!isPast && !isFri){
-      dayEl.onclick = () => selectCalDay(dateStr, dayEl);
-    }
-    grid.appendChild(dayEl);
-  }
-}
-
 function changeMonth(dir) {
   bookingState.calMonth += dir;
   if(bookingState.calMonth > 11){ bookingState.calMonth=0; bookingState.calYear++; }
   if(bookingState.calMonth < 0 ){ bookingState.calMonth=11; bookingState.calYear--; }
-  bookingState.selectedDate = null;
-  bookingState.selectedTime = null;
-  document.getElementById('btn-step2-next').disabled = true;
-  document.getElementById('selected-datetime-display').innerHTML = '';
-  renderCalendar();
-  document.getElementById('time-slots').innerHTML = '';
+  renderCalendarUnified();
 }
 
-function selectCalDay(dateStr, el) {
-  bookingState.selectedDate = dateStr;
-  bookingState.selectedTime = null;
-  document.querySelectorAll('.cal-day').forEach(d => d.classList.remove('selected'));
-  el.classList.add('selected');
-  document.getElementById('btn-step2-next').disabled = true;
-  document.getElementById('selected-datetime-display').innerHTML = '';
-  renderTimeSlots();
-}
-
-// ---- Time Slots ----
-function renderTimeSlots() {
-  const container = document.getElementById('time-slots');
-  if(!container) return;
-  container.innerHTML = timeSlots.map(slot => `
-    <button class="time-slot" onclick="selectTimeSlot(this,'${slot}')">${slot}</button>
-  `).join('');
-}
-
-function selectTimeSlot(el, slot) {
-  document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
-  el.classList.add('selected');
-  bookingState.selectedTime = slot;
-  document.getElementById('btn-step2-next').disabled = false;
-  const display = document.getElementById('selected-datetime-display');
-  const dateObj = new Date(bookingState.selectedDate + 'T00:00:00');
-  const dateFormatted = dateObj.toLocaleDateString(currentLang === 'ar' ? 'ar-SA' : 'en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
-  display.innerHTML = `<span class="dt-confirm-icon">📅</span> <strong>${dateFormatted}</strong> &nbsp; <span class="dt-confirm-icon">🕐</span> <strong>${slot}</strong>`;
-}
-
-// ---- Summary ----
 function renderBookingSummary() {
   const svcLbl  = serviceLabels[bookingState.service]?.[currentLang] || bookingState.service;
-  const dateObj  = new Date(bookingState.selectedDate + 'T00:00:00');
-  const dateFmt  = dateObj.toLocaleDateString(currentLang === 'ar' ? 'ar-SA' : 'en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+  const dateStr  = bookingState.selectedDate;
+  const timeStr  = bookingState.selectedTime;
   const name    = document.getElementById('bk-name').value.trim();
   const phone   = document.getElementById('bk-phone').value.trim();
   const address = document.getElementById('bk-address').value.trim();
-  const city    = document.getElementById('bk-city').options[document.getElementById('bk-city').selectedIndex].text;
-  const garment = document.getElementById('bk-garment').options[document.getElementById('bk-garment').selectedIndex].text;
+  const city    = document.getElementById('bk-city').value;
+  const garment = document.getElementById('bk-garment').value;
   const notes   = document.getElementById('bk-notes').value.trim();
 
   const rows = [
     [t('sum_service'), svcLbl,    '🛠️'],
-    [t('sum_date'),    dateFmt,   '📅'],
-    [t('sum_time'),    bookingState.selectedTime,'🕐'],
+    [t('sum_date'),    dateStr,   '📅'],
+    [t('sum_time'),    timeStr,   '🕐'],
     [t('sum_name'),    name,      '👤'],
     [t('sum_phone'),   phone,     '📞'],
     [t('sum_address'), address,   '📍'],
     [t('sum_city'),    city,      '🏙️'],
     [t('sum_garment'), garment,   '👘'],
   ];
-  if(notes) rows.push(['Notes / ملاحظات', notes, '📝']);
+
+  if (bookingState.selectedFabric) {
+    const fab = bookingState.selectedFabric;
+    const fabLabel = fab.name?.[currentLang] || fab.name_en || fab.name;
+    rows.push([t('sum_fabric') || 'Fabric', fabLabel, '🧵']);
+    rows.push([t('sum_total_cost') || 'Total Cost', `${bookingState.totalCost} SAR`, '💰']);
+  }
 
   document.getElementById('booking-summary').innerHTML = `
-    <div class="summary-card">
+    <div class="summary-grid-redesign">
       ${rows.map(([label, value, icon]) => `
-        <div class="bk-summary-row">
-          <span class="sum-icon">${icon}</span>
-          <span class="sum-label">${label}</span>
-          <span class="sum-value">${value}</span>
+        <div class="summary-item-new">
+          <div class="si-icon">${icon}</div>
+          <div class="si-content">
+            <span class="si-label">${label}</span>
+            <span class="si-value">${value}</span>
+          </div>
         </div>
       `).join('')}
     </div>`;
 }
 
-// ---- Submit ----
 function submitBooking() {
   const ref = 'ALK-' + Date.now().toString(36).toUpperCase();
-  // Save to localStorage as demo persistence
   const booking = {
     ref,
     service:  bookingState.service,
     date:     bookingState.selectedDate,
     time:     bookingState.selectedTime,
+    fabric:   bookingState.selectedFabric ? bookingState.selectedFabric.id : null,
+    totalCost: bookingState.totalCost,
     name:     document.getElementById('bk-name').value.trim(),
     phone:    document.getElementById('bk-phone').value.trim(),
     address:  document.getElementById('bk-address').value.trim(),
@@ -2459,21 +2290,18 @@ function submitBooking() {
   bookings.push(booking);
   localStorage.setItem('alkhayat_bookings', JSON.stringify(bookings));
 
-  // Show success
-  document.querySelector('.booking-section').querySelector('.booking-step.active').style.display='none';
-  document.querySelector('.booking-progress').style.opacity='0.5';
+  document.querySelectorAll('.booking-step').forEach(s => s.style.display = 'none');
   const succ = document.getElementById('booking-success');
-  succ.style.display = 'block';
-  document.getElementById('success-ref').innerHTML =
-    `<strong>${currentLang === 'en' ? 'Booking Reference' : 'رقم الحجز'}:</strong> <span class="ref-code">${ref}</span>`;
-
-  // Send WhatsApp if checked
+  if(succ) {
+    succ.style.display = 'block';
+    document.getElementById('success-ref').textContent = ref;
+  }
+  
   if(document.getElementById('bk-whatsapp') && document.getElementById('bk-whatsapp').checked){
     setTimeout(() => bookViaWhatsApp(booking), 1000);
   }
 }
 
-// ---- WhatsApp ----
 function bookViaWhatsApp(bk) {
   const b = bk || {
     service:  bookingState.service,
@@ -2482,8 +2310,8 @@ function bookViaWhatsApp(bk) {
     name:     document.getElementById('bk-name')?.value || '',
     phone:    document.getElementById('bk-phone')?.value || '',
     address:  document.getElementById('bk-address')?.value || '',
-    city:     document.getElementById('bk-city')?.options[document.getElementById('bk-city')?.selectedIndex]?.text || '',
-    garment:  document.getElementById('bk-garment')?.options[document.getElementById('bk-garment')?.selectedIndex]?.text || '',
+    city:     document.getElementById('bk-city')?.value || '',
+    garment:  document.getElementById('bk-garment')?.value || '',
     notes:    document.getElementById('bk-notes')?.value || '',
   };
   const svcLbl = serviceLabels[b.service]?.en || b.service;
@@ -2504,6 +2332,7 @@ function bookViaWhatsApp(bk) {
   );
   window.open(`https://wa.me/966XXXXXXXXX?text=${msg}`, '_blank');
 }
+
 
 // =================================================================
 //  GEOLOCATION AUTO-ADDRESS
@@ -2662,7 +2491,10 @@ function renderFabricPanel(filter = 'all') {
     const isSelected = selectedFabricId === f.id;
     return `
       <div class="fabric-item ${isSelected ? 'selected' : ''}" onclick="selectFabricItem(${f.id})">
-        <div class="fi-img-wrap" style="width:50px;height:50px;border-radius:8px;overflow:hidden;flex-shrink:0;margin-right:12px;"><img src="${f.img}" alt="${name}" style="width:100%;height:100%;object-fit:cover;"></div><div class="fi-info" style="flex:1;">
+        <div class="fi-img-wrap">
+          <img src="${f.img}" alt="${name}">
+        </div>
+        <div class="fi-info">
           <div class="fi-name">${name}</div>
           <div class="fi-meta">
             ${f.badge === 'New' ? '<span class="fi-tag new">🆕 New</span>' : ''}
@@ -2676,6 +2508,7 @@ function renderFabricPanel(filter = 'all') {
           ${f.old_price ? `<div class="fi-old">SAR ${f.old_price}</div>` : ``}
         </div>
       </div>`;
+
   }).join('') || `<div class="fi-empty">No results for this filter</div>`;
 }
 
@@ -3009,6 +2842,89 @@ function updateFloatingPositions(timestamp) {
 
 // Stats Counter and Floating Logos loader
 window.addEventListener('load', () => {
+    // Remove Page Loader
+    const loader = document.querySelector('.page-loader');
+    if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
+    }
+
     setTimeout(initStatsCounter, 1000);
     setTimeout(renderFloatingLogos, 500);
+});
+
+/* ============ SEARCH LOGIC ============ */
+function openSearch() {
+  const overlay = document.getElementById('search-overlay');
+  if(overlay) {
+    overlay.classList.add('active');
+    setTimeout(() => {
+        const input = document.getElementById('ajax-search-input');
+        if(input) input.focus();
+    }, 300);
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeSearch() {
+  const overlay = document.getElementById('search-overlay');
+  if(overlay) {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function handleAjaxSearch() {
+  const input = document.getElementById('ajax-search-input');
+  if(!input) return;
+  const query = input.value.toLowerCase().trim();
+  const resultsGrid = document.getElementById('search-results-grid');
+  const emptyState = document.getElementById('search-empty-state');
+  
+  if (query.length < 2) {
+    resultsGrid.innerHTML = '';
+    if(emptyState) emptyState.style.display = 'none';
+    return;
+  }
+
+  const filtered = products.filter(p => {
+    const name = ((currentLang === 'en' ? p.name_en : p.name_ar) || '').toLowerCase();
+    const cat = (p.cat || '').toLowerCase();
+    const origin = (p.origin || '').toLowerCase();
+    return name.includes(query) || cat.includes(query) || origin.includes(query);
+  });
+
+  if (filtered.length === 0) {
+    resultsGrid.innerHTML = '';
+    if(emptyState) emptyState.style.display = 'block';
+  } else {
+    if(emptyState) emptyState.style.display = 'none';
+    resultsGrid.innerHTML = filtered.map(p => {
+      const name = currentLang === 'en' ? p.name_en : p.name_ar;
+      const catObj = categories.find(c => c.id === p.cat);
+      const catDisplay = currentLang === 'en' ? (catObj ? catObj.name_en : p.cat) : (catObj ? catObj.name_ar : p.cat);
+      
+      return `
+        <div class="search-result-item" onclick="openProductModal(${p.id});closeSearch()">
+          <img src="${p.img}" alt="${name}" class="search-result-img">
+          <div class="search-result-info">
+            <span class="cat">${catDisplay}</span>
+            <h4>${name}</h4>
+            <span class="price">SAR ${p.price}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+}
+
+// Close search on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeSearch();
+        if(typeof closeModal === 'function') closeModal();
+        if(typeof closeCart === 'function') closeCart();
+    }
 });
